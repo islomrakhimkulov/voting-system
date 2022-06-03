@@ -9,14 +9,14 @@
 
 		<!-- Logo -->
 		<div
-			class="bg-logo w-[236px] h-[127px] bg-cover bg-center absolute top-6"
+			class="bg-logo w-[14.75rem] h-[7.9375rem] bg-cover bg-center absolute top-6"
 		></div>
 
 		<!-- Cards -->
 		<div class="flex gap-6 z-0">
 			<!-- <router-link :to="{ name: 'home' }"> </router-link> -->
 			<div
-				class="w-[220px] flex flex-col items-center bg-primary-200 rounded p-6"
+				class="w-[13.75rem] flex flex-col items-center bg-primary-200 rounded p-6"
 			>
 				<img src="../assets/presentation.svg" alt="" />
 				<span class="text-gray-0 mt-4 block">Taqdimot ko’rinishi</span>
@@ -40,7 +40,7 @@
 
 		<!-- Footer Text -->
 		<div class="absolute bottom-6">
-			<span class="text-[18px] text-gray-400">E-voting system</span>
+			<span class="text-lg text-gray-400">E-voting system</span>
 		</div>
 	</div>
 </template>

@@ -9,19 +9,57 @@ module.exports = {
 				lg: '976px',
 				xl: '1440px',
 			},
-			spacing: {
-				p: '1.5rem', // 24px
-				sm: '1.5rem', // 24px
-			},
+			// spacing: {
+			// 	1: '0.06rem', // 1px
+			// 	2: '0.13rem', // 2px
+			// 	3: '0.19rem', // 3px
+			// 	4: '0.3rem', // 4px
+			// 	5: '0.3rem', // 5px
+			// 	6: '0.4rem', // 6px
+			// 	8: '0.5rem', // 8px
+			// 	10: '0.625rem', // 10px
+			// 	12: '0.75rem', // 12px
+			// 	13: '0.8125rem', // 13px
+			// 	14: '0.875rem', // 14px
+			// 	15: '0.9375rem', // 15px
+			// 	16: '1rem', // 16px
+			// 	18: '1.125rem', // 18px
+			// 	20: '1.25rem', // 20px
+			// 	24: '1.5rem', // 24px
+			// 	25: '1.5625rem', // 25px
+			// 	28: '1.75rem', // 28px
+			// 	32: '2rem', // 32px
+			// 	36: '2.25rem', // 36px
+			// 	40: '2.5rem', // 40px
+			// 	44: '2.75rem', // 44px
+			// 	48: '3rem', // 48px
+			// 	50: '3rem', // 50px
+			// 	56: '3.5rem', // 56px
+			// 	64: '4rem', // 64px
+			// 	72: '4.5rem', // 72px
+			// },
 			fontFamily: {
 				sans: ['Open Sans'],
 			},
-			// fontSize: {},
+			fontSize: {
+				xs: '.75rem', // 12px
+				sm: '.875rem', // 14px
+				base: '1rem', // 16px
+				lg: '1.125rem', // 18px
+				xl: '1.25rem', // 20px
+				'2xl': '1.5rem', // 24px
+				'3xl': '1.875rem', // 30px
+				'4xl': '2.25rem', // 36px
+				'5xl': '3rem', // 48px
+				'6xl': '4rem', // 64px
+				'7xl': '5rem', // 80px
+			},
 			backgroundImage: {
 				logo: "url('./src/assets/logo.png')",
 				presentation: "url('./src/assets/presentation.svg')",
 				tablet: "url('./src/assets/tablet.svg')",
 				admin: "url('./src/assets/admin.svg')",
+				adminBg: "url('./src/asstets/admin-bg.svg')",
 			},
 			colors: {
 				// Main colors
@@ -64,14 +102,16 @@ module.exports = {
 					800: '#313131',
 					900: '#262626',
 				},
-				darkBlue: {
+				accent: {
 					50: '#eeeefc',
+					60: '#d6d6f8',
 					75: '#b9b8f3',
 					100: '#9c9bee',
 					200: '#7270e7',
 					300: '#5553e2',
 					400: '#3b3a9e',
 					500: '#34338a',
+					600: '#4D46DE',
 				},
 				// Special colors
 				success: {

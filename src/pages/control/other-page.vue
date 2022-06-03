@@ -1,7 +1,9 @@
 <script setup lang="ts">
-    useHead({
-        title: 'Other Pages',
-    });
+	useHead({
+		title: 'Other Pages',
+	});
+
+	const { t: string } = useI18n();
 </script>
 
 <template>
@@ -12,12 +14,12 @@
 			class="mt-5 hover:text-gray-200 dark:hover:text-gray-500 hover:underline"
 			>{{ $t('pages.home') }}</router-link
 		>
-		<h2 class="text-secondary-400">Hello</h2>
+		<h2 class="text-secondary-400">{{ $t('Hello') }}</h2>
 	</div>
 </template>
 
 <style scoped></style>
 
 <route lang="yaml">
-    name: other-page
+name: other-page
 </route>

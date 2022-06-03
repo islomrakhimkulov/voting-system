@@ -7,12 +7,12 @@
 		<VotingBackground class="absolute w-full -z-0" />
 
 		<!-- LOGO -->
-		<div class="bg-logo w-[236px] h-[127px] bg-cover bg-center z-10"></div>
-
-		<swipper></swipper>
+		<div
+			class="bg-logo w-[14.75rem] h-[7.9375rem] bg-cover bg-center z-10"
+		></div>
 
 		<div class="absolute bottom-6">
-			<span class="text-gray-400">E-voting system</span>
+			<span class="text-lg text-gray-400">E-voting system</span>
 		</div>
 	</div>
 </template>

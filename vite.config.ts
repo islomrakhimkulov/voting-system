@@ -47,7 +47,15 @@ export default defineConfig({
 			// see https://github.com/antfu/unplugin-auto-import/pull/23/
 			resolvers: [],
 		}),
-		Pages(),
+		Pages({
+			dirs: [
+				{ dir: 'src/pages', baseRoute: '' },
+				{
+					dir: 'src/pages/control',
+					baseRoute: 'control',
+				},
+			],
+		}),
 		Layouts(),
 		VitePWA({
 			includeAssets: [
@@ -106,6 +114,6 @@ export default defineConfig({
 	ssgOptions: {
 		script: 'async',
 		formatting: 'minify',
-		format : 'cjs'
+		format: 'cjs',
 	},
 });

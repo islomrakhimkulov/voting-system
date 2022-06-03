@@ -6,12 +6,11 @@ import '@vue/runtime-core'
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AppButton: typeof import('./src/components/AppButton.vue')['default']
+    AppIcon: typeof import('./src/components/AppIcon.vue')['default']
     AppNavbar: typeof import('./src/components/AppNavbar.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    Swipper: typeof import('./src/components/swipper.vue')['default']
     VotingBackground: typeof import('./src/components/VotingBackground.vue')['default']
-    VotingButton: typeof import('./src/components/VotingButton.vue')['default']
   }
 }
 

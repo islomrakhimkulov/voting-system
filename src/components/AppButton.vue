@@ -1,20 +1,127 @@
-<script setup lang="ts">
-	useHead({
-		title: 'App Button',
+<script lang="ts">
+	const COLORS = [
+		'default',
+		'primary',
+		'accent',
+		'success',
+		'danger',
+		'warning',
+		'info',
+		'link',
+	];
+	const SIZES = [
+		'default',
+		'small',
+		'normal',
+		'medium',
+		'large',
+		'extra-large',
+	];
+</script>
+
+<script lang="ts" setup>
+	import { computed } from 'vue';
+
+	const { color, size, active, isBlock } = defineProps({
+		color: {
+			type: String,
+			default: () => 'default',
+			validator: (value: string) => COLORS.includes(value),
+		},
+		size: {
+			type: String,
+			default: () => 'default',
+			validator: (value: string) => SIZES.includes(value),
+		},
+		active: {
+			type: Boolean,
+			default: () => false,
+		},
+		disabled: {
+			type: Boolean,
+			default: () => false,
+		},
+		isBlock: {
+			type: Boolean,
+			default: () => false,
+		},
+		prependIcon: {
+			type: Boolean,
+			default: () => false,
+		},
+		appendIcon: {
+			type: Boolean,
+			default: () => false,
+		},
+	});
+
+	const classes = computed(() => {
+		return {
+			'active-button': active,
+			block: isBlock,
+			[`is-${color}`]: true,
+			[`is-${size}`]: true,
+		};
 	});
 </script>
 
 <template>
-	<div>
-		<button
-			class="bg-primary-300 text-gray-0 py-3 px-11 rounded uppercase"
-			type="button"
-		>
-			<slot name="main-btn"></slot>
-		</button>
-	</div>
+	<button
+		class="app-button py-2 px-6 text-sm rounded font-normal uppercase transition-colors duration-300"
+		:class="classes"
+		type="button"
+	>
+		<span class="app-button-content">
+			<slot></slot>
+		</span>
+	</button>
 </template>
 
-<route lang="yaml">
-name: home
-</route>
+<style lang="postcss">
+	.app-button.is-default {
+		@apply bg-gray-50 hover:bg-gray-200 text-black;
+	}
+	.app-button.is-primary {
+		@apply bg-primary-200 hover:bg-primary-400 text-white;
+	}
+	.app-button.is-secondary {
+		@apply bg-secondary-200 hover:bg-secondary-400;
+	}
+	.app-button.is-gray {
+		@apply bg-gray-200 hover:bg-gray-400 text-black;
+	}
+	.app-button.is-accent {
+		@apply bg-accent-300 hover:bg-accent-400 text-white;
+	}
+	.app-button.is-success {
+		@apply bg-success-200 hover:bg-success-400 text-white;
+	}
+	.app-button.is-warning {
+		@apply bg-warning-200 hover:bg-warning-400 text-black;
+	}
+	.app-button.is-danger {
+		@apply bg-danger-200 hover:bg-danger-400 text-white;
+	}
+	.app-button.is-link {
+		@apply bg-transparent font-semibold;
+	}
+	.app-button.is-small {
+		@apply text-sm;
+	}
+	.app-button.is-medium {
+		@apply text-base;
+	}
+	.app-button.is-large {
+		@apply text-lg;
+	}
+	.app-button.is-normal {
+		@apply text-base;
+	}
+	.app-button.is-extra-large {
+		@apply text-4xl;
+	}
+	/* icons */
+	.app-button > .app-button-content > .app-icon {
+		@apply mr-2;
+	}
+</style>
