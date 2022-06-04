@@ -8,8 +8,10 @@
 		'warning',
 		'info',
 		'link',
+		'disabled',
+		'simple',
 	];
-	const SIZES = ['small', 'medium', 'large', 'extra-large'];
+	const SIZES = ['default', 'small', 'medium', 'large', 'extra-large'];
 </script>
 
 <script lang="ts" setup>
@@ -63,6 +65,9 @@
 		class="app-button text-sm rounded font-normal uppercase transition-colors duration-300"
 		:class="classes"
 		type="button"
+
+
+		
 	>
 		<span class="app-button-content flex justify-center items-center">
 			<slot></slot>
@@ -117,8 +122,10 @@
 		@apply mr-7;
 	}
 
-	/* icons */
-	.app-button > .app-button-content > .app-icon {
-		/* @apply mr-2; */
+	/* main buttons */
+
+	/* disabled buttons */
+	.app-button.is-disabled {
+		@apply bg-gray-2000 text-gray-1500 border-gray-1500  border-2;
 	}
 </style>

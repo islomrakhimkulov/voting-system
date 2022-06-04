@@ -6,7 +6,7 @@
 		Object.entries(urls).map(([k, v]) => [path.getFilename(k), v])
 	);
 
-	const { color, src, left, right } = defineProps({
+	const { color, src, position } = defineProps({
 		color: {
 			type: String,
 			default: () => 'default',
@@ -20,15 +20,13 @@
 					'info',
 				].includes(value),
 		},
+		position: {
+			type: String,
+			default: () => 'default',
+			validator: (value: string) =>
+				['default', 'left', 'right'].includes(value),
+		},
 		src: {
-			type: String,
-			default: () => '',
-		},
-		left: {
-			type: String,
-			default: () => '',
-		},
-		right: {
 			type: String,
 			default: () => '',
 		},
@@ -40,8 +38,7 @@
 			'app-icon': true,
 			'is-asset': isAsset,
 			[color]: true,
-			[`is-${left}`]: true,
-			[`is-${right}`]: true,
+			[`is-${position}`]: true,
 		};
 	});
 </script>
@@ -59,10 +56,11 @@
 	}
 
 	.app-icon.is-left {
-		@apply mr-7;
+		@apply mr-2;
 	}
+
 	.app-icon.is-right {
-		@apply ml-9;
+		@apply ml-2;
 	}
 
 	.app-icon > svg {
