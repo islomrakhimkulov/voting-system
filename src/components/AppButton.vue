@@ -9,14 +9,7 @@
 		'info',
 		'link',
 	];
-	const SIZES = [
-		'default',
-		'small',
-		'normal',
-		'medium',
-		'large',
-		'extra-large',
-	];
+	const SIZES = ['small', 'medium', 'large', 'extra-large'];
 </script>
 
 <script lang="ts" setup>
@@ -30,7 +23,7 @@
 		},
 		size: {
 			type: String,
-			default: () => 'default',
+			default: () => 'medium',
 			validator: (value: string) => SIZES.includes(value),
 		},
 		active: {
@@ -67,11 +60,11 @@
 
 <template>
 	<button
-		class="app-button py-2 px-6 text-sm rounded font-normal uppercase transition-colors duration-300"
+		class="app-button text-sm rounded font-normal uppercase transition-colors duration-300"
 		:class="classes"
 		type="button"
 	>
-		<span class="app-button-content">
+		<span class="app-button-content flex justify-center items-center">
 			<slot></slot>
 		</span>
 	</button>
@@ -103,25 +96,29 @@
 		@apply bg-danger-200 hover:bg-danger-400 text-white;
 	}
 	.app-button.is-link {
-		@apply bg-transparent font-semibold;
+		@apply bg-transparent font-semibold hover:bg-accent-300 hover:text-white hover:font-normal;
 	}
 	.app-button.is-small {
 		@apply text-sm;
 	}
 	.app-button.is-medium {
-		@apply text-base;
+		@apply text-base h-[3rem] py-2 px-6;
 	}
 	.app-button.is-large {
-		@apply text-lg;
+		@apply text-lg h-[3rem] py-2 px-6;
 	}
 	.app-button.is-normal {
-		@apply text-base;
+		@apply text-base h-[3rem] py-2 px-6;
 	}
 	.app-button.is-extra-large {
-		@apply text-4xl;
+		@apply text-4xl h-[3rem] py-2 px-6;
 	}
+	.app-button.is-prependIcon {
+		@apply mr-7;
+	}
+
 	/* icons */
 	.app-button > .app-button-content > .app-icon {
-		@apply mr-2;
+		/* @apply mr-2; */
 	}
 </style>

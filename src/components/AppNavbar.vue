@@ -9,17 +9,14 @@
 			</div>
 			<!-- Buttons here -->
 			<div class="flex items-center gap-4">
-				<AppButton block color="accent">Yig'ilishlar</AppButton>
-				<AppButton size="normal">Qurilmalar</AppButton>
-				<AppButton color="link">Qurilmalar</AppButton>
-				<AppButton color="success" class="flex items-center">
+				<AppButton block color="accent" medium>Yig'ilishlar</AppButton>
+				<AppButton size="normal" large>Qurilmalar</AppButton>
+				<AppButton color="link" small>Qurilmalar</AppButton>
+				<AppButton color="success" prependIcon>
 					<AppIcon src="bi_plus-circle" />
 					Qurilmalar
+					<AppIcon src="bi_plus-circle" />
 				</AppButton>
-				<AppButton color="warning">
-					<template #prepend>(Chapda) </template>
-					Qurilmalar</AppButton
-				>
 			</div>
 		</div>
 	</div>

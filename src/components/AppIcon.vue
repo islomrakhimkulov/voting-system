@@ -1,5 +1,12 @@
 <script setup lang="ts">
-	const { color, src } = defineProps({
+	import * as path from '@/utils/path';
+
+	const urls = import.meta.glob('/src/assets/icons/*.svg', { as: 'raw' });
+	const icons = Object.fromEntries(
+		Object.entries(urls).map(([k, v]) => [path.getFilename(k), v])
+	);
+
+	const { color, src, left, right } = defineProps({
 		color: {
 			type: String,
 			default: () => 'default',
@@ -17,25 +24,49 @@
 			type: String,
 			default: () => '',
 		},
+		left: {
+			type: String,
+			default: () => '',
+		},
+		right: {
+			type: String,
+			default: () => '',
+		},
 	});
 
 	const isAsset = computed(() => !!src);
+	const classes = computed(() => {
+		return {
+			'app-icon': true,
+			'is-asset': isAsset,
+			[color]: true,
+			[`is-${left}`]: true,
+			[`is-${right}`]: true,
+		};
+	});
 </script>
 
 <template>
-	<i class="app-icon" :class="{ [color]: true, 'is-asset': isAsset }">
-		<slot v-if="!isAsset"></slot>
-		<img v-else :src="src" />
+	<i :class="classes" v-if="isAsset" v-html="icons[src]"></i>
+	<i :class="classes" v-else>
+		<slot></slot>
 	</i>
 </template>
 
-<style lang="postcss" scoped>
+<style lang="postcss">
 	.app-icon {
-		width: 1em;
-		height: 1em;
+		@apply w-[1em] h-full leading-3;
 	}
 
-	.app-icon.is-asset {
-		background-image: url(v-bind(src));
+	.app-icon.is-left {
+		@apply mr-7;
+	}
+	.app-icon.is-right {
+		@apply ml-9;
+	}
+
+	.app-icon > svg {
+		@apply inline w-[1em] h-[1em] !important;
+		@apply align-baseline;
 	}
 </style>
