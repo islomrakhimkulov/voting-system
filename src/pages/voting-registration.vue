@@ -4,7 +4,7 @@
 		class="bg-primary-50 h-screen w-full flex justify-center items-center relative"
 	>
 		<!-- Background -->
-		<VotingBackground class="absolute w-full -z-0"></VotingBackground>
+		<ParticlesBackground class="absolute w-full -z-0" />
 
 		<!-- LOGO -->
 		<div

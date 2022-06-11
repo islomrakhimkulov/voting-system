@@ -10,6 +10,8 @@
 		'link',
 		'disabled',
 		'simple',
+		'prev',
+		'next',
 	];
 	const SIZES = ['default', 'small', 'medium', 'large', 'extra-large'];
 </script>
@@ -65,9 +67,6 @@
 		class="app-button text-sm rounded font-normal uppercase transition-colors duration-300"
 		:class="classes"
 		type="button"
-
-
-		
 	>
 		<span class="app-button-content flex justify-center items-center">
 			<slot></slot>
@@ -101,7 +100,7 @@
 		@apply bg-danger-200 hover:bg-danger-400 text-white;
 	}
 	.app-button.is-link {
-		@apply bg-transparent font-semibold hover:bg-accent-300 hover:text-white hover:font-normal;
+		@apply bg-transparent hover:bg-accent-300 hover:text-white hover:font-normal;
 	}
 	.app-button.is-small {
 		@apply text-sm;
@@ -124,8 +123,16 @@
 
 	/* main buttons */
 
-	/* disabled buttons */
+	/* disabled button */
 	.app-button.is-disabled {
 		@apply bg-gray-2000 text-gray-1500 border-gray-1500  border-2;
+	}
+
+	/* next button */
+	.app-button.is-next {
+		@apply bg-gray-2500 text-gray-1000 border-gray-1500 border-2;
+	}
+	/* prev button */
+	.app-button.is-prev {
 	}
 </style>

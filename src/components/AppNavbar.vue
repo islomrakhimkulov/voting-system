@@ -10,18 +10,7 @@
 			<!-- Buttons here -->
 			<div class="flex items-center gap-4">
 				<AppButton block color="accent">Yig'ilishlar</AppButton>
-				<AppButton size="large">Qurilmalar</AppButton>
 				<AppButton color="link">Qurilmalar</AppButton>
-				<AppButton color="primary">Qurilmalar</AppButton>
-				<AppButton color="accent">
-					<AppIcon src="bi_plus-circle" position="left" />
-					Yaratish
-				</AppButton>
-
-				<AppButton color="disabled">
-					Yaratish
-					<AppIcon src="chevron-right" position="right" />
-				</AppButton>
 			</div>
 		</div>
 	</div>

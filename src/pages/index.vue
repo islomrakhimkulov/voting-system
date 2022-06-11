@@ -6,9 +6,9 @@
 
 <template>
 	<div>
-		<VotingBackground class="absolute w-full -z-10" />
-		<VotingRegistration />
+		<ParticlesBackground class="absolute w-full -z-10" />
 		<AppNavbar />
+		<AppCard />
 	</div>
 </template>
 
