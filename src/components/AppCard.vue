@@ -13,7 +13,8 @@
 
 		<div class="text-center">
 			<!-- AppTimer -->
-			<div class="p-6">
+			<AppTimer />
+			<div class="pb-6">
 				<p class="text-gray-90 text-sm">
 					ovoz berish yakunlangunigacha
 				</p>
