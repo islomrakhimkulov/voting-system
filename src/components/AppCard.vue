@@ -1,5 +1,7 @@
 <script setup lang="ts">
 	import { computed } from 'vue';
+
+	const endsAt = ref(new Date(new Date().getTime() + 2_600_000));
 </script>
 <template>
 	<div class="p-4 m-4 w-[360px] bg-white rounded-md shadow-md">
@@ -13,7 +15,7 @@
 
 		<div class="text-center">
 			<!-- AppTimer -->
-			<AppTimer />
+			<AppTimer v-model="endsAt" />
 			<div class="pb-6">
 				<p class="text-gray-90 text-sm">
 					ovoz berish yakunlangunigacha
