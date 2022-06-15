@@ -8,10 +8,12 @@
 	<div>
 		<ParticlesBackground class="absolute w-full -z-10" />
 		<AppNavbar />
-		<div class="flex mt-8">
+		<div class="my-10">
 			<AppCard />
-			<CurrentTime />
-			<AppChart />
+			<!-- <CurrentTime /> -->
+			<div>
+				<AppChart />
+			</div>
 		</div>
 	</div>
 </template>

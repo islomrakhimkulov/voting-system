@@ -84,10 +84,21 @@
 
 <template>
 	<section class="flex text-5xl font-semibold text-accent-600 justify-center">
-		<div class="hours mx-2 relative">{{ time.hours }}</div>
+		<div class="hours mx-2 relative">
+			{{ time.hours }}
+			<div class="text-[16px]">soat</div>
+		</div>
+
 		<span class="leading-snug">:</span>
-		<div class="minutes mx-2 relative">{{ time.minutes }}</div>
+		<div class="minutes mx-2 relative">
+			{{ time.minutes }}
+			<div class="text-[16px]">daqiqa</div>
+		</div>
+
 		<span class="leading-snug">:</span>
-		<div class="seconds ml-2 relative">{{ time.seconds }}</div>
+		<div class="seconds ml-2 relative">
+			{{ time.seconds }}
+			<div class="text-[16px]">soniya</div>
+		</div>
 	</section>
 </template>
