@@ -12,6 +12,8 @@ declare module '@vue/runtime-core' {
     AppNavbar: typeof import('./src/components/AppNavbar.vue')['default']
     AppTimer: typeof import('./src/components/AppTimer.vue')['default']
     CurrentTime: typeof import('./src/components/CurrentTime.vue')['default']
+    GivenVotingResulChart: typeof import('./src/components/GivenVotingResulChart.vue')['default']
+    GroupedVotingResultChart: typeof import('./src/components/GroupedVotingResultChart.vue')['default']
     ParticlesBackground: typeof import('./src/components/ParticlesBackground.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

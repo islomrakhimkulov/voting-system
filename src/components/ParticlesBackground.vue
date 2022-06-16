@@ -1,23 +1,16 @@
 <script setup lang="ts">
 	import { loadFull } from 'tsparticles';
 
-	const particlesInit = async engine => {
+	const particlesInit = async (engine: any) => {
 		await loadFull(engine);
-	};
-
-	const particlesLoaded = async container => {
-		console.log('Particles container loaded', container);
 	};
 </script>
 
 <template>
 	<!-- Particles Background  -->
 	<Particles
-		:class="classes"
-		class="app-bg"
 		id="tsparticles"
 		:particlesInit="particlesInit"
-		:particlesLoaded="particlesLoaded"
 		:options="{
 			background: {
 				color: {

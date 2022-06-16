@@ -13,6 +13,14 @@
 			<!-- <CurrentTime /> -->
 			<div>
 				<AppChart />
+				<div class="flex">
+					<div class="max-w-[35vw]">
+						<grouped-voting-result-chart />
+					</div>
+					<div class="max-w-[35vw]">
+						<given-voting-resul-chart />
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

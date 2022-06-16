@@ -18,15 +18,13 @@
 		'Qatnashmagan',
 	]);
 
-	onMounted(() => {
-		console.log(doughnutRef.value.chartInstance);
-		doughnutRef.value.chartInstance.toBase64Image();
-	});
-
 	const options1 = ref({
 		responsive: true,
 		plugins: {
 			legend: {
+				display: true,
+				padding: 90,
+				position: 'bottom',
 				labels: {
 					usePointStyle: true,
 					pointStyle: 'circle',
@@ -35,10 +33,23 @@
 			},
 			title: {
 				display: true,
-				text: 'Doughnut Chart',
+				text: 'Ovoz berish natijlari',
 			},
 			tooltip: {
 				intersect: false,
+				tooltip: {
+					callbacks: {
+						title: () => null,
+					},
+				},
+			},
+			datalabels: {
+				align: 'top',
+				color: 'pink',
+				font: {
+					weight: 'bold',
+					size: 16,
+				},
 			},
 		},
 	});
@@ -46,6 +57,8 @@
 		responsive: true,
 		plugins: {
 			legend: {
+				display: true,
+				position: 'bottom',
 				labels: {
 					usePointStyle: true,
 					pointStyle: 'rect',
@@ -54,10 +67,17 @@
 			},
 			title: {
 				display: true,
-				text: 'This is Bar Chart',
+				text: 'Umumiy natija',
 			},
 			tooltip: {
 				intersect: true,
+			},
+		},
+		scales: {
+			x: {
+				grid: {
+					offset: true,
+				},
 			},
 		},
 	});
@@ -91,6 +111,7 @@
 <template>
 	<div class="flex justify-center">
 		<DoughnutChart
+			style="height: 50vh; width: 50vh"
 			:chartData="resultInfo1"
 			:options="options1"
 			ref="doughnutRef"
