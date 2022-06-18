@@ -8,19 +8,14 @@
 	<div>
 		<ParticlesBackground class="absolute w-full -z-10" />
 		<AppNavbar />
-		<div class="my-10">
-			<AppCard />
-			<!-- <CurrentTime /> -->
+
+		<div class="my-10 flex justify-center items-center">
+			<AppCard />🥳
 			<div>
-				<AppChart />
-				<div class="flex">
-					<div class="max-w-[35vw]">
-						<grouped-voting-result-chart />
-					</div>
-					<div class="max-w-[35vw]">
-						<given-voting-resul-chart />
-					</div>
-				</div>
+				<given-voting-resul-chart />
+			</div>
+			<div>
+				<grouped-voting-result-chart />
 			</div>
 		</div>
 	</div>

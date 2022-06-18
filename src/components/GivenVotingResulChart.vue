@@ -10,14 +10,32 @@
 	import { DoughnutChart } from 'vue-chart-3';
 
 	const groupVotes = ref([894, 347]);
-	const dataLabels1 = ref(['Qatnashgan', 'Qatnashmagan']);
+	1;
+	const chartData = computed(() => ({
+		labels: CHART_LABELS,
+		datasets: [
+			{
+				data: groupVotes.value,
+				backgroundColor: BACKGROUND_COLORS,
+			},
+		],
+	}));
 
-	const options1 = ref({
+	const chartOptions = ref({
 		responsive: true,
 		plugins: {
+			doughnutlabel: {
+				labels: [
+					{
+						text: 'Berilgan ovozlar',
+					},
+				],
+			},
 			legend: {
 				display: true,
-				padding: 90,
+				padding: {
+					top: 150,
+				},
 				position: 'bottom',
 				labels: {
 					usePointStyle: true,
@@ -30,39 +48,26 @@
 				text: 'Ovoz berish natijlari',
 			},
 			tooltip: {
+				enabled: true,
 				intersect: false,
 				tooltip: {
 					callbacks: {
-						title: () => null,
+						label: (tooltipItem, data) => {
+							return `${data.labels[tooltipItem.index]}: ${
+								data.datasets[0].data[tooltipItem.index]
+							}%`;
+						},
 					},
-				},
-			},
-			datalabels: {
-				align: 'top',
-				color: 'pink',
-				font: {
-					weight: 'bold',
-					size: 16,
 				},
 			},
 		},
 	});
-
-	const resultInfo1 = computed(() => ({
-		labels: dataLabels1.value,
-		datasets: [
-			{
-				data: groupVotes.value,
-				backgroundColor: ['#22b870', '#ef67aa'],
-			},
-		],
-	}));
 </script>
 <template>
 	<div class="p-5">
 		<DoughnutChart
-			:chartData="resultInfo1"
-			:options="options1"
+			:chartData="chartData"
+			:options="chartOptions"
 			ref="doughnutRef"
 			class="p-4 mx-5 bg-white rounded shadow"
 		/>

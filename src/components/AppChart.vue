@@ -117,10 +117,5 @@
 			ref="doughnutRef"
 			class="p-4 mx-5 bg-white rounded shadow"
 		/>
-		<BarChart
-			:chartData="resultInfo2"
-			:options="options2"
-			class="px-8 py-2 bg-white rounded shadow"
-		/>
 	</div>
 </template>
