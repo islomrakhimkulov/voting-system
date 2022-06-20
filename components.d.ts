@@ -17,6 +17,8 @@ declare module '@vue/runtime-core' {
     ParticlesBackground: typeof import('./src/components/ParticlesBackground.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    VotesCountChart: typeof import('./src/components/VotesCountChart.vue')['default']
+    VotingList: typeof import('./src/components/VotingList.vue')['default']
   }
 }
 

@@ -71,7 +71,7 @@
 			},
 			title: {
 				display: true,
-				text: 'Ovoz berish natijlari',
+				text: 'Umumiy natija',
 			},
 			tooltip: {
 				enabled: true,

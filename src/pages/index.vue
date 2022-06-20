@@ -10,12 +10,15 @@
 		<AppNavbar />
 
 		<div class="my-10 flex justify-center items-center">
-			<AppCard />🥳
+			<AppCard />
 			<div>
-				<given-voting-resul-chart />
+				<VotesCountChart />
 			</div>
 			<div>
-				<grouped-voting-result-chart />
+				<GroupedVotingResultChart />
+			</div>
+			<div>
+				<VotingList />
 			</div>
 		</div>
 	</div>
