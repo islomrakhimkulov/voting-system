@@ -30,12 +30,6 @@
 			checked: false,
 		},
 	]);
-
-	const filteredButton = onMounted(() => {
-		subjecstList.value.map(item => {
-			return item.status === 'Yakunlangan' ? 'default' : 'accent';
-		});
-	});
 </script>
 
 <template>
@@ -63,37 +57,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr
-					v-for="subject in subjecstList"
-					:key="subject.id"
-					class="border-b-[1px] border-b-gray-80"
-				>
-					<td class="px-3 py-4">
-						<input
-							type="checkbox"
-							class="rounded p-3 focus:ring-0 border border-gray-5"
-							name=""
-							id=""
-						/>
-					</td>
-					<td class="px-3 py-4">
-						<p>
-							{{ subject.title }}
-						</p>
-					</td>
-					<td class="px-3 py-4">
-						<p>{{ subject.time }}</p>
-					</td>
-					<td class="px-3 py-4">
-						<AppButton
-							class="p-2"
-							size="small"
-							:color="filteredButton()"
-						>
-							{{ subject.status }}
-						</AppButton>
-					</td>
-				</tr>
+				<VotingSubjectItem :subjecstList="subjecstList" />
 			</tbody>
 		</table>
 	</div>
