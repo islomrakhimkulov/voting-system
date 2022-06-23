@@ -8,18 +8,17 @@
 	<div>
 		<ParticlesBackground class="absolute w-full -z-10" />
 		<AppNavbar />
-
-		<div class="my-10 flex justify-center items-center">
-			<AppCard />
-			<div>
-				<VotesCountChart />
+		<div class="mx-auto container gap-4">
+			<div class="my-10 flex justify-center items-center">
+				<AppCard />
+				<div>
+					<VotesCountChart />
+				</div>
+				<div>
+					<GroupedVotingResultChart />
+				</div>
 			</div>
-			<div>
-				<GroupedVotingResultChart />
-			</div>
-			<div>
-				<VotingList />
-			</div>
+			<VotingSubjectsList />
 		</div>
 	</div>
 </template>
