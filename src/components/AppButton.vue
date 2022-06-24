@@ -76,7 +76,7 @@
 
 <style lang="postcss">
 	.app-button.is-default {
-		@apply bg-gray-50 hover:bg-gray-200 text-black;
+		@apply bg-gray-100 hover:bg-gray-400 text-white;
 	}
 	.app-button.is-primary {
 		@apply bg-primary-200 hover:bg-primary-400 text-white;

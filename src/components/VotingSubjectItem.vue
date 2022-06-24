@@ -1,25 +1,24 @@
 <script setup lang="ts">
-	const props = defineProps({
-		subjecstList: {
-			type: Array,
-			default: () => ({}),
-		},
-	});
+	import { Subject } from '@/types/SubjectType';
 
-	const filteredButton = computed(() => {
-		subjecstList.value.map(item => {
-			return item.status === 'Yakunlangan' ? 'default' : 'accent';
-		});
+	const { subject } = defineProps<{ subject: Subject | undefined }>();
+
+	const actionButtonColor = computed(() => {
+		if (subject?.status === 'Yakunlanganmagan') {
+			return 'accent';
+		}
+
+		if (subject?.status === 'Rejalashtirilgan') {
+			return 'accent';
+		}
+
+		return 'default';
 	});
 </script>
 
 <template>
-	<tr
-		:v-for="subject in subjecstList"
-		:key="subject.id"
-		class="border-b-[1px] border-b-gray-80"
-	>
-		<td class="px-3 py-3">
+	<tr class="border-b-[1px] border-b-gray-40">
+		<td class="px-4 py-3">
 			<input
 				type="checkbox"
 				class="rounded p-2 focus:ring-0 border border-gray-5"
@@ -32,13 +31,19 @@
 				{{ subject.title }}
 			</p>
 		</td>
-		<td class="px-3 py-3">
+		<td>
 			<p>{{ subject.time }}</p>
 		</td>
 		<td class="px-3 py-3">
-			<AppButton class="p-2" size="small" :color="filteredButton">
+			<AppButton
+				class="p-1 w-full"
+				size="small"
+				:color="actionButtonColor"
+			>
 				{{ subject.status }}
 			</AppButton>
 		</td>
 	</tr>
 </template>
+
+<style scoped></style>

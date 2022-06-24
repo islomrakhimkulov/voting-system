@@ -1,11 +1,9 @@
 <script setup lang="ts">
-	const Title = ref([
-		{
-			subjectTitle: 'Mavzular',
-			timeTitle: 'Belgilangan vaqt',
-			statusTitle: 'Status',
-		},
-	]);
+	const title = ref({
+		subjectTitle: 'Mavzular',
+		timeTitle: 'Belgilangan vaqt',
+		statusTitle: 'Status',
+	});
 
 	const subjecstList = ref([
 		{
@@ -34,30 +32,32 @@
 
 <template>
 	<div>
-		<table class="table-auto w-full bg-white shadow-lg rounded">
+		<table class="table-auto w-full bg-white shadow rounded">
 			<thead>
-				<tr class="border-b-[1px] border-b-gray-80">
-					<th class="px-3 py-2">
+				<tr class="border-b-[1px] border-b-gray-40">
+					<th class="px-3 py-3">
 						<input
 							type="checkbox"
-							class="rounded p-3 focus:ring-0 border border-gray-5"
+							class="rounded p-2 focus:ring-0 border border-gray-5"
 							name=""
 							id=""
 						/>
 					</th>
-					<th class="px-3 py-2 text-left">
-						{{ Title[0].subjectTitle }}
+					<th class="px-3 py-3 text-left">
+						{{ title.subjectTitle }}
 					</th>
-					<th class="px-3 py-2 text-left">
-						{{ Title[0].timeTitle }}
+					<th class="px-3 py-3 text-left">
+						{{ title.timeTitle }}
 					</th>
-					<th class="px-3 py-2 text-left pl-6">
-						{{ Title[0].statusTitle }}
+					<th class="px-3 py-3 text-left pl-6">
+						{{ title.statusTitle }}
 					</th>
 				</tr>
 			</thead>
 			<tbody>
-				<VotingSubjectItem :subjecstList="subjecstList" />
+				<template v-for="subject in subjecstList" :key="subject.id">
+					<VotingSubjectItem :subject="subject" />
+				</template>
 			</tbody>
 		</table>
 	</div>

@@ -16,8 +16,6 @@ declare module '@vue/runtime-core' {
     ParticlesBackground: typeof import('./src/components/ParticlesBackground.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    Table: typeof import('./src/components/TableSubjectItem.vue')['default'];
-    TableSubjectItem: typeof import('./src/components/TableSubjectItem.vue')['default']
     VotesCountChart: typeof import('./src/components/VotesCountChart.vue')['default']
     VotingSubjectItem: typeof import('./src/components/VotingSubjectItem.vue')['default']
     VotingSubjectsList: typeof import('./src/components/VotingSubjectsList.vue')['default']
