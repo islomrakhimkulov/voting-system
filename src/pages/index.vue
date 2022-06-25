@@ -18,7 +18,8 @@
 					<GroupedVotingResultChart />
 				</div>
 			</div>
-			<VotingSubjectsList />
+			<VotingSubjectsList class="my-4" />
+			<voting-subjects-accordion class="my-16" />
 		</div>
 	</div>
 </template>

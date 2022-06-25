@@ -1,11 +1,11 @@
 <script setup lang="ts">
-	const title = ref({
+	const subjectListTitles = ref({
 		subjectTitle: 'Mavzular',
 		timeTitle: 'Belgilangan vaqt',
 		statusTitle: 'Status',
 	});
 
-	const subjecstList = ref([
+	const subjectList = ref([
 		{
 			id: 1,
 			title: ' About new industry of all regions and their lives, what do those who are poor need and government should provide... ',
@@ -15,17 +15,17 @@
 		},
 		{
 			id: 2,
-			title: ' Subject 2',
-			time: '25 may 2022, 17:00',
+			title: ' Subject 2 ',
+			time: '25 may 2022, 14:00',
 			status: 'Rejalashtirilgan',
-			checked: true,
+			checked: false,
 		},
 		{
 			id: 3,
-			title: 'Subject 3',
-			time: '27 may 2022, 14:00',
+			title: ' Subject 3',
+			time: '25 may 2022, 17:00',
 			status: 'Rejalashtirilgan',
-			checked: false,
+			checked: true,
 		},
 	]);
 </script>
@@ -44,18 +44,18 @@
 						/>
 					</th>
 					<th class="px-3 py-3 text-left">
-						{{ title.subjectTitle }}
+						{{ subjectListTitles.subjectTitle }}
 					</th>
 					<th class="px-3 py-3 text-left">
-						{{ title.timeTitle }}
+						{{ subjectListTitles.timeTitle }}
 					</th>
 					<th class="px-3 py-3 text-left pl-6">
-						{{ title.statusTitle }}
+						{{ subjectListTitles.statusTitle }}
 					</th>
 				</tr>
 			</thead>
 			<tbody>
-				<template v-for="subject in subjecstList" :key="subject.id">
+				<template v-for="subject in subjectList" :key="subject.id">
 					<VotingSubjectItem :subject="subject" />
 				</template>
 			</tbody>
