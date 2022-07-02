@@ -17,7 +17,8 @@
 		{
 			id: 3,
 			subjectTitle: 'Accordion 3',
-			subjectText: 'some lorem here 33',
+			subjectText:
+				"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. ",
 			open: true,
 		},
 	]);
@@ -40,12 +41,17 @@
 </script>
 
 <template>
-	<div class="bg-white p-4 shadow rounded">
+	<div class="bg-white shadow rounded">
 		<template v-for="(accordion, i) in accordionInfo" :key="accordion.id">
 			<VotingSubjectsAccordionItem
 				:accordion="accordion"
-				@click="openItem(i)"
+				@change="openItem(i)"
+				class="border-b-2 border-gray-40"
 			/>
 		</template>
+		<AppButton class="uppercase w-full" color="accent" size="large">
+			<AppIcon src="edit"></AppIcon>
+			Mavzu qo'shish
+		</AppButton>
 	</div>
 </template>

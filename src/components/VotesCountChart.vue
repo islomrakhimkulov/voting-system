@@ -9,7 +9,7 @@
 	import { computed, ref } from 'vue';
 	import { DoughnutChart } from 'vue-chart-3';
 
-	const participants = reactive({ voted: 20, total: 31 });
+	const participants = reactive({ voted: 894, total: 1241 });
 	const votedPercentage = computed(() => {
 		const percentage = (participants.voted * 100) / participants.total;
 		return percentage.toFixed(0);

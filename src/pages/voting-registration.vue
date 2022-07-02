@@ -33,11 +33,7 @@
 						name="registration"
 					/>
 				</div>
-				<AppButton
-					color="primary"
-					block
-					class="flex items-center justify-end mt-4"
-				>
+				<AppButton color="primary" class="block mt-4">
 					Kirish
 				</AppButton>
 			</div>

@@ -109,10 +109,10 @@
 		@apply text-base h-[3rem] py-2 px-6;
 	}
 	.app-button.is-large {
-		@apply text-lg h-[3rem] py-2 px-6;
+		@apply text-lg  py-6 px-6;
 	}
 	.app-button.is-normal {
-		@apply text-base h-[3rem] py-2 px-6;
+		@apply text-base h-[3rem] py-6 px-6;
 	}
 	.app-button.is-extra-large {
 		@apply text-4xl h-[3rem] py-2 px-6;

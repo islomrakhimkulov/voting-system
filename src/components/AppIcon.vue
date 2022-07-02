@@ -1,10 +1,11 @@
 <script setup lang="ts">
 	import * as path from '@/utils/path';
 
-	const urls = import.meta.glob('/src/assets/icons/*.svg', { as: 'raw' });
-	const icons = Object.fromEntries(
-		Object.entries(urls).map(([k, v]) => [path.getFilename(k), v])
-	);
+	// const urls = import.meta.glob('/src/assets/icons/*.svg');
+
+	// const icons = Object.fromEntries(
+	// 	Object.entries(urls).map(([k, v]) => [path.getFilename(k), v])
+	// );
 
 	const { color, src, position } = defineProps({
 		color: {
@@ -32,6 +33,12 @@
 		},
 	});
 
+	const svgIconCode = await (
+		await fetch(`/src/assets/icons/${src}.svg?raw`)
+	).text();
+
+	const svgIconContent = computed(() => svgIconCode);
+
 	const isAsset = computed(() => !!src);
 	const classes = computed(() => {
 		return {
@@ -44,8 +51,8 @@
 </script>
 
 <template>
-	<i :class="classes" v-if="isAsset" v-html="icons[src]"></i>
-	<i :class="classes" v-else>
+	<i :class="classes" v-html="svgIconContent"></i>
+	<i :class="classes">
 		<slot></slot>
 	</i>
 </template>

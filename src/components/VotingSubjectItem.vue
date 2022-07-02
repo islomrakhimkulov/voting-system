@@ -17,7 +17,7 @@
 </script>
 
 <template>
-	<tr class="border-b-[1px] border-b-gray-40">
+	<tr class="border-b border-b-gray-40">
 		<td class="px-4 py-3">
 			<input
 				type="checkbox"

@@ -5,6 +5,8 @@
 		<!-- Current Time -->
 		<h2 class="uppercase text-[18px] font-semibold">Joriy Vaqt</h2>
 		<!-- Date Object here -->
-		<p class="py-2 text-gray-90 text-sm">21 may 2022 - 25 may 2022</p>
+		<div>
+			<label class="text-[10px]">Boshlash vaqti</label>
+		</div>
 	</div>
 </template>
