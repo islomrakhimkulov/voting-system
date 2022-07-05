@@ -48,6 +48,7 @@
 						>Mavzu qo'shish</AppButton
 					>
 				</div>
+				<AppModal class="mt-3" />
 			</div>
 		</div>
 	</div>

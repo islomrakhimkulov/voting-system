@@ -102,8 +102,11 @@
 	.app-button.is-link {
 		@apply bg-transparent hover:bg-accent-300 hover:text-white hover:font-normal;
 	}
+	.app-button.is-simple {
+		@apply bg-transparent bg-white text-gray-35 hover:font-normal rounded border-[1px];
+	}
 	.app-button.is-small {
-		@apply text-sm;
+		@apply px-5 py-1 h-10;
 	}
 	.app-button.is-medium {
 		@apply text-base h-[3rem] py-2 px-6;

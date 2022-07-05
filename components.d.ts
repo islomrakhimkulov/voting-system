@@ -9,6 +9,7 @@ declare module '@vue/runtime-core' {
     AppCard: typeof import('./src/components/AppCard.vue')['default']
     AppChart: typeof import('./src/components/AppChart.vue')['default']
     AppIcon: typeof import('./src/components/AppIcon.vue')['default']
+    AppModal: typeof import('./src/components/AppModal.vue')['default']
     AppNavbar: typeof import('./src/components/AppNavbar.vue')['default']
     AppTimer: typeof import('./src/components/AppTimer.vue')['default']
     CurrentTime: typeof import('./src/components/CurrentTime.vue')['default']

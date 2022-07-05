@@ -89,7 +89,9 @@ module.exports = {
 					20: '#f6f6f6',
 					25: '#747474',
 					30: '#eeeeee',
+					35: '#6F7482',
 					40: '#e3e3e3',
+					45: '#B8BCCA',
 					50: '#c9c9c9',
 					60: '#bcbcbc',
 					70: '#b1b1b1',
@@ -108,6 +110,7 @@ module.exports = {
 					1500: '#BFBFBF',
 					2000: '#DDDDDD',
 					2500: '#FAFAFA',
+					3000: '#F9F9F9',
 				},
 				accent: {
 					50: '#eeeefc',
