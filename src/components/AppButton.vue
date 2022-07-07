@@ -106,7 +106,7 @@
 		@apply bg-transparent bg-white text-gray-35 hover:font-normal rounded border-[1px];
 	}
 	.app-button.is-small {
-		@apply px-5 py-1 h-10;
+		@apply px-3 py-1 h-10;
 	}
 	.app-button.is-medium {
 		@apply text-base h-[3rem] py-2 px-6;

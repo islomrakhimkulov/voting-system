@@ -8,6 +8,7 @@
 	<div>
 		<ParticlesBackground class="absolute w-full -z-10" />
 		<AppNavbar />
+		<!-- <CurrentTime /> -->
 		<div class="mx-auto container gap-4">
 			<div class="my-10 flex justify-center items-center">
 				<AppCard />

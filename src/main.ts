@@ -5,8 +5,8 @@ import generatedRoutes from 'virtual:generated-pages';
 import '@/styles/index.css';
 import '@fontsource/open-sans';
 import Particles from 'particles.vue3';
-import dayjs from 'dayjs';
-import './plugins/chartjs';
+// import dayjs from 'dayjs';
+import '@/plugins/chartjs';
 
 const routes = setupLayouts(generatedRoutes);
 

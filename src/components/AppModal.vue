@@ -1,16 +1,21 @@
 <script setup lang="ts">
-	const open = ref(false);
+	const openModal = ref(false);
+
+	const myDate = new Date().toISOString().substr(0, 10);
+	// var today = new Date().toLocaleTimeString().toString().padStart(2, '0');
 </script>
 
 <template>
 	<div>
-		<AppButton color="primary" @click="open = true">Show Modal</AppButton>
+		<AppButton color="primary" @click="openModal = true"
+			>Show Modal</AppButton
+		>
 
 		<Teleport to="body">
-			<transition name="modal" v-if="open">
+			<transition name="modal" v-if="openModal">
 				<div class="modal">
 					<div
-						class="mx-auto mt-[150px] max-w-[1200px] bg-white shadow rounded-md"
+						class="mx-auto mt-[150px] max-w-[1100px] bg-white shadow rounded-md"
 					>
 						<!-- add subhect  -->
 						<div class="flex">
@@ -77,6 +82,7 @@
 												/>
 												:
 												<input
+													v-model="myDate"
 													class="border-gray-45 rounded"
 													type="date"
 													placeholder="Soniya"
@@ -108,21 +114,23 @@
 									</div>
 								</div>
 							</div>
+
+							<!-- before see -->
 							<div class="w-1/2">
 								<div class="px-7 py-5">
 									<!-- title -->
-									<h2 class="text-[22px] pb-4 font-semibold">
+									<h2 class="text-[22px] pb-2 font-semibold">
 										Oldindan ko'rish
 										<AppButton
 											color="danger"
-											@click="open = false"
+											@click="openModal = false"
 											>Close</AppButton
 										>
 									</h2>
 
 									<!-- subject title  -->
 									<div
-										class="text-gray-5 pb-4 font-semibold uppercase"
+										class="text-gray-5 pb-2 font-semibold uppercase"
 									>
 										ABOUT NEW INDUSTRY OF ALL REGIONS AND
 										THEIR LIVES, WHAT DO THOSE WHO ARE POOR
@@ -131,7 +139,7 @@
 									</div>
 
 									<!-- subject description -->
-									<p class="text-gray-25 pb-4">
+									<p class="text-gray-25 pb-2">
 										Lorem Ipsum is simply dummy text of the
 										printing and typesetting industry. Lorem
 										Ipsum has been the industry's standard
@@ -142,9 +150,9 @@
 									</p>
 
 									<!-- time -->
-									<div class="pb-4">
+									<div class="pb-2">
 										<h2
-											class="pb-4 text-gray-900 uppercase text-[16px]"
+											class="pb-3 text-gray-900 uppercase text-[16px]"
 										>
 											Ajratilgan vaqt
 										</h2>
@@ -156,9 +164,9 @@
 
 									<!-- voting buttons group -->
 
-									<div class="pb-4">
+									<div>
 										<h2
-											class="pb-4 text-gray-900 uppercase text-[16px]"
+											class="pb-3 text-gray-900 uppercase text-[16px]"
 										>
 											Ovoz berish
 										</h2>
@@ -178,7 +186,6 @@
 								</div>
 							</div>
 						</div>
-						<!-- before see -->
 					</div>
 				</div>
 			</transition>
@@ -198,17 +205,13 @@
 		transition: all 0.3s ease;
 	}
 
-	.modal-enter-from {
-		opacity: 0;
+	.modal-enter-active,
+	.modal-leave-active {
+		transition: opacity 0.5s ease;
 	}
 
+	.modal-enter-from,
 	.modal-leave-to {
 		opacity: 0;
-	}
-
-	.modal-enter-from .modal-container,
-	.modal-leave-to .modal-container {
-		-webkit-transform: scale(1.1);
-		transform: scale(1.1);
 	}
 </style>

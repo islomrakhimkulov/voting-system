@@ -59,7 +59,7 @@ module.exports = {
 				presentation: "url('./src/assets/presentation.svg')",
 				tablet: "url('./src/assets/tablet.svg')",
 				admin: "url('./src/assets/admin.svg')",
-				adminBg: "url('./src/asstets/admin-bg.svg')",
+				adminBg: "url('./src/assets/pattern.png')",
 			},
 			colors: {
 				// Main colors
