@@ -64,6 +64,7 @@ module.exports = {
 			colors: {
 				// Main colors
 				primary: {
+					25: '#E1F4FF',
 					50: '#ecf5fe',
 					75: '#b0d6f9',
 					100: '#8fc5f6',
@@ -93,6 +94,7 @@ module.exports = {
 					40: '#e3e3e3',
 					45: '#B8BCCA',
 					50: '#c9c9c9',
+					55: '#D0D0D0',
 					60: '#bcbcbc',
 					70: '#b1b1b1',
 					80: '#a4a4a4',

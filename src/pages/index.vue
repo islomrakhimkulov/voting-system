@@ -21,6 +21,8 @@
 			</div>
 			<VotingSubjectsList class="my-4" />
 			<voting-subjects-accordion class="my-16" />
+			<voting-question-item class="my-4" />
+			<voting-question-item class="my-4" active />
 		</div>
 	</div>
 </template>

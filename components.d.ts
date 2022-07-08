@@ -18,6 +18,7 @@ declare module '@vue/runtime-core' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     VotesCountChart: typeof import('./src/components/VotesCountChart.vue')['default']
+    VotingQuestionItem: typeof import('./src/components/VotingQuestionItem.vue')['default']
     VotingSubjectItem: typeof import('./src/components/VotingSubjectItem.vue')['default']
     VotingSubjectsAccordion: typeof import('./src/components/VotingSubjectsAccordion.vue')['default']
     VotingSubjectsAccordionItem: typeof import('./src/components/VotingSubjectsAccordionItem.vue')['default']
