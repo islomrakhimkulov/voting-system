@@ -18,14 +18,14 @@
 			<div
 				class="w-[13.75rem] flex flex-col items-center bg-primary-200 rounded p-6"
 			>
-				<img src="../assets/presentation.svg" alt="" />
+				<img src="@/assets/presentation.svg" alt="" />
 				<span class="text-gray-0 mt-4 block">Taqdimot ko’rinishi</span>
 			</div>
 			<!-- <router-link :to="{ name: 'other-page' }"> </router-link> -->
 			<div
 				class="w-[220px] flex flex-col items-center bg-primary-200 rounded p-6"
 			>
-				<img src="../assets/tablet.svg" alt="" />
+				<img src="@/assets/tablet.svg" alt="" />
 				<span class="text-gray-0 mt-4 block">Boshqaruv</span>
 			</div>
 
@@ -33,7 +33,7 @@
 			<div
 				class="w-[220px] flex flex-col items-center bg-primary-200 rounded p-6"
 			>
-				<img src="../assets/admin.svg" alt="" />
+				<img src="@/assets/admin.svg" alt="" />
 				<span class="text-gray-0 mt-4 block">Ovoz Berish</span>
 			</div>
 		</div>

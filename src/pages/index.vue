@@ -23,6 +23,12 @@
 			<voting-subjects-accordion class="my-16" />
 			<voting-question-item class="my-4" />
 			<voting-question-item class="my-4" active />
+
+			<div class="py-6">
+				<AppTimer />
+				<AppTimer active />
+				<AppTimer disabled />
+			</div>
 		</div>
 	</div>
 </template>

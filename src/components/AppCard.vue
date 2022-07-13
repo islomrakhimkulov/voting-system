@@ -15,7 +15,7 @@
 
 		<div class="text-center">
 			<!-- AppTimer -->
-			<AppTimer v-model="endsAt" />
+			<AppTimer v-model="endsAt" active />
 			<div class="pb-6">
 				<p class="text-gray-90 text-sm">
 					ovoz berish yakunlangunigacha

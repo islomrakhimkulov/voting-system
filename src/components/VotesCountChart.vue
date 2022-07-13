@@ -82,12 +82,12 @@
 	});
 </script>
 <template>
-	<div class="relative p-5">
+	<div class="relative">
 		<DoughnutChart
 			:chartData="chartData"
 			:options="chartOptions"
 			ref="doughnutRef"
-			class="p-2 bg-white rounded shadow"
+			class="p-2 rounded"
 		/>
 		<div
 			class="text-[#A5A5A5] text-[18px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-10"

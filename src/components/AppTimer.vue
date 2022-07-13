@@ -1,7 +1,16 @@
+<script lang="ts">
+	const COLORS = ['white', 'black', 'accent'];
+</script>
+
 <script setup lang="ts">
 	import { ref, computed } from 'vue';
 
-	const { modelValue: givenTime, reverse: isReverse } = defineProps({
+	const {
+		modelValue: givenTime,
+		reverse: isReverse,
+		active,
+		disabled,
+	} = defineProps({
 		modelValue: {
 			type: Date,
 			default: () => null,
@@ -10,6 +19,21 @@
 			type: Boolean,
 			default: () => false,
 		},
+		active: {
+			type: Boolean,
+			default: () => false,
+		},
+		disabled: {
+			type: Boolean,
+			default: () => 'default',
+		},
+	});
+
+	const classes = computed(() => {
+		return {
+			'active-color': active,
+			[`is-${disabled}`]: disabled,
+		};
 	});
 
 	const currentTime = ref<Date | null>(null);
@@ -83,22 +107,37 @@
 </script>
 
 <template>
-	<section class="flex text-5xl font-semibold text-accent-600 justify-center">
+	<section
+		class="app-timer flex text-5xl font-semibold text-gray-900 justify-center"
+		:class="classes"
+	>
 		<div class="hours mx-2 relative">
 			{{ time.hours }}
-			<div class="text-[16px]">soat</div>
+			<div class="text-[16px] timer-indicator">soat</div>
 		</div>
 
 		<span class="leading-snug">:</span>
 		<div class="minutes mx-2 relative">
 			{{ time.minutes }}
-			<div class="text-[16px]">daqiqa</div>
+			<div class="text-[16px] timer-indicator">daqiqa</div>
 		</div>
 
 		<span class="leading-snug">:</span>
 		<div class="seconds ml-2 relative">
 			{{ time.seconds }}
-			<div class="text-[16px]">soniya</div>
+			<div class="text-[16px] timer-indicator">soniya</div>
 		</div>
 	</section>
 </template>
+
+<style lang="postcss">
+	.app-timer.active-color {
+		@apply text-accent-600;
+	}
+	/* .timer-indicator {
+		@apply text-gray-90;
+	} */
+	.app-timer.is-true {
+		@apply bg-gray-80 px-8 pb-2 text-white rounded inline-flex;
+	}
+</style>

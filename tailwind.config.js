@@ -55,11 +55,11 @@ module.exports = {
 				'7xl': '5rem', // 80px
 			},
 			backgroundImage: {
-				logo: "url('./src/assets/logo.png')",
-				presentation: "url('./src/assets/presentation.svg')",
-				tablet: "url('./src/assets/tablet.svg')",
-				admin: "url('./src/assets/admin.svg')",
-				adminBg: "url('./src/assets/pattern.png')",
+				logo: "url('@/assets/logo.png')",
+				presentation: "url('@/assets/presentation.svg')",
+				tablet: "url('@/assets/tablet.svg')",
+				admin: "url('@/assets/admin.svg')",
+				adminBg: "url('@/assets/pattern.png')",
 			},
 			colors: {
 				// Main colors
@@ -72,6 +72,7 @@ module.exports = {
 					300: '#3e9bf0',
 					400: '#2b6da8',
 					500: '#265f92',
+					600: '#EFFAFF',
 				},
 				secondary: {
 					50: '#fdedf5',
