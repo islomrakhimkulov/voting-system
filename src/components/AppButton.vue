@@ -97,7 +97,7 @@
 		@apply bg-warning-200 hover:bg-warning-400 text-black;
 	}
 	.app-button.is-danger {
-		@apply bg-danger-200 hover:bg-danger-400 text-white;
+		@apply bg-danger-300 hover:bg-danger-400 text-white;
 	}
 	.app-button.is-link {
 		@apply bg-transparent hover:bg-accent-300 hover:text-white hover:font-normal;

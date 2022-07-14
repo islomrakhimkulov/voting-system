@@ -1,7 +1,3 @@
-<script lang="ts">
-	const COLORS = ['white', 'black', 'accent'];
-</script>
-
 <script setup lang="ts">
 	import { ref, computed } from 'vue';
 
@@ -24,7 +20,7 @@
 			default: () => false,
 		},
 		disabled: {
-			type: Boolean,
+			type: String,
 			default: () => 'default',
 		},
 	});
@@ -32,7 +28,7 @@
 	const classes = computed(() => {
 		return {
 			'active-color': active,
-			[`is-${disabled}`]: disabled,
+			[`is-${disabled}`]: true,
 		};
 	});
 
@@ -113,7 +109,7 @@
 	>
 		<div class="hours mx-2 relative">
 			{{ time.hours }}
-			<div class="text-[16px] timer-indicator">soat</div>
+			<div class="text-[16px] ml-2 timer-indicator">soat</div>
 		</div>
 
 		<span class="leading-snug">:</span>

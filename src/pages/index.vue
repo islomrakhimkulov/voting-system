@@ -8,8 +8,11 @@
 	<div>
 		<ParticlesBackground class="absolute w-full -z-10" />
 		<AppNavbar />
+
 		<!-- <CurrentTime /> -->
 		<div class="mx-auto container gap-4">
+			<voting-stepper />
+
 			<div class="my-10 flex justify-center items-center">
 				<AppCard />
 				<div>
@@ -24,10 +27,11 @@
 			<voting-question-item class="my-4" />
 			<voting-question-item class="my-4" active />
 
+			<voting-planned-list />
+
 			<div class="py-6">
 				<AppTimer />
 				<AppTimer active />
-				<AppTimer disabled />
 			</div>
 		</div>
 	</div>

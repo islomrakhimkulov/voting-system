@@ -86,10 +86,6 @@
 
 <template>
 	<div class="p-5">
-		<BarChart
-			:chartData="chartData"
-			:options="chartOptions"
-			class="px-8 py-2 bg-white rounded shadow"
-		/>
+		<BarChart :chartData="chartData" :options="chartOptions" />
 	</div>
 </template>

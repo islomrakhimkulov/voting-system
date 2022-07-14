@@ -21,7 +21,7 @@
 
 			<!-- main content -->
 			<div
-				class="bg-white px-10 py-4 mt-[120px] mx-auto w-[850px] rounded-md"
+				class="bg-white px-10 py-4 mx-auto mt-[120px] w-[1000px] rounded-md"
 			>
 				<div>
 					<!-- main subject title -->
@@ -50,7 +50,7 @@
 										</div>
 									</div>
 									<div
-										class="pl-5 text-[16px] pr-[100px] font-semibold"
+										class="pl-5 text-[16px] text-gray-900 pr-[100px] font-semibold"
 									>
 										About new industry of all regions and
 										their lives, what do those who are poor
@@ -78,9 +78,15 @@
 							<h2 class="text-[16px] text-gray-900 uppercase">
 								Ovoz berish jarayoni
 							</h2>
-							<div>
-								<div class="flex justify-center">
+							<div class="flex justify-center items-center">
+								<div>
 									<VotesCountChart style="width: 400px" />
+								</div>
+
+								<div>
+									<GroupedVotingResultChart
+										style="width: 400px"
+									/>
 								</div>
 							</div>
 						</div>
