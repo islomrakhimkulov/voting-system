@@ -104,24 +104,24 @@
 
 <template>
 	<section
-		class="app-timer flex text-5xl font-semibold text-gray-900 justify-center"
+		class="app-timer flex text-[44px] font-semibold text-gray-900 justify-center"
 		:class="classes"
 	>
 		<div class="hours mx-2 relative">
 			{{ time.hours }}
-			<div class="text-[16px] ml-2 timer-indicator">soat</div>
+			<div class="text-sm ml-2 timer-indicator">soat</div>
 		</div>
 
 		<span class="leading-snug">:</span>
 		<div class="minutes mx-2 relative">
-			{{ time.minutes }}
-			<div class="text-[16px] timer-indicator">daqiqa</div>
+			<div>{{ time.minutes }}</div>
+			<div class="text-sm timer-indicator">daqiqa</div>
 		</div>
 
 		<span class="leading-snug">:</span>
 		<div class="seconds ml-2 relative">
 			{{ time.seconds }}
-			<div class="text-[16px] timer-indicator">soniya</div>
+			<div class="text-sm timer-indicator">soniya</div>
 		</div>
 	</section>
 </template>

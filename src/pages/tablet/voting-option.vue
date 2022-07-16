@@ -9,11 +9,11 @@
 
 		<!-- Logo -->
 		<div
-			class="bg-logo w-[14.75rem] h-[7.9375rem] bg-cover bg-center absolute top-6"
+			class="bg-logo w-[14.75rem] h-[7.9375rem] ml-[100px] bg-cover bg-center absolute top-6"
 		></div>
 
 		<!-- Cards -->
-		<div class="flex gap-6 z-0">
+		<div class="flex gap-6 z-0 text-[16px]">
 			<!-- <router-link :to="{ name: 'home' }"> </router-link> -->
 			<div
 				class="w-[13.75rem] flex flex-col items-center bg-primary-200 rounded p-6"
@@ -40,7 +40,7 @@
 
 		<!-- Footer Text -->
 		<div class="absolute bottom-6">
-			<span class="text-lg text-gray-400">E-voting system</span>
+			<span class="text-[16px] text-gray-400">E-voting system</span>
 		</div>
 	</div>
 </template>

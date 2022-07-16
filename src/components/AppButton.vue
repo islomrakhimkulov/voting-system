@@ -106,7 +106,7 @@
 		@apply bg-transparent bg-white text-gray-35 hover:font-normal rounded border-[1px];
 	}
 	.app-button.is-small {
-		@apply px-3 py-1 h-10;
+		@apply px-3 py-1 h-10 text-sm;
 	}
 	.app-button.is-medium {
 		@apply text-base h-[3rem] py-2 px-6;
@@ -137,5 +137,6 @@
 	}
 	/* prev button */
 	.app-button.is-prev {
+		@apply bg-gray-2500 text-gray-1000 border-gray-1500 border-2;
 	}
 </style>

@@ -2,6 +2,18 @@
 	useHead({
 		title: 'E-voting system',
 	});
+	const indexList = ref([
+		{
+			id: 1,
+			text: 'About new industry of all regions and their lives, what do those who are poor...',
+			status: 'active',
+		},
+		{
+			id: 2,
+			text: 'About new industry of all regions and their lives, what do those who are poor... ',
+			status: 'noactive',
+		},
+	]);
 </script>
 
 <template>
@@ -24,8 +36,9 @@
 			</div>
 			<VotingSubjectsList class="my-4" />
 			<voting-subjects-accordion class="my-16" />
-			<voting-question-item class="my-4" />
-			<voting-question-item class="my-4" active />
+			<template v-for="question in indexList" :key="question.id">
+				<VotingQuestionItem :question="question" active class="my-3" />
+			</template>
 
 			<voting-planned-list />
 

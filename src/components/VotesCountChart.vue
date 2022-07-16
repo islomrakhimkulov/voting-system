@@ -45,6 +45,8 @@
 
 	const chartOptions = ref({
 		responsive: true,
+		// chart width
+		cutout: 80,
 		plugins: {
 			doughnutlabel: {
 				labels: [

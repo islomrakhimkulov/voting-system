@@ -172,13 +172,19 @@
 										</h2>
 										<!-- buttons -->
 										<div class="flex gap-5">
-											<AppButton color="success"
+											<AppButton
+												color="success"
+												class="w-full"
 												>Qo'shilaman</AppButton
 											>
-											<AppButton color="danger"
+											<AppButton
+												color="danger"
+												class="w-full"
 												>Qarshiman</AppButton
 											>
-											<AppButton color="warning"
+											<AppButton
+												color="warning"
+												class="w-full"
 												>Be'tarafman</AppButton
 											>
 										</div>

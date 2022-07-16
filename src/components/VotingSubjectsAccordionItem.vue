@@ -56,11 +56,7 @@
 </template>
 
 <style>
-	.fade-enter-active .fade-leave-active {
-		transition: opacity, 2s ease;
-	}
-
 	.fade-enter-from .fade-enter-to {
-		opacity: 0;
+		transition: opacity, 2s ease;
 	}
 </style>

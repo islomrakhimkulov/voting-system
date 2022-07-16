@@ -1,31 +1,28 @@
 <script setup lang="ts">
-	const { active } = defineProps({
+	const { active, question } = defineProps({
 		active: {
 			type: Boolean,
 			default: () => false,
 		},
-	});
-
-	const classes = computed(() => {
-		return {
-			'question-item': active,
-		};
+		question: {
+			type: Object,
+			default: () => ({}),
+		},
 	});
 </script>
 
 <template>
-	<div class="p-5 bg-white rounded-md shadow w-[500px]" :class="classes">
+	<div class="p-3 bg-white rounded-md shadow w-[400px]">
 		<div class="flex items-center">
 			<div>
 				<div
-					class="w-[60px] h-[60px] circle bg-gray-55 text-[26px] text-gray-900 rounded-full flex items-center justify-center"
+					class="w-[50px] h-[50px] circle bg-gray-55 text-[20px] text-gray-900 rounded-full flex items-center justify-center"
 				>
-					1
+					{{ question.id }}
 				</div>
 			</div>
-			<div class="pl-5 text-lg">
-				About new industry of all regions and their lives, what do those
-				who are poor...
+			<div class="pl-5 text-[15px]">
+				{{ question.text }}
 			</div>
 		</div>
 	</div>

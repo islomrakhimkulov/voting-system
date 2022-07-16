@@ -6,7 +6,7 @@
 	>
 		<!-- Logo -->
 		<div
-			class="bg-logo w-[14.75rem] h-[7.9375rem] bg-cover bg-center absolute top-3"
+			class="bg-logo w-[14.75rem] h-[7.9375rem] ml-[100px] bg-cover bg-center absolute top-3"
 		></div>
 
 		<div class="container mx-auto">

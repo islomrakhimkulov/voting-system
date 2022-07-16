@@ -28,7 +28,7 @@
 							placeholder="Yig'ilishni nomini kiriting namuna uchun: XIX syezd "
 						/>
 					</div>
-					<p class="text-accent-300 text-[16px] font-semibold">
+					<p class="text-accent-300 pb-3 text-[16px] font-semibold">
 						Tarkibi
 					</p>
 					<!--           
