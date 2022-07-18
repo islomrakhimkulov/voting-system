@@ -93,17 +93,7 @@
 								has been the industry's standard dummy text ever
 								since the 1500s
 							</p>
-							<!-- time -->
-							<div class="pb-2">
-								<h2
-									class="text-[14px] pb-3 text-gray-900 uppercase"
-								>
-									Ajratilgan vaqt
-								</h2>
-								<div>
-									<AppTimer />
-								</div>
-							</div>
+
 							<!-- chart result  -->
 							<div class="pb-2">
 								<h2 class="text-[14px] text-gray-900 uppercase">
@@ -125,7 +115,8 @@
 								</div>
 							</div>
 						</div>
-						<div class="flex justify-between items-center pt-3">
+
+						<div class="flex justify-between items-center pt-36">
 							<AppButton size="small" color="disabled"
 								>orqaga</AppButton
 							>

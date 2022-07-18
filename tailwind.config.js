@@ -115,6 +115,7 @@ module.exports = {
 					2000: '#DDDDDD',
 					2500: '#FAFAFA',
 					3000: '#F9F9F9',
+					4000: '#D9D9D9',
 				},
 				accent: {
 					50: '#eeeefc',
