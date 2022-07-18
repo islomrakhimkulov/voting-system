@@ -208,6 +208,10 @@
 													<div
 														class="w-[220px] p-2 bg-success-50 text-success-300 border-success-300 border-2 rounded-lg"
 													>
+														<img
+															src="@/assets/icons/group-align.svg"
+															alt=""
+														/>
 														<div
 															class="flex flex-col items-center"
 														>
@@ -236,6 +240,10 @@
 													<div
 														class="w-[220px] p-2 bg-success-50 text-success-300 border-success-300 border-2 rounded-lg"
 													>
+														<img
+															src="@/assets/icons/group-align.svg"
+															alt=""
+														/>
 														<div
 															class="flex flex-col items-center"
 														>
@@ -263,6 +271,10 @@
 													<div
 														class="w-[220px] p-2 bg-success-50 text-success-300 border-success-300 border-2 rounded-lg"
 													>
+														<img
+															src="@/assets/icons/group-align.svg"
+															alt=""
+														/>
 														<div
 															class="flex flex-col items-center"
 														>
@@ -290,6 +302,10 @@
 													<div
 														class="w-[220px] p-2 bg-success-50 text-success-300 border-success-300 border-2 rounded-lg"
 													>
+														<img
+															src="@/assets/icons/group-align.svg"
+															alt=""
+														/>
 														<div
 															class="flex flex-col items-center"
 														>
@@ -358,6 +374,10 @@
 											<div
 												class="w-[220px] p-2 bg-gray-30 text-gray-70 border-gray-70 border-2 rounded-lg"
 											>
+												<img
+													src="@/assets/icons/group-align.svg"
+													alt=""
+												/>
 												<div
 													class="flex flex-col items-center"
 												>
@@ -382,8 +402,12 @@
 												</p>
 											</div>
 											<div
-												class="w-[220px] p-3 bg-gray-30 text-gray-70 border-gray-70 border-2 rounded-lg"
+												class="w-[220px] p-2 bg-gray-30 text-gray-70 border-gray-70 border-2 rounded-lg"
 											>
+												<img
+													src="@/assets/icons/group-align.svg"
+													alt=""
+												/>
 												<div
 													class="flex flex-col items-center"
 												>
@@ -407,8 +431,12 @@
 												</p>
 											</div>
 											<div
-												class="w-[220px] p-3 bg-gray-30 text-gray-70 border-gray-70 border-2 rounded-lg"
+												class="w-[220px] p-2 bg-gray-30 text-gray-70 border-gray-70 border-2 rounded-lg"
 											>
+												<img
+													src="@/assets/icons/group-align.svg"
+													alt=""
+												/>
 												<div
 													class="flex flex-col items-center"
 												>
