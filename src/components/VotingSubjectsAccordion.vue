@@ -49,9 +49,5 @@
 				class="border-b-2 border-gray-40"
 			/>
 		</template>
-		<AppButton class="uppercase w-full" color="accent" size="large">
-			<AppIcon src="edit"></AppIcon>
-			Mavzu qo'shish
-		</AppButton>
 	</div>
 </template>

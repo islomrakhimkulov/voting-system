@@ -1,4 +1,5 @@
 <script setup lang="ts">
+	import PlusIcon from '@/assets/icons/bi_plus-circle.svg?raw';
 	import { Navigation, Pagination } from 'swiper';
 	import { Swiper, SwiperSlide } from 'swiper/vue';
 
@@ -57,7 +58,10 @@
 						</div>
 					</div>
 
-					<AppButton color="accent">Yaratish</AppButton>
+					<AppButton color="accent">
+						<AppIcon v-html="PlusIcon" position="left"></AppIcon>
+						Yaratish</AppButton
+					>
 				</div>
 
 				<!-- meeting shcudule -->

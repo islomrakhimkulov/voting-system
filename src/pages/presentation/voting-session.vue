@@ -26,7 +26,9 @@
 						XIX Oliy Majlis Qonunchilik palatasining navbatdagi
 						yalpi majlisi
 					</h2>
-					<p class="text-[16px] text-gray-300">joriy yig’ilishlar</p>
+					<p class="text-[16px] text-gray-300 pt-2">
+						Kun tartibidagi mavzular
+					</p>
 				</div>
 				<div>
 					<VotingStepper />

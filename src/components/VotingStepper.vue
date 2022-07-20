@@ -24,33 +24,35 @@
 </script>
 
 <template>
-	<div v-for="subject in currentSubjectList" :key="subject.id">
-		<div class="flex items-center gap-10 my-[30px] relative">
-			<!-- counter id -->
-			<div
-				class="w-[50px] h-[50px] circle bg-primary-300 text-white text-[20px] before:absolute before:w-[2px] before:h-[40px] before:bg-primary-100 before:bottom-[-35px] last:before:w-5 last:before:h-3 last:before:bg-danger-500 rounded-full flex items-center justify-center dd"
-			>
-				{{ subject.id }}
-			</div>
-			<!-- content description -->
-			<div
-				class="w-[600px] py-4 px-8 bg-primary-300 text-white text-[18px] rounded flex items-center justify-center"
-			>
-				<!-- content description here -->
-				<p class="pr-4">
-					{{ subject.text }}
-				</p>
+	<div
+		v-for="subject in currentSubjectList"
+		:key="subject.id"
+		class="flex items-center gap-10 my-[30px] relative parent-div"
+	>
+		<!-- counter id -->
+		<div
+			class="child-div w-[50px] h-[50px] bg-primary-300 text-white text-[20px] before:absolute before:w-[2px] before:h-[40px] before:bg-primary-100 before:bottom-[-35px] rounded-full flex items-center justify-center"
+		>
+			{{ subject.id }}
+		</div>
 
-				<img src="@/assets/icons/arrow-right.svg" alt="" />
-			</div>
+		<!-- content description -->
+		<div
+			class="w-[600px] py-4 px-8 bg-primary-300 text-white text-[18px] rounded flex items-center justify-center"
+		>
+			<!-- content description here -->
+			<p class="">
+				{{ subject.text }}
+			</p>
+
+			<!-- <img src="@/assets/icons/arrow-right.svg" alt="" /> -->
 		</div>
 	</div>
 </template>
 
 <style>
-	.dd:last-child::before {
-		display: none !important;
+	.parent-div:last-child .child-div::before {
+		width: 0 !important;
+		height: 0;
 	}
 </style>
-
-div div div

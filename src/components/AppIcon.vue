@@ -1,13 +1,7 @@
 <script setup lang="ts">
 	import * as path from '@/utils/path';
 
-	// const urls = import.meta.glob('/src/assets/icons/*.svg');
-
-	// const icons = Object.fromEntries(
-	// 	Object.entries(urls).map(([k, v]) => [path.getFilename(k), v])
-	// );
-
-	const { color, src, position } = defineProps({
+	const { color, position } = defineProps({
 		color: {
 			type: String,
 			default: () => 'default',
@@ -27,23 +21,11 @@
 			validator: (value: string) =>
 				['default', 'left', 'right'].includes(value),
 		},
-		src: {
-			type: String,
-			default: () => '',
-		},
 	});
 
-	const svgIconCode = await (
-		await fetch(`/src/assets/icons/${src}.svg?raw`)
-	).text();
-
-	const svgIconContent = computed(() => svgIconCode);
-
-	const isAsset = computed(() => !!src);
 	const classes = computed(() => {
 		return {
 			'app-icon': true,
-			'is-asset': isAsset,
 			[color]: true,
 			[`is-${position}`]: true,
 		};
@@ -51,8 +33,7 @@
 </script>
 
 <template>
-	<i :class="classes" v-html="svgIconContent"></i>
-	<i :class="classes">
+	<i :class="classes" class="app-icon">
 		<slot></slot>
 	</i>
 </template>

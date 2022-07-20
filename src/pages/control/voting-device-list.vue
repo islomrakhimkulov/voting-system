@@ -1,6 +1,23 @@
 <script setup lang="ts">
-	const openCreateGroupModal = ref(false);
-	const openRegistrationModal = ref(false);
+	import PlusIcon from '@/assets/icons/bi_plus-circle.svg?raw';
+
+	const isOpenDevice = ref(false);
+	const isOpenToken = ref(false);
+
+	const showDevicesModal = () => {
+		isOpenDevice.value = true;
+	};
+	const hideDevicesModal = () => {
+		isOpenDevice.value = false;
+	};
+
+	const showTokenCodeModal = () => {
+		isOpenToken.value = true;
+	};
+
+	const hideTokenCodeModal = () => {
+		isOpenToken.value = false;
+	};
 </script>
 
 <template>
@@ -29,9 +46,12 @@
 							<div>
 								<AppButton
 									color="accent"
-									@click="openCreateGroupModal = true"
-									>Qo'shish</AppButton
+									@click="showDevicesModal"
 								>
+									<AppIcon v-html="PlusIcon" position="left">
+									</AppIcon
+									>Qo'shish
+								</AppButton>
 							</div>
 						</div>
 
@@ -109,9 +129,12 @@
 							<div>
 								<AppButton
 									color="accent"
-									@click="openRegistrationModal = true"
-									>Qo'shish</AppButton
+									@click="showTokenCodeModal"
 								>
+									<AppIcon v-html="PlusIcon" position="left">
+									</AppIcon>
+									Qo'shish
+								</AppButton>
 							</div>
 						</div>
 						<!-- devices named card group  -->
@@ -159,398 +182,20 @@
 				</div>
 			</div>
 
-			<!-- opening add group modal  -->
-			<Teleport to="body">
-				<transition name="modal" v-if="openCreateGroupModal">
-					<div class="modal">
-						<div
-							class="mx-auto mt-[130px] max-w-[1100px] bg-white shadow rounded-md"
-						>
-							<!-- add subject  -->
-							<div class="flex">
-								<div
-									class="w-1/2 border-r-[1px] border-gray-45"
-								>
-									<div
-										class="bg-gray-3000 py-5 px-7 rounded-t-md"
-									>
-										<!-- title -->
-										<h2
-											class="text-[16px] font-semibold uppercase"
-										>
-											Qurilamalar guruhi
-										</h2>
+			<!-- devices control modal -->
+			<VotingDevicesModal
+				:isOpen="isOpenDevice"
+				@close="hideDevicesModal"
+			/>
 
-										<!-- form content -->
-										<div class="py-2">
-											<div class="flex flex-col py-2">
-												<input
-													class="rounded text-[16px] border-gray-45"
-													type="text"
-													placeholder="Guruh nomini kiriting"
-													name="title"
-													id="title"
-												/>
-											</div>
-											<!-- guruhlashtirilgan qurilmalar -->
-											<div>
-												<h2
-													class="text-[16px] font-semibold uppercase"
-												>
-													Guruhlashtilirilgan
-													qurilmalar
-												</h2>
-												<!-- card group-->
-												<div
-													class="py-4 flex flex-row items-center flex-wrap gap-2"
-												>
-													<!-- card -->
-													<div
-														class="w-[220px] p-2 bg-success-50 text-success-300 border-success-300 border-2 rounded-lg"
-													>
-														<img
-															src="@/assets/icons/group-align.svg"
-															alt=""
-														/>
-														<div
-															class="flex flex-col items-center"
-														>
-															<!-- icon -->
-															<img
-																class="w-[100px]"
-																src="@/assets/phone-tablet.svg"
-																alt=""
-															/>
-															<!-- group name -->
-															<h2
-																class="text-[16px] font-semibold"
-															>
-																John Doe's
-																tablet
-															</h2>
-														</div>
-														<!-- group status-->
-														<p
-															class="text-[14px] text-right"
-														>
-															Guruhlangan
-														</p>
-													</div>
-
-													<div
-														class="w-[220px] p-2 bg-success-50 text-success-300 border-success-300 border-2 rounded-lg"
-													>
-														<img
-															src="@/assets/icons/group-align.svg"
-															alt=""
-														/>
-														<div
-															class="flex flex-col items-center"
-														>
-															<!-- icon -->
-															<img
-																class="w-[100px]"
-																src="@/assets/phone-tablet.svg"
-																alt=""
-															/>
-															<!-- group name -->
-															<h2
-																class="text-[16px] font-semibold"
-															>
-																John Doe's
-																tablet
-															</h2>
-														</div>
-														<!-- group status-->
-														<p
-															class="text-[14px] text-right"
-														>
-															Guruhlangan
-														</p>
-													</div>
-													<div
-														class="w-[220px] p-2 bg-success-50 text-success-300 border-success-300 border-2 rounded-lg"
-													>
-														<img
-															src="@/assets/icons/group-align.svg"
-															alt=""
-														/>
-														<div
-															class="flex flex-col items-center"
-														>
-															<!-- icon -->
-															<img
-																class="w-[100px]"
-																src="@/assets/phone-tablet.svg"
-																alt=""
-															/>
-															<!-- group name -->
-															<h2
-																class="text-[16px] font-semibold"
-															>
-																John Doe's
-																tablet
-															</h2>
-														</div>
-														<!-- group status-->
-														<p
-															class="text-[14px] text-right"
-														>
-															Guruhlangan
-														</p>
-													</div>
-													<div
-														class="w-[220px] p-2 bg-success-50 text-success-300 border-success-300 border-2 rounded-lg"
-													>
-														<img
-															src="@/assets/icons/group-align.svg"
-															alt=""
-														/>
-														<div
-															class="flex flex-col items-center"
-														>
-															<!-- icon -->
-															<img
-																class="w-[100px]"
-																src="@/assets/phone-tablet.svg"
-																alt=""
-															/>
-															<!-- group name -->
-															<h2
-																class="text-[16px] font-semibold"
-															>
-																John Doe's
-																tablet
-															</h2>
-														</div>
-														<!-- group status-->
-														<p
-															class="text-[14px] text-right"
-														>
-															Guruhlangan
-														</p>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-
-									<!-- bottom buttons -->
-									<div
-										class="bg-white border-t-[1px] border-gray-45 rounded-b-md"
-									>
-										<div class="p-5 flex justify-end gap-4">
-											<AppButton
-												@click="
-													openCreateGroupModal = false
-												"
-												class="w-1/4"
-												size="small"
-												color="simple"
-												>Bekor qilish</AppButton
-											>
-											<AppButton
-												class="w-1/4"
-												size="small"
-												color="accent"
-												>Saqlash</AppButton
-											>
-										</div>
-									</div>
-								</div>
-
-								<!-- guruhlashtilrilmagan qurilmalar -->
-								<div class="w-1/2">
-									<div class="px-7 py-5">
-										<!-- title -->
-										<h2
-											class="text-[16px] font-semibold uppercase"
-										>
-											Guruhlashtirilmagan qurilmalar
-										</h2>
-										<div
-											class="py-4 flex flex-row flex-wrap gap-2"
-										>
-											<div
-												class="w-[220px] p-2 bg-gray-30 text-gray-70 border-gray-70 border-2 rounded-lg"
-											>
-												<img
-													src="@/assets/icons/group-align.svg"
-													alt=""
-												/>
-												<div
-													class="flex flex-col items-center"
-												>
-													<!-- icon -->
-													<img
-														class="w-[100px]"
-														src="@/assets/phone-tablet.svg"
-														alt=""
-													/>
-													<!-- group name -->
-													<h2
-														class="text-[16px] font-semibold"
-													>
-														John Doe's tablet
-													</h2>
-												</div>
-												<!-- group status-->
-												<p
-													class="text-[14px] text-right"
-												>
-													Guruhlanmagan
-												</p>
-											</div>
-											<div
-												class="w-[220px] p-2 bg-gray-30 text-gray-70 border-gray-70 border-2 rounded-lg"
-											>
-												<img
-													src="@/assets/icons/group-align.svg"
-													alt=""
-												/>
-												<div
-													class="flex flex-col items-center"
-												>
-													<!-- icon -->
-													<img
-														src="@/assets/phone-tablet.svg"
-														alt=""
-													/>
-													<!-- group name -->
-													<h2
-														class="text-[16px] font-semibold"
-													>
-														John Doe's tablet
-													</h2>
-												</div>
-												<!-- group status-->
-												<p
-													class="text-[14px] text-right"
-												>
-													Guruhlanmagan
-												</p>
-											</div>
-											<div
-												class="w-[220px] p-2 bg-gray-30 text-gray-70 border-gray-70 border-2 rounded-lg"
-											>
-												<img
-													src="@/assets/icons/group-align.svg"
-													alt=""
-												/>
-												<div
-													class="flex flex-col items-center"
-												>
-													<!-- icon -->
-													<img
-														src="@/assets/phone-tablet.svg"
-														alt=""
-													/>
-													<!-- group name -->
-													<h2
-														class="text-[16px] font-semibold"
-													>
-														John Doe's tablet
-													</h2>
-												</div>
-												<!-- group status-->
-												<p
-													class="text-[14px] text-right"
-												>
-													Guruhlanmagan
-												</p>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</transition>
-			</Teleport>
-
-			<!-- open registration modal -->
-			<Teleport to="body">
-				<transition name="modal" v-if="openRegistrationModal">
-					<div class="modal">
-						<div
-							class="mx-auto mt-[150px] max-w-[500px] bg-white shadow rounded-md"
-						>
-							<div
-								class="p-4 container mx-auto bg-gray-3000 rounded-t-md"
-							>
-								<h2
-									class="text-sm text-gray-900 font-semibold uppercase"
-								>
-									Ro'yxatga olish kodi
-								</h2>
-								<img
-									class="mx-auto pt-10"
-									src="@/assets/token.svg"
-									alt=""
-								/>
-								<p
-									class="text-[16px] text-success-300 py-5 text-left px-20"
-								>
-									Quyidagi kod orqali foydalanuvchi o'z
-									qurilmasiga kirishi mumkin!
-								</p>
-								<!-- key code -->
-								<div
-									class="flex flex-row items-center justify-center gap-2 pb-4"
-								>
-									<div
-										class="px-4 py-2 bg-success-50 text-success-300 text-[24px] rounded border-2 border-success-300"
-									>
-										5
-									</div>
-									<div
-										class="px-4 py-2 bg-success-50 text-success-300 text-[24px] rounded border-2 border-success-300"
-									>
-										2
-									</div>
-									<div
-										class="px-4 py-2 bg-success-50 text-success-300 text-[24px] rounded border-2 border-success-300"
-									>
-										3
-									</div>
-									<div
-										class="px-4 py-2 bg-success-50 text-success-300 text-[24px] rounded border-2 border-success-300"
-									>
-										1
-									</div>
-									<div
-										class="px-4 py-2 bg-success-50 text-success-300 text-[24px] rounded border-2 border-success-300"
-									>
-										0
-									</div>
-									<div
-										class="px-4 py-2 bg-success-50 text-success-300 text-[24px] rounded border-2 border-success-300"
-									>
-										9
-									</div>
-								</div>
-							</div>
-							<div
-								class="border-t border-t-[#D9D9D9]-100 bg-white rounded-b-md"
-							>
-								<div class="py-5 flex justify-end pr-4">
-									<app-button
-										class="w-1/3"
-										@click="openRegistrationModal = false"
-										color="simple"
-										size="small"
-										>chiqish</app-button
-									>
-								</div>
-							</div>
-						</div>
-					</div>
-				</transition>
-			</Teleport>
+			<!-- token code modal -->
+			<VotingTokenCode
+				:isOpen="isOpenToken"
+				@close="hideTokenCodeModal"
+			/>
 		</div>
 	</div>
 </template>
-
 <style>
 	.modal {
 		position: fixed;
