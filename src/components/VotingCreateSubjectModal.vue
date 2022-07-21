@@ -14,15 +14,31 @@
 	const closeSubjectModal = () => {
 		emits('closeSubjectModal');
 	};
+
+	// const myDate = new Date().toISOString().substr(0, 10);
+	const showData = '2022-07-21';
+	const showTime = '13:12';
+	// var today = new Date().toLocaleTimeString().toString().padStart(2, '0');
+
+	const subjectText = ref('');
+	const subjectDescription = ref('');
+
+	const saveSubjectData = () => {
+		console.log(subjectText.value + ' ' + subjectDescription.value);
+
+		// push and clear input
+		subjectText.value = '';
+		subjectDescription.value = '';
+	};
 </script>
 
 <template>
 	<div>
 		<Teleport to="body">
-			<transition name="modal" v-if="isOpenModal">
-				<div class="modal">
+			<Transition name="fade">
+				<div class="modal" v-if="isOpenModal">
 					<div
-						class="mx-auto mt-[150px] max-w-[1150px] bg-white shadow rounded-md"
+						class="mx-auto mt-[150px] max-w-[1100px] bg-white shadow rounded-md"
 					>
 						<!-- add subhect  -->
 						<div class="flex">
@@ -47,28 +63,30 @@
 												>
 											</label>
 											<input
-												class="rounded text-[16px] border-gray-45"
+												v-model="subjectText"
 												type="text"
 												placeholder="Text"
 												name="title"
 												id="title"
+												class="rounded text-[16px] border-gray-45"
 											/>
 										</div>
 										<div class="flex flex-col py-2">
 											<label
 												class="text-gray-35 text-[16px] pb-1"
-												for="subjectContent"
+												for="subjectDescription"
 												>Matn
 												<span class="text-danger-600"
 													>*</span
 												>
 											</label>
 											<textarea
-												class="text-sm border-gray-45 resize-none rounded"
+												v-model="subjectDescription"
 												name=""
-												id="subjectContent"
+												id="subjectDescription"
 												rows="6"
-												placeholder="lorem10"
+												placeholder="Tavsif"
+												class="text-sm border-gray-45 resize-none rounded"
 											></textarea>
 										</div>
 										<div class="flex flex-col py-2">
@@ -82,19 +100,20 @@
 											</label>
 											<div>
 												<input
-													class="border-gray-45 rounded"
+													v-model="showTime"
 													type="time"
 													placeholder="Daqiqa"
 													name="time"
+													class="border-gray-45 rounded"
 												/>
 												:
 												<input
-													v-model="myDate"
-													class="border-gray-45 rounded"
+													v-model="showData"
 													type="date"
 													placeholder="Soniya"
 													name="title"
 													id="title"
+													class="border-gray-45 rounded"
 												/>
 											</div>
 										</div>
@@ -114,6 +133,7 @@
 											>Bekor qilish</AppButton
 										>
 										<AppButton
+											@click="saveSubjectData"
 											class="w-1/4"
 											size="small"
 											color="accent"
@@ -133,23 +153,14 @@
 
 									<!-- subject title  -->
 									<div
-										class="text-gray-5 pb-2 font-semibold uppercase"
+										class="text-gray-5 pb-2 min-h-[100px] font-semibold uppercase"
 									>
-										ABOUT NEW INDUSTRY OF ALL REGIONS AND
-										THEIR LIVES, WHAT DO THOSE WHO ARE POOR
-										NEED AND GOVERNMENT SHOULD PROVIDE WORK
-										SPACE TO HELP OUT
+										{{ subjectText }}
 									</div>
 
 									<!-- subject description -->
-									<p class="text-gray-25 pb-2">
-										Lorem Ipsum is simply dummy text of the
-										printing and typesetting industry. Lorem
-										Ipsum has been the industry's standard
-										dummy text ever since the 1500s, when an
-										unknown printer took a galley of type
-										and scrambled it to make a type specimen
-										book. It has survived not only five
+									<p class="text-gray-25 pb-2 min-h-[100px]">
+										{{ subjectDescription }}
 									</p>
 
 									<!-- time -->
@@ -179,28 +190,18 @@
 												color="success"
 												class="w-full"
 											>
-												<AppIcon
-													v-html="TickIcon"
-												></AppIcon>
 												Qo'shilaman</AppButton
 											>
 											<AppButton
 												color="danger"
 												class="w-full"
 											>
-												<AppIcon
-													v-html="CrossIcon"
-												></AppIcon>
 												Qarshiman</AppButton
 											>
 											<AppButton
 												color="warning"
 												class="w-full"
 											>
-												<AppIcon
-													v-html="CircleIcon"
-													position="left"
-												></AppIcon>
 												Be'tarafman</AppButton
 											>
 										</div>
@@ -210,7 +211,19 @@
 						</div>
 					</div>
 				</div>
-			</transition>
+			</Transition>
 		</Teleport>
 	</div>
 </template>
+
+<style>
+	.fade-enter-active,
+	.fade-leave-active {
+		transition: opacity 0.5s ease-in;
+	}
+
+	.fade-enter-from,
+	.fade-leave-to {
+		opacity: 0;
+	}
+</style>

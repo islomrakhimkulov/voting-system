@@ -12,6 +12,7 @@
 		'simple',
 		'prev',
 		'next',
+		'transparent',
 	];
 	const SIZES = ['default', 'small', 'medium', 'large', 'extra-large'];
 </script>

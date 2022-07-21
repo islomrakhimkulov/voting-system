@@ -38,6 +38,12 @@
 			return accordion;
 		});
 	};
+	// delete accordion
+	const deleteItem = (id: number) => {
+		accordionInfo.value = accordionInfo.value.filter(
+			accordion => accordion.id !== id + 1
+		);
+	};
 </script>
 
 <template>
@@ -46,8 +52,11 @@
 			<VotingSubjectsAccordionItem
 				:accordion="accordion"
 				@change="openItem(i)"
+				@delete="deleteItem(i)"
 				class="border-b-2 border-gray-40"
 			/>
 		</template>
 	</div>
 </template>
+
+<style></style>

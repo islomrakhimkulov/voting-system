@@ -9,8 +9,12 @@
 			</div>
 			<!-- Buttons here -->
 			<div class="flex items-center gap-4">
-				<AppButton block color="accent">Yig'ilishlar</AppButton>
-				<AppButton color="link">Qurilmalar</AppButton>
+				<router-link :to="{ name: 'control-voting-list' }">
+					<AppButton block color="accent">Yig'ilishlar</AppButton>
+				</router-link>
+				<router-link :to="{ name: 'control-voting-device-list' }">
+					<AppButton color="link">Qurilmalar</AppButton>
+				</router-link>
 			</div>
 		</div>
 	</div>

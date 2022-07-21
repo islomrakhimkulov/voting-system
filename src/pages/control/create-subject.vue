@@ -12,8 +12,7 @@
 		isOpenModal.value = false;
 	};
 
-	const myDate = new Date().toISOString().substr(0, 10);
-	// var today = new Date().toLocaleTimeString().toString().padStart(2, '0');
+	const show = ref(false);
 </script>
 
 <template>
@@ -97,6 +96,7 @@
 				</div>
 
 				<!-- modal here -->
+
 				<VotingCreateSubjectModal
 					:isOpenModal="isOpenModal"
 					@closeSubjectModal="closeSubjectModal"
@@ -116,15 +116,5 @@
 		height: 100%;
 		background-color: rgba(0, 0, 0, 0.5);
 		transition: all 0.3s ease;
-	}
-
-	.modal-enter-active,
-	.modal-leave-active {
-		transition: opacity 0.5s ease;
-	}
-
-	.modal-enter-from,
-	.modal-leave-to {
-		opacity: 0;
 	}
 </style>

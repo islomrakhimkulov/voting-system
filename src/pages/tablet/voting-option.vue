@@ -15,27 +15,30 @@
 		<!-- Cards -->
 		<div class="flex gap-6 z-0 text-[16px]">
 			<!-- <router-link :to="{ name: 'home' }"> </router-link> -->
-			<div
-				class="w-[13.75rem] flex flex-col items-center bg-primary-200 rounded p-6"
+			<router-link
+				:to="{ name: 'presentation-voting-session' }"
+				class="w-[220px] flex flex-col items-center bg-primary-200 rounded p-6"
 			>
 				<img src="@/assets/presentation.svg" alt="" />
 				<span class="text-gray-0 mt-4 block">Taqdimot ko’rinishi</span>
-			</div>
+			</router-link>
 			<!-- <router-link :to="{ name: 'other-page' }"> </router-link> -->
-			<div
-				class="w-[220px] flex flex-col items-center bg-primary-200 rounded p-6"
-			>
-				<img src="@/assets/tablet.svg" alt="" />
-				<span class="text-gray-0 mt-4 block">Boshqaruv</span>
-			</div>
-
-			<!-- <router-link :to="{ name: 'other-page' }"> </router-link> -->
-			<div
+			<router-link
+				:to="{ name: 'control-voting-list' }"
 				class="w-[220px] flex flex-col items-center bg-primary-200 rounded p-6"
 			>
 				<img src="@/assets/admin.svg" alt="" />
+				<span class="text-gray-0 mt-4 block">Boshqaruv</span>
+			</router-link>
+
+			<!-- <router-link :to="{ name: 'other-page' }"> </router-link> -->
+			<router-link
+				:to="{ name: 'tablet-voting-registration' }"
+				class="w-[220px] flex flex-col items-center bg-primary-200 rounded p-6"
+			>
+				<img src="@/assets/tablet.svg" alt="" />
 				<span class="text-gray-0 mt-4 block">Ovoz Berish</span>
-			</div>
+			</router-link>
 		</div>
 
 		<!-- Footer Text -->

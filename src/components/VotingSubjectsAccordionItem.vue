@@ -1,4 +1,6 @@
 <script setup lang="ts">
+	import EditIcon from '@/assets/icons/edit.svg?raw';
+	import DeleteIcon from '@/assets/icons/delete.svg?raw';
 	const { accordion } = defineProps({
 		accordion: {
 			type: Object,
@@ -6,10 +8,14 @@
 		},
 	});
 
-	const emits = defineEmits(['change']);
+	const emits = defineEmits(['change', 'delete']);
 
-	const sayOpen = function () {
+	const sayOpen = () => {
 		emits('change');
+	};
+
+	const deleteItem = () => {
+		emits('delete');
 	};
 
 	const isOpen = computed(() => {
@@ -28,6 +34,7 @@
 				<p class="px-6">{{ accordion.id }}</p>
 
 				<!-- subject title -->
+
 				<div class="w-[1000px] mx-auto">
 					<div class="text-[18px] cursor-pointer" @click="sayOpen">
 						<p>{{ accordion.subjectTitle }}</p>
@@ -36,8 +43,18 @@
 						<div>
 							{{ accordion.subjectText }}
 						</div>
-						<div class="flex justify-end">
+
+						<div class="py-2 flex items-center justify-end">
 							<!-- set icons here -->
+
+							<AppButton color="transparent" @click="deleteItem">
+								<AppIcon v-html="DeleteIcon" size="medium">
+								</AppIcon>
+							</AppButton>
+							<AppButton color="transparent">
+								<AppIcon v-html="EditIcon" size="medium">
+								</AppIcon>
+							</AppButton>
 						</div>
 					</div>
 				</div>
@@ -54,9 +71,3 @@
 		</li>
 	</ul>
 </template>
-
-<style>
-	.fade-enter-from .fade-enter-to {
-		transition: opacity, 2s ease;
-	}
-</style>

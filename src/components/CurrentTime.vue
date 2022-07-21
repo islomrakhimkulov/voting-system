@@ -1,4 +1,9 @@
-<script steup lang="ts"></script>
+<script setup lang="ts">
+	const startingData = '2022-07-21';
+	const startingTime = '10:00';
+	const endingData = '2022-07-29';
+	const endingTime = '12:30';
+</script>
 
 <template>
 	<div class="p-4 m-4 w-[360px] bg-white rounded-md shadow-md">
@@ -12,16 +17,18 @@
 				</label>
 				<div>
 					<input
-						class="border-gray-45 rounded mr-2"
+						v-model="startingData"
 						type="date"
 						name="time"
+						class="border-gray-45 rounded mr-2"
 					/>
 
 					<input
-						class="border-gray-45 rounded"
+						v-model="startingTime"
 						type="time"
 						name="title"
 						id="title"
+						class="border-gray-45 rounded"
 					/>
 				</div>
 			</div>
@@ -31,16 +38,18 @@
 				</label>
 				<div>
 					<input
-						class="border-gray-45 rounded mr-2"
+						v-model="endingData"
 						type="date"
 						name="time"
+						class="border-gray-45 rounded mr-2"
 					/>
 
 					<input
-						class="border-gray-45 rounded"
+						v-model="endingTime"
 						type="time"
 						name="title"
 						id="title"
+						class="border-gray-45 rounded"
 					/>
 				</div>
 			</div>

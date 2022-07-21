@@ -57,10 +57,12 @@
 							</p>
 						</div>
 					</div>
-
-					<AppButton color="accent">
-						<AppIcon v-html="PlusIcon" position="left"></AppIcon>
-						Yaratish</AppButton
+					<router-link :to="{ name: 'control-create-subject' }">
+						<AppButton color="accent">
+							<AppIcon v-html="PlusIcon" position="left">
+							</AppIcon>
+							Yaratish
+						</AppButton></router-link
 					>
 				</div>
 
