@@ -31,7 +31,7 @@
 				<img src="../assets/icons/align.svg" alt="" />
 
 				<!-- order number -->
-				<p class="px-6">{{ accordion.id }}</p>
+				<p class="px-6">{{ accordion.id + 1 }}</p>
 
 				<!-- subject title -->
 

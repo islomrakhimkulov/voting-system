@@ -29,15 +29,18 @@
 							SHOULD PROVIDE WORK SPACE TO HELP OUT
 						</div>
 
-						<div class="flex pb-3">
-							<div class="text-gray-15 text-[15px] font-semibold">
-								Tarkibi
-							</div>
-							<p
-								class="ml-3 text-[15px] text-accent-300 font-semibold"
+						<div class="flex items-center pb-3">
+							<router-link
+								:to="{ name: 'control-create-subject' }"
+								class="mr-3 text-[15px] text-gray-15 font-semibold"
 							>
-								Natija
-							</p>
+								Tarkibi</router-link
+							>
+							<router-link
+								:to="{ name: 'control-voting-full-result' }"
+								class="text-accent-300 text-[15px] font-semibold"
+								>Natija</router-link
+							>
 						</div>
 						<!-- download button -->
 						<div class="bg-primary-10 p-3 mb-4 rounded">
@@ -52,7 +55,7 @@
 						<!--all result list -->
 						<div class="bg-primary-10 mt-4 p-5 rounded">
 							<!-- we can use v-for for show all result list -->
-							<div class="overflow-y-scroll h-[555px]">
+							<div class="overflow-y-scroll h-[550px] scroller">
 								<div class="pb-2">
 									<h2
 										class="text-gray-900 pb-2 text-sm uppercase"
@@ -175,4 +178,12 @@
 	</div>
 </template>
 
-<style></style>
+<style>
+	.scroller {
+		scrollbar-width: thin;
+		scrollbar-color: yellow;
+		scrollbar-base-color: brown;
+		scrollbar-arrow-color: #f4cb0a !important;
+		scrollbar-track-color: blue !important;
+	}
+</style>

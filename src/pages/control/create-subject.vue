@@ -1,7 +1,7 @@
 <script setup lang="ts">
 	import PlusIcon from '@/assets/icons/bi_plus-circle.svg?raw';
 	import TickIcon from '@/assets/icons/check.svg?raw';
-	const notSubject = true;
+	const notSubject = false;
 	const isOpenModal = ref(false);
 
 	const showModal = () => {
@@ -41,14 +41,27 @@
 							placeholder="Yig'ilishni nomini kiriting namuna uchun: XIX syezd "
 						/>
 					</div>
-					<p class="text-accent-300 pb-3 text-[16px] font-semibold">
-						Tarkibi
-					</p>
+					<div class="flex items-center pb-3">
+						<router-link
+							:to="{ name: 'control-create-subject' }"
+							class="mr-3 text-[15px] text-accent-300 font-semibold"
+						>
+							Tarkibi</router-link
+						>
+						<router-link
+							:to="{ name: 'control-voting-full-result' }"
+							class="text-gray-15 text-[15px] font-semibold"
+							>Natija</router-link
+						>
+					</div>
+
 					<!--           
                      --------   guide   --------
                      if subject not found, put not found svg icon,
                      else VotingSubjectsAccordion
+
                  -->
+
 					<div
 						class="flex items-center justify-center py-10"
 						v-if="notSubject"
@@ -106,7 +119,7 @@
 	</div>
 </template>
 
-<style>
+<style lang="postcss">
 	.modal {
 		position: fixed;
 		z-index: 9998;
@@ -117,4 +130,7 @@
 		background-color: rgba(0, 0, 0, 0.5);
 		transition: all 0.3s ease;
 	}
+	/* a.router-link-active {
+		@apply text-[15px] text-accent-300 font-semibold;
+	} */
 </style>

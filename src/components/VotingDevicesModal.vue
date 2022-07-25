@@ -11,6 +11,33 @@
 	const closeModal = () => {
 		emit('close');
 	};
+
+	const groupName = ref('');
+	const unGroupedList = ref([
+		{ id: 1, title: "Joh's tablet", status: 'guruhlanmagan' },
+		{ id: 2, title: "Islom's tablet", status: 'guruhlangan' },
+		{ id: 3, title: "Aziz's tablet", status: 'guruhlanmagan' },
+	]);
+
+	const groupedList = ref([
+		{ id: 1, title: "Joh's tablet", status: 'guruhlanmagan' },
+	]);
+
+	const firstGroup = () => {
+		return unGroupedList.value.filter(
+			item => item.status === 'guruhlanmagan'
+		);
+	};
+
+	const secondGroup = () => {
+		return groupedList.value.filter(item => item.status === 'guruhlangan');
+	};
+
+	const startDrag = (event, item) => {
+		const target = event.target;
+		console.log(item);
+		event.dataTransfer;
+	};
 </script>
 
 <template>
@@ -39,11 +66,13 @@
 									<div class="py-2">
 										<div class="flex flex-col py-2">
 											<input
-												class="rounded text-[16px] border-gray-45"
+												@click.prevent="addName"
+												v-model="groupName"
 												type="text"
 												placeholder="Guruh nomini kiriting"
 												name="title"
 												id="title"
+												class="rounded text-[16px] border-gray-45"
 											/>
 										</div>
 										<!-- guruhlashtirilgan qurilmalar -->
@@ -54,15 +83,17 @@
 												Guruhlashtilirilgan qurilmalar
 											</h2>
 											<!-- card group-->
-											<div
+											<ul
 												class="py-4 flex flex-row items-center flex-wrap gap-2"
 											>
 												<!-- card -->
-												<div
+												<li
+													v-for="item in groupedList"
+													:key="item.id"
 													class="w-[220px] p-2 bg-success-50 text-success-300 border-success-300 border-2 rounded-lg"
 												>
 													<img
-														src="@/assets/icons/group-align.svg"
+														src="@/assets/icons/align-green.svg"
 														alt=""
 													/>
 													<div
@@ -70,116 +101,25 @@
 													>
 														<!-- icon -->
 														<img
-															class="w-[100px]"
-															src="@/assets/phone-tablet.svg"
+															class="w-[90px]"
+															src="@/assets/phone-tablet-green.svg"
 															alt=""
 														/>
 														<!-- group name -->
 														<h2
 															class="text-[16px] font-semibold"
 														>
-															John Doe's tablet
+															{{ item.title }}
 														</h2>
 													</div>
 													<!-- group status-->
 													<p
 														class="text-[14px] text-right"
 													>
-														Guruhlangan
+														{{ item.status }}
 													</p>
-												</div>
-
-												<div
-													class="w-[220px] p-2 bg-success-50 text-success-300 border-success-300 border-2 rounded-lg"
-												>
-													<img
-														src="@/assets/icons/group-align.svg"
-														alt=""
-													/>
-													<div
-														class="flex flex-col items-center"
-													>
-														<!-- icon -->
-														<img
-															class="w-[100px]"
-															src="@/assets/phone-tablet.svg"
-															alt=""
-														/>
-														<!-- group name -->
-														<h2
-															class="text-[16px] font-semibold"
-														>
-															John Doe's tablet
-														</h2>
-													</div>
-													<!-- group status-->
-													<p
-														class="text-[14px] text-right"
-													>
-														Guruhlangan
-													</p>
-												</div>
-												<div
-													class="w-[220px] p-2 bg-success-50 text-success-300 border-success-300 border-2 rounded-lg"
-												>
-													<img
-														src="@/assets/icons/group-align.svg"
-														alt=""
-													/>
-													<div
-														class="flex flex-col items-center"
-													>
-														<!-- icon -->
-														<img
-															class="w-[100px]"
-															src="@/assets/phone-tablet.svg"
-															alt=""
-														/>
-														<!-- group name -->
-														<h2
-															class="text-[16px] font-semibold"
-														>
-															John Doe's tablet
-														</h2>
-													</div>
-													<!-- group status-->
-													<p
-														class="text-[14px] text-right"
-													>
-														Guruhlangan
-													</p>
-												</div>
-												<div
-													class="w-[220px] p-2 bg-success-50 text-success-300 border-success-300 border-2 rounded-lg"
-												>
-													<img
-														src="@/assets/icons/group-align.svg"
-														alt=""
-													/>
-													<div
-														class="flex flex-col items-center"
-													>
-														<!-- icon -->
-														<img
-															class="w-[100px]"
-															src="@/assets/phone-tablet.svg"
-															alt=""
-														/>
-														<!-- group name -->
-														<h2
-															class="text-[16px] font-semibold"
-														>
-															John Doe's tablet
-														</h2>
-													</div>
-													<!-- group status-->
-													<p
-														class="text-[14px] text-right"
-													>
-														Guruhlangan
-													</p>
-												</div>
-											</div>
+												</li>
+											</ul>
 										</div>
 									</div>
 								</div>
@@ -215,13 +155,19 @@
 									>
 										Guruhlashtirilmagan qurilmalar
 									</h2>
-									<div
+									<ul
 										class="py-4 flex flex-row flex-wrap gap-2"
 									>
-										<div
-											class="w-[220px] p-2 bg-gray-30 text-gray-70 border-gray-70 border-2 rounded-lg"
+										<!-- cards group -->
+										<li
+											v-for="item in unGroupedList"
+											:key="item.id"
+											draggable="true"
+											@dragstart="startDrag(event, item)"
+											class="w-[220px] p-2 bg-gray-30 text-gray-70 border-gray-70 border-2 rounded-lg cursor-move"
 										>
 											<img
+												class="pointer-events-none"
 												src="@/assets/icons/group-align.svg"
 												alt=""
 											/>
@@ -230,7 +176,7 @@
 											>
 												<!-- icon -->
 												<img
-													class="w-[100px]"
+													class="w-[90px] pointer-events-none"
 													src="@/assets/phone-tablet.svg"
 													alt=""
 												/>
@@ -238,69 +184,15 @@
 												<h2
 													class="text-[16px] font-semibold"
 												>
-													John Doe's tablet
+													{{ item.title }}
 												</h2>
 											</div>
 											<!-- group status-->
 											<p class="text-[14px] text-right">
-												Guruhlanmagan
+												{{ item.status }}
 											</p>
-										</div>
-										<div
-											class="w-[220px] p-2 bg-gray-30 text-gray-70 border-gray-70 border-2 rounded-lg"
-										>
-											<img
-												src="@/assets/icons/group-align.svg"
-												alt=""
-											/>
-											<div
-												class="flex flex-col items-center"
-											>
-												<!-- icon -->
-												<img
-													src="@/assets/phone-tablet.svg"
-													alt=""
-												/>
-												<!-- group name -->
-												<h2
-													class="text-[16px] font-semibold"
-												>
-													John Doe's tablet
-												</h2>
-											</div>
-											<!-- group status-->
-											<p class="text-[14px] text-right">
-												Guruhlanmagan
-											</p>
-										</div>
-										<div
-											class="w-[220px] p-2 bg-gray-30 text-gray-70 border-gray-70 border-2 rounded-lg"
-										>
-											<img
-												src="@/assets/icons/group-align.svg"
-												alt=""
-											/>
-											<div
-												class="flex flex-col items-center"
-											>
-												<!-- icon -->
-												<img
-													src="@/assets/phone-tablet.svg"
-													alt=""
-												/>
-												<!-- group name -->
-												<h2
-													class="text-[16px] font-semibold"
-												>
-													John Doe's tablet
-												</h2>
-											</div>
-											<!-- group status-->
-											<p class="text-[14px] text-right">
-												Guruhlanmagan
-											</p>
-										</div>
-									</div>
+										</li>
+									</ul>
 								</div>
 							</div>
 						</div>
