@@ -32,12 +32,6 @@
 	const secondGroup = () => {
 		return groupedList.value.filter(item => item.status === 'guruhlangan');
 	};
-
-	const startDrag = (event, item) => {
-		const target = event.target;
-		console.log(item);
-		event.dataTransfer;
-	};
 </script>
 
 <template>
@@ -163,7 +157,6 @@
 											v-for="item in unGroupedList"
 											:key="item.id"
 											draggable="true"
-											@dragstart="startDrag(event, item)"
 											class="w-[220px] p-2 bg-gray-30 text-gray-70 border-gray-70 border-2 rounded-lg cursor-move"
 										>
 											<img

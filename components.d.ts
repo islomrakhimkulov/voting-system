@@ -20,6 +20,8 @@ declare module '@vue/runtime-core' {
     VotingCreateSubjectModal: typeof import('./src/components/VotingCreateSubjectModal.vue')['default']
     VotingDevicesModal: typeof import('./src/components/VotingDevicesModal.vue')['default']
     VotingModalTimer: typeof import('./src/components/VotingModalTimer.vue')['default']
+    VotingNamedGorup: typeof import('./src/components/VotingNamedGorup.vue')['default']
+    VotingNamedGroup: typeof import('./src/components/VotingNamedGroup.vue')['default']
     VotingPlannedItem: typeof import('./src/components/VotingPlannedItem.vue')['default']
     VotingPlannedList: typeof import('./src/components/VotingPlannedList.vue')['default']
     VotingQuestionItem: typeof import('./src/components/VotingQuestionItem.vue')['default']
@@ -29,6 +31,7 @@ declare module '@vue/runtime-core' {
     VotingSubjectsAccordionItem: typeof import('./src/components/VotingSubjectsAccordionItem.vue')['default']
     VotingSubjectsList: typeof import('./src/components/VotingSubjectsList.vue')['default']
     VotingTokenCode: typeof import('./src/components/VotingTokenCode.vue')['default']
+    VotingUnnamedGroup: typeof import('./src/components/VotingUnnamedGroup.vue')['default']
   }
 }
 

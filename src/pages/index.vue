@@ -34,6 +34,7 @@
 					<GroupedVotingResultChart />
 				</div>
 			</div>
+			<voting-named-gorup />
 			<VotingSubjectsList class="my-4" />
 			<voting-subjects-accordion class="my-16" />
 			<template v-for="question in indexList" :key="question.id">

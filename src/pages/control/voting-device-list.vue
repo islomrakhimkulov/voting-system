@@ -18,6 +18,20 @@
 	const hideTokenCodeModal = () => {
 		isOpenToken.value = false;
 	};
+
+	// named group list
+	const namedGroupList = ref([
+		{ id: 0, name: 'Quyi Palata', memberCount: 5 },
+		{ id: 1, name: "O'rta Palata", memberCount: 10 },
+		{ id: 2, name: 'Yuqori palata', memberCount: 15 },
+	]);
+
+	// unnamed group list
+	const unNamedGroupList = ref([
+		{ id: 0, name: "Joh's tablet", status: 'Guruhlanmagan' },
+		{ id: 1, name: "Usmon's tablet", status: 'Guruhlanmagan' },
+		{ id: 2, name: "Kamol's tablet", status: 'Guruhlanmagan' },
+	]);
 </script>
 
 <template>
@@ -46,7 +60,7 @@
 							<div>
 								<AppButton
 									color="accent"
-									@click="showDevicesModal"
+									@click="showTokenCodeModal"
 								>
 									<AppIcon v-html="PlusIcon" position="left">
 									</AppIcon
@@ -57,69 +71,20 @@
 
 						<!-- devices card group -->
 
-						<div class="py-3 flex flex-row gap-5 flex-wrap">
-							<!-- cards group -->
-							<div
-								class="w-[270px] p-3 bg-gray-30 text-gray-70 border-gray-70 border-2 rounded-lg"
+						<div class="flex flex-row flex-wrap gap-5 py-3">
+							<!-- unnnamed cards group components -->
+							<template
+								v-for="unNamedCard in unNamedGroupList"
+								:key="unNamedCard.id"
 							>
-								<div class="flex flex-col items-center">
-									<!-- icon -->
-									<img
-										src="@/assets/phone-tablet.svg"
-										alt=""
-									/>
-									<!-- group name -->
-									<h2 class="text-[16px] font-semibold">
-										John Doe's tablet
-									</h2>
-								</div>
-								<!-- group status-->
-								<p class="text-[14px] text-right">
-									Guruhlanmagan
-								</p>
-							</div>
-
-							<div
-								class="w-[270px] p-3 bg-gray-30 text-gray-70 border-gray-70 border-2 rounded-lg"
-							>
-								<div class="flex flex-col items-center">
-									<img
-										src="@/assets/phone-tablet.svg"
-										alt=""
-									/>
-									<!-- group name -->
-									<h2 class="text-[16px] font-semibold">
-										John Doe's tablet
-									</h2>
-								</div>
-								<!-- group status-->
-								<p class="text-[14px] text-right">
-									Guruhlanmagan
-								</p>
-							</div>
-
-							<div
-								class="w-[270px] p-3 bg-gray-30 text-gray-70 border-gray-70 border-2 rounded-lg"
-							>
-								<div class="flex flex-col items-center">
-									<img
-										src="@/assets/phone-tablet.svg"
-										alt=""
-									/>
-									<!-- group name -->
-									<h2 class="text-[16px] font-semibold">
-										John Doe's tablet
-									</h2>
-								</div>
-								<!-- group status-->
-								<p class="text-[14px] text-right">
-									Guruhlanmagan
-								</p>
-							</div>
+								<VotingUnnamedGroup
+									:unNamedCard="unNamedCard"
+								/>
+							</template>
 						</div>
 					</div>
 					<!-- groups name -->
-					<div class="">
+					<div>
 						<div class="flex justify-between items-center">
 							<h2
 								class="text-[18px] text-gray-900 font-semibold uppercase"
@@ -129,7 +94,7 @@
 							<div>
 								<AppButton
 									color="accent"
-									@click="showTokenCodeModal"
+									@click="showDevicesModal"
 								>
 									<AppIcon v-html="PlusIcon" position="left">
 									</AppIcon>
@@ -138,60 +103,29 @@
 							</div>
 						</div>
 						<!-- devices named card group  -->
-						<div class="flex flex-row flex-wrap gap-5 py-4">
-							<!-- cards -->
-							<div
-								class="w-[270px] p-2 bg-primary-300 border-2 border-primary-400 text-white rounded-md"
+						<div class="flex flex-row flex-wrap gap-5 py-3">
+							<!-- named cards group cards -->
+							<template
+								v-for="namedCard in namedGroupList"
+								:key="namedCard.id"
 							>
-								<!-- icon -->
-								<img
-									class="w-[30px]"
-									src="@/assets/icons/group-icon.svg"
-									alt=""
-								/>
-								<h2
-									class="text-[20px] py-3 font-semibold text-center uppercase"
-								>
-									Yuqori palata
-								</h2>
-								<p class="text-[16px] text-right">
-									Qurilamalar soni: 15
-								</p>
-							</div>
-
-							<div
-								class="w-[270px] p-2 bg-primary-300 border-2 border-primary-400 text-white rounded-md"
-							>
-								<!-- icon -->
-								<img
-									class="w-[30px]"
-									src="@/assets/icons/group-icon.svg"
-									alt=""
-								/>
-								<h2
-									class="text-[20px] py-3 font-semibold text-center uppercase"
-								>
-									Quyi palata
-								</h2>
-								<p class="text-[16px] text-right">
-									Qurilamalar soni: 15
-								</p>
-							</div>
+								<VotingNamedGroup :namedCard="namedCard" />
+							</template>
 						</div>
 					</div>
 				</div>
 			</div>
 
-			<!-- devices control modal -->
-			<VotingDevicesModal
-				:isOpen="isOpenDevice"
-				@close="hideDevicesModal"
-			/>
-
 			<!-- token code modal -->
 			<VotingTokenCode
 				:isOpen="isOpenToken"
 				@close="hideTokenCodeModal"
+			/>
+
+			<!-- devices control modal -->
+			<VotingDevicesModal
+				:isOpen="isOpenDevice"
+				@close="hideDevicesModal"
 			/>
 		</div>
 	</div>
