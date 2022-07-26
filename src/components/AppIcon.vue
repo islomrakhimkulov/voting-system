@@ -66,7 +66,7 @@
 		@apply align-baseline;
 	}
 	.app-icon.is-small {
-		@apply text-2xl;
+		@apply text-xl;
 	}
 	.app-icon.is-medium {
 		@apply text-3xl;

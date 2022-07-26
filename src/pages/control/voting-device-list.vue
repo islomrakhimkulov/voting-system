@@ -3,18 +3,19 @@
 
 	const isOpenDevice = ref(false);
 	const isOpenToken = ref(false);
-
+	// devices list open moddal
 	const showDevicesModal = () => {
 		isOpenDevice.value = true;
 	};
+	// devices list close moddal
 	const hideDevicesModal = () => {
 		isOpenDevice.value = false;
 	};
-
+	// token code open modal
 	const showTokenCodeModal = () => {
 		isOpenToken.value = true;
 	};
-
+	// token code close modal
 	const hideTokenCodeModal = () => {
 		isOpenToken.value = false;
 	};
@@ -28,10 +29,20 @@
 
 	// unnamed group list
 	const unNamedGroupList = ref([
-		{ id: 0, name: "Joh's tablet", status: 'Guruhlanmagan' },
-		{ id: 1, name: "Usmon's tablet", status: 'Guruhlanmagan' },
-		{ id: 2, name: "Kamol's tablet", status: 'Guruhlanmagan' },
+		{ name: "Joh's tablet", status: 'Guruhlanmagan' },
+		{ name: "Usmon's tablet", status: 'Guruhlanmagan' },
+		{ name: "Kamol's tablet", status: 'Guruhlanmagan' },
 	]);
+
+	// delete named group card
+	const deleteCard = () => {
+		namedGroupList.value.splice(0, 1);
+	};
+
+	// delete from unGrouped card
+	const deleteUnGroupedCard = () => {
+		unNamedGroupList.value.splice(0, 1);
+	};
 </script>
 
 <template>
@@ -74,11 +85,12 @@
 						<div class="flex flex-row flex-wrap gap-5 py-3">
 							<!-- unnnamed cards group components -->
 							<template
-								v-for="unNamedCard in unNamedGroupList"
-								:key="unNamedCard.id"
+								v-for="(unNamedCard, i) in unNamedGroupList"
+								:key="i"
 							>
 								<VotingUnnamedGroup
 									:unNamedCard="unNamedCard"
+									@delete="deleteUnGroupedCard"
 								/>
 							</template>
 						</div>
@@ -106,10 +118,13 @@
 						<div class="flex flex-row flex-wrap gap-5 py-3">
 							<!-- named cards group cards -->
 							<template
-								v-for="namedCard in namedGroupList"
-								:key="namedCard.id"
+								v-for="(cardInfo, i) in namedGroupList"
+								:key="i"
 							>
-								<VotingNamedGroup :namedCard="namedCard" />
+								<VotingNamedGroup
+									:cardInfo="cardInfo"
+									@delete="deleteCard(i)"
+								/>
 							</template>
 						</div>
 					</div>

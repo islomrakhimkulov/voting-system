@@ -14,24 +14,20 @@
 
 	const groupName = ref('');
 	const unGroupedList = ref([
-		{ id: 1, title: "Joh's tablet", status: 'guruhlanmagan' },
+		{ id: 1, title: "Aziz's tablet", status: 'guruhlanmagan' },
 		{ id: 2, title: "Islom's tablet", status: 'guruhlangan' },
-		{ id: 3, title: "Aziz's tablet", status: 'guruhlanmagan' },
+		{ id: 3, title: "Javohir's tablet", status: 'guruhlanmagan' },
 	]);
 
 	const groupedList = ref([
 		{ id: 1, title: "Joh's tablet", status: 'guruhlanmagan' },
 	]);
 
-	const firstGroup = () => {
-		return unGroupedList.value.filter(
-			item => item.status === 'guruhlanmagan'
-		);
-	};
-
-	const secondGroup = () => {
-		return groupedList.value.filter(item => item.status === 'guruhlangan');
-	};
+	// const firstGroup = () => {
+	// 	return unGroupedList.value.filter(
+	// 		item => item.status === 'guruhlanmagan'
+	// 	);
+	// };
 </script>
 
 <template>

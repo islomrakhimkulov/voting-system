@@ -1,7 +1,4 @@
-<script setup lang="ts">
-	const activeBtn = ref(true);
-</script>
-
+<script setup lang="ts"></script>
 <template>
 	<div class="bg-accent-60 py-3">
 		<div class="flex mx-auto container gap-4">

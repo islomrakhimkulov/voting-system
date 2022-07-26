@@ -1,35 +1,45 @@
 <script setup lang="ts">
-	import DeleteIcon from '@/assets/icons/delete.svg?raw';
+	import DeleteIcon from '@/assets/icons/delete-white.svg?raw';
 	import EditIcon from '@/assets/icons/edit-white.svg?raw';
-	const { namedCard } = defineProps({
-		namedCard: {
+	const { cardInfo } = defineProps({
+		cardInfo: {
 			type: Object,
 			default: () => ({}),
 		},
 	});
+
+	const emits = defineEmits(['delete']);
+	const deleteGroupName = () => {
+		emits('delete');
+	};
 </script>
 <template>
 	<div
-		class="w-[270px] p-2 bg-primary-300 border-2 border-primary-400 text-white rounded-md"
+		class="w-[270px] p-2 bg-accent-200 border-2 border-accent-300 text-white rounded-md"
 	>
 		<!-- icon -->
 		<div class="flex justify-between items-center">
 			<img class="w-[30px]" src="@/assets/icons/group-icon.svg" alt="" />
-			<AppButton size="small" color="transparent">
-				<AppIcon v-html="DeleteIcon" size="small"></AppIcon>
-			</AppButton>
+			<div class="flex gap-2">
+				<AppButton size="small" color="success">
+					<AppIcon v-html="EditIcon" size="small"></AppIcon>
+				</AppButton>
+				<AppButton size="small" color="danger">
+					<AppIcon
+						@click="deleteGroupName"
+						v-html="DeleteIcon"
+						size="small"
+					></AppIcon>
+				</AppButton>
+			</div>
 		</div>
 
 		<h2 class="text-[20px] py-2 font-semibold text-center uppercase">
-			{{ namedCard.name }}
+			{{ cardInfo.name }}
 		</h2>
-		<div class="flex justify-between items-center">
-			<AppButton size="small" color="transparent">
-				<AppIcon v-html="EditIcon" size="small"></AppIcon>
-			</AppButton>
-			<p class="text-[16px] text-right">
-				Qurilamalar soni: {{ namedCard.memberCount }}
-			</p>
-		</div>
+
+		<p class="text-[16px] text-center">
+			Qurilamalar soni: {{ cardInfo.memberCount }}
+		</p>
 	</div>
 </template>

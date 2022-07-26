@@ -13,6 +13,12 @@
 				['default', 'success'].includes(value),
 		},
 	});
+
+	const emits = defineEmits(['delete']);
+	const deleteItem = () => {
+		emits('delete');
+	};
+
 	const classes = computed(() => {
 		return {
 			[`is-${color}`]: true,
@@ -26,7 +32,14 @@
 	>
 		<div class="text-right">
 			<AppButton size="small" color="transparent">
-				<AppIcon v-html="DeleteIcon" size="small"></AppIcon>
+				<AppIcon v-html="EditIcon" size="small"></AppIcon>
+			</AppButton>
+			<AppButton size="small" color="transparent">
+				<AppIcon
+					@click="deleteItem"
+					v-html="DeleteIcon"
+					size="small"
+				></AppIcon>
 			</AppButton>
 		</div>
 		<div class="flex flex-col items-center">
@@ -35,12 +48,7 @@
 			<h2 class="text-[14px] font-semibold">{{ unNamedCard.name }}</h2>
 		</div>
 		<!-- group status-->
-		<div class="flex justify-between items-center">
-			<AppButton size="small" color="transparent">
-				<AppIcon v-html="EditIcon" size="small"></AppIcon>
-			</AppButton>
-			<p class="text-[14px] text-right">{{ unNamedCard.status }}</p>
-		</div>
+		<p class="text-[14px] text-right">{{ unNamedCard.status }}</p>
 	</div>
 </template>
 

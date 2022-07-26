@@ -1,6 +1,6 @@
 <script setup lang="ts">
-	import EditIcon from '@/assets/icons/edit.svg?raw';
-	import DeleteIcon from '@/assets/icons/delete.svg?raw';
+	import EditIcon from '@/assets/icons/edit-white.svg?raw';
+	import DeleteIcon from '@/assets/icons/delete-white.svg?raw';
 	const { accordion } = defineProps({
 		accordion: {
 			type: Object,
@@ -44,16 +44,24 @@
 							{{ accordion.subjectText }}
 						</div>
 
-						<div class="py-2 flex items-center justify-end">
+						<div class="py-2 flex items-center justify-end gap-2">
 							<!-- set icons here -->
 
-							<AppButton color="transparent" @click="deleteItem">
-								<AppIcon v-html="DeleteIcon" size="medium">
-								</AppIcon>
+							<AppButton size="small" color="success">
+								<AppIcon
+									v-html="EditIcon"
+									size="small"
+								></AppIcon>
 							</AppButton>
-							<AppButton color="transparent">
-								<AppIcon v-html="EditIcon" size="medium">
-								</AppIcon>
+							<AppButton
+								size="small"
+								color="danger"
+								@click="deleteItem"
+							>
+								<AppIcon
+									v-html="DeleteIcon"
+									size="small"
+								></AppIcon>
 							</AppButton>
 						</div>
 					</div>
