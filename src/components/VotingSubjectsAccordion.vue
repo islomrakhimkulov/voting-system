@@ -40,6 +40,7 @@
 	};
 	// delete accordion
 	const deleteItem = (id: number) => {
+		// accordionInfo.value.splice(0, 1);
 		accordionInfo.value = accordionInfo.value.filter(
 			accordion => accordion.id !== id
 		);

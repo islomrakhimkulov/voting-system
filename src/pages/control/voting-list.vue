@@ -44,17 +44,18 @@
 						<h2 class="text-[18px] font-bold py-2 uppercase">
 							Yig'ilishlar jadvali
 						</h2>
-						<div class="flex">
-							<p
-								class="text-accent-300 text-[16px] font-semibold"
+						<div class="flex items-center pb-3">
+							<router-link
+								:to="{ name: 'control-create-subject' }"
+								class="mr-3 text-[15px] text-accent-300 font-semibold"
 							>
 								Rejalashtirilgan
-							</p>
-							<p
-								class="text-gray-15 text-[16px] pl-5 font-semibold"
+							</router-link>
+							<router-link
+								:to="{ name: 'control-voting-full-result' }"
+								class="text-gray-15 text-[15px] font-semibold"
+								>Yakunlangan</router-link
 							>
-								Yakunlangan
-							</p>
 						</div>
 					</div>
 					<router-link :to="{ name: 'control-create-subject' }">
