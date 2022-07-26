@@ -1,5 +1,12 @@
 <script lang="ts">
-	const SIZES = ['default', 'small', 'medium', 'large', 'extra-large'];
+	const SIZES = [
+		'default',
+		'small',
+		'medium',
+		'large',
+		'extra-large',
+		'special',
+	];
 </script>
 
 <script setup lang="ts">
@@ -66,12 +73,15 @@
 		@apply align-baseline;
 	}
 	.app-icon.is-small {
-		@apply text-xl;
+		@apply text-2xl;
 	}
 	.app-icon.is-medium {
 		@apply text-3xl;
 	}
 	.app-icon.is-large {
 		@apply text-4xl;
+	}
+	.app-icon.is-special {
+		@apply text-xl;
 	}
 </style>

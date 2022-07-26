@@ -13,6 +13,7 @@
 		'prev',
 		'next',
 		'transparent',
+		'special',
 	];
 	const SIZES = ['default', 'small', 'medium', 'large', 'extra-large'];
 </script>
@@ -108,6 +109,9 @@
 	}
 	.app-button.is-small {
 		@apply px-2 py-1 h-10 text-sm;
+	}
+	.app-button.is-special {
+		@apply px-2 h-[35px] text-sm;
 	}
 	.app-button.is-medium {
 		@apply text-base h-[3rem] py-2 px-6;

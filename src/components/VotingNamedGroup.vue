@@ -21,14 +21,14 @@
 		<div class="flex justify-between items-center">
 			<img class="w-[30px]" src="@/assets/icons/group-icon.svg" alt="" />
 			<div class="flex gap-2">
-				<AppButton size="small" color="success">
-					<AppIcon v-html="EditIcon" size="small"></AppIcon>
+				<AppButton size="special" color="success">
+					<AppIcon v-html="EditIcon" size="special"></AppIcon>
 				</AppButton>
-				<AppButton size="small" color="danger">
+				<AppButton size="special" color="danger">
 					<AppIcon
 						@click="deleteGroupName"
 						v-html="DeleteIcon"
-						size="small"
+						size="special"
 					></AppIcon>
 				</AppButton>
 			</div>
