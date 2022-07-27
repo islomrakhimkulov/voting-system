@@ -168,11 +168,11 @@
 						</div>
 					</div>
 				</div>
-				<div class="w-[20%] ml-5">
+				<!-- <div class="w-[20%] ml-5">
 					<div class="mt-[140px]">
 						<CurrentTime />
 					</div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</div>

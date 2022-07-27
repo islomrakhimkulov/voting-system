@@ -1,4 +1,5 @@
 <script setup lang="ts">
+	const prop = defineProps({});
 	const subjectListTitles = ref({
 		subjectTitle: 'Mavzular',
 		timeTitle: 'Belgilangan vaqt',
@@ -28,6 +29,8 @@
 			checked: true,
 		},
 	]);
+
+	const addSubject = () => {};
 </script>
 
 <template>

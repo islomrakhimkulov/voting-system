@@ -35,13 +35,13 @@
 	]);
 
 	// delete named group card
-	const deleteCard = () => {
-		namedGroupList.value.splice(0, 1);
+	const deleteCard = (id: number) => {
+		namedGroupList.value.splice(id, 1);
 	};
 
 	// delete from unGrouped card
-	const deleteUnGroupedCard = () => {
-		unNamedGroupList.value.splice(0, 1);
+	const deleteUnGroupedCard = (id: number) => {
+		unNamedGroupList.value.splice(id, 1);
 	};
 </script>
 
@@ -85,12 +85,12 @@
 						<div class="flex flex-row flex-wrap gap-5 py-3">
 							<!-- unnnamed cards group components -->
 							<template
-								v-for="(unNamedCard, i) in unNamedGroupList"
-								:key="i"
+								v-for="(unNamedCard, idx) in unNamedGroupList"
+								:key="idx"
 							>
 								<VotingUnnamedGroup
 									:unNamedCard="unNamedCard"
-									@delete="deleteUnGroupedCard"
+									@delete="deleteUnGroupedCard(idx)"
 								/>
 							</template>
 						</div>
@@ -118,12 +118,12 @@
 						<div class="flex flex-row flex-wrap gap-5 py-3">
 							<!-- named cards group cards -->
 							<template
-								v-for="(cardInfo, i) in namedGroupList"
-								:key="i"
+								v-for="(cardInfo, idx) in namedGroupList"
+								:key="idx"
 							>
 								<VotingNamedGroup
 									:cardInfo="cardInfo"
-									@delete="deleteCard(i)"
+									@delete="deleteCard(idx)"
 								/>
 							</template>
 						</div>

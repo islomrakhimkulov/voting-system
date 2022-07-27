@@ -1,6 +1,6 @@
 <script setup lang="ts">
 	import PlusIcon from '@/assets/icons/bi_plus-circle.svg?raw';
-	import TickIcon from '@/assets/icons/check.svg?raw';
+	// import TickIcon from '@/assets/icons/check.svg?raw';
 	const notSubject = false;
 	const isOpenModal = ref(false);
 
@@ -11,8 +11,11 @@
 	const closeSubjectModal = () => {
 		isOpenModal.value = false;
 	};
-
-	const show = ref(false);
+	const meetingName = ref('');
+	const sendName = () => {
+		console.log(meetingName.value);
+		meetingName.value = '';
+	};
 </script>
 
 <template>
@@ -27,18 +30,20 @@
 			<div class="flex">
 				<div class="w-[75%]">
 					<div class="flex text-[16px] text-gray-900 py-1">
-						<img
+						<!-- <img
 							class="mr-1"
 							src="@/assets/icons/chevron-left.svg"
 							alt=""
-						/>
+						/> -->
 						<h4 class="uppercase">Yig'ilishlar</h4>
 					</div>
 					<div class="py-3">
 						<input
-							class="p-4 w-full placeholder:uppercase placeholder:text-gray-90 outline-none rounded border-gray-90"
+							@keyup.enter="sendName"
+							v-model="meetingName"
 							type="text"
-							placeholder="Yig'ilishni nomini kiriting namuna uchun: XIX syezd "
+							placeholder="Yig'ilishni nomini kiriting:"
+							class="p-4 w-full placeholder:uppercase placeholder:text-gray-90 outline-none rounded border-gray-90"
 						/>
 					</div>
 					<div class="flex items-center pb-3">
@@ -95,7 +100,7 @@
 				</div>
 				<div class="w-[20%] ml-5">
 					<div class="mt-[150px]">
-						<div class="flex justify-start items-center ml-4">
+						<!-- <div class="flex justify-start items-center ml-4">
 							<AppButton color="accent">
 								<AppIcon
 									v-html="TickIcon"
@@ -103,7 +108,7 @@
 								></AppIcon>
 								Saqlash</AppButton
 							>
-						</div>
+						</div> -->
 						<CurrentTime />
 					</div>
 				</div>

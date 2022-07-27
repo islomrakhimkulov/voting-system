@@ -15,7 +15,14 @@
 		'transparent',
 		'special',
 	];
-	const SIZES = ['default', 'small', 'medium', 'large', 'extra-large'];
+	const SIZES = [
+		'default',
+		'small',
+		'medium',
+		'large',
+		'extra-large',
+		'special',
+	];
 </script>
 
 <script lang="ts" setup>

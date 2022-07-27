@@ -8,14 +8,19 @@
 		},
 	});
 
-	const emits = defineEmits(['change', 'delete']);
+	const emits = defineEmits(['openItem', 'deleteItem', 'editItem']);
 
-	const sayOpen = () => {
-		emits('change');
+	const openAccordion = () => {
+		emits('openItem');
 	};
 
+	//delete from accordion
 	const deleteItem = () => {
-		emits('delete');
+		emits('deleteItem');
+	};
+	//  edit accordion item
+	const editItem = () => {
+		emits('editItem');
 	};
 
 	const isOpen = computed(() => {
@@ -28,7 +33,9 @@
 		<li class="flex items-center justify-between">
 			<div class="flex items-center">
 				<!-- sorting icon -->
-				<img src="../assets/icons/align.svg" alt="" />
+				<div v-if="accordion.draggable">
+					<img src="../assets/icons/align.svg" alt="" />
+				</div>
 
 				<!-- order number -->
 				<p class="px-6">{{ accordion.id + 1 }}</p>
@@ -36,7 +43,10 @@
 				<!-- subject title -->
 
 				<div class="w-[1000px] mx-auto">
-					<div class="text-[18px] cursor-pointer" @click="sayOpen">
+					<div
+						class="text-[18px] cursor-pointer"
+						@click="openAccordion"
+					>
 						<p>{{ accordion.subjectTitle }}</p>
 					</div>
 					<div class="py-2 text-[16px] text-gray-25" :class="isOpen">
@@ -46,17 +56,20 @@
 
 						<div class="py-2 flex items-center justify-end gap-2">
 							<!-- set icons here -->
-
-							<AppButton size="small" color="success">
+							<AppButton
+								@click="editItem"
+								color="success"
+								size="small"
+							>
 								<AppIcon
 									v-html="EditIcon"
 									size="small"
 								></AppIcon>
 							</AppButton>
 							<AppButton
-								size="small"
-								color="danger"
 								@click="deleteItem"
+								color="danger"
+								size="small"
 							>
 								<AppIcon
 									v-html="DeleteIcon"

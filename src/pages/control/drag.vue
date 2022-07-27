@@ -25,45 +25,46 @@
 	};
 </script>
 <template>
-	<div class="container mx-auto">
+	<div>
 		<h1
 			class="text-center text-accent-300 shadow-lg py-4 font-semibold text-2xl"
 		>
 			Drag and Drop
 		</h1>
-		<div class="mx-auto">
+		<div class="mx-auto container">
 			<TestTodo />
-		</div>
-		<div
-			class="drag-zone"
-			@drop="onDrop($event, 1)"
-			@dragenter.prevent
-			@dragover.prevent
-		>
+
 			<div
-				v-for="item in getList(1)"
-				:key="item.id"
-				class="drag-el"
-				draggable="true"
-				@dragstart="startDrag($event, item)"
+				class="drag-zone"
+				@drop="onDrop($event, 1)"
+				@dragenter.prevent
+				@dragover.prevent
 			>
-				{{ item.title }}
+				<div
+					v-for="item in getList(1)"
+					:key="item.id"
+					class="drag-el"
+					draggable="true"
+					@dragstart="startDrag($event, item)"
+				>
+					{{ item.title }}
+				</div>
 			</div>
-		</div>
-		<div
-			class="drag-zone"
-			@drop="onDrop($event, 2)"
-			@dragenter.prevent
-			@dragover.prevent
-		>
 			<div
-				v-for="item in getList(2)"
-				:key="item.id"
-				class="drag-el"
-				draggable="true"
-				@dragstart="startDrag($event, item)"
+				class="drag-zone"
+				@drop="onDrop($event, 2)"
+				@dragenter.prevent
+				@dragover.prevent
 			>
-				{{ item.title }}
+				<div
+					v-for="item in getList(2)"
+					:key="item.id"
+					class="drag-el"
+					draggable="true"
+					@dragstart="startDrag($event, item)"
+				>
+					{{ item.title }}
+				</div>
 			</div>
 		</div>
 	</div>

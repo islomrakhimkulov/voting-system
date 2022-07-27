@@ -39,7 +39,7 @@
 					<swiper-slide><AppCard /></swiper-slide>
 				</swiper>
 
-				<div class="flex items-center justify-between my-6">
+				<div class="flex items-center justify-between my-5">
 					<div>
 						<h2 class="text-[18px] font-bold py-2 uppercase">
 							Yig'ilishlar jadvali
@@ -54,8 +54,9 @@
 							<router-link
 								:to="{ name: 'control-voting-full-result' }"
 								class="text-gray-15 text-[15px] font-semibold"
-								>Yakunlangan</router-link
 							>
+								Yakunlangan
+							</router-link>
 						</div>
 					</div>
 					<router-link :to="{ name: 'control-create-subject' }">
