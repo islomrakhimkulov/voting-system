@@ -11,7 +11,9 @@
 	const closeSubjectModal = () => {
 		isOpenModal.value = false;
 	};
+
 	const meetingName = ref('');
+
 	const sendName = () => {
 		console.log(meetingName.value);
 		meetingName.value = '';
@@ -30,11 +32,11 @@
 			<div class="flex">
 				<div class="w-[75%]">
 					<div class="flex text-[16px] text-gray-900 py-1">
-						<!-- <img
+						<img
 							class="mr-1"
 							src="@/assets/icons/chevron-left.svg"
 							alt=""
-						/> -->
+						/>
 						<h4 class="uppercase">Yig'ilishlar</h4>
 					</div>
 					<div class="py-3">
@@ -67,18 +69,15 @@
 
                  -->
 
-					<div
-						class="flex items-center justify-center py-10"
-						v-if="notSubject"
-					>
+					<div v-if="!notSubject">
+						<VotingSubjectsAccordion />
+					</div>
+					<div class="flex items-center justify-center py-10" v-else>
 						<img
 							src="@/assets/not-add.png"
 							alt=""
 							class="pointer-events-none"
 						/>
-					</div>
-					<div v-else>
-						<VotingSubjectsAccordion />
 					</div>
 					<!-- Voting Subjects Accordion -->
 
@@ -98,25 +97,14 @@
 						>
 					</div>
 				</div>
-				<div class="w-[20%] ml-5">
-					<div class="mt-[150px]">
-						<!-- <div class="flex justify-start items-center ml-4">
-							<AppButton color="accent">
-								<AppIcon
-									v-html="TickIcon"
-									position="left"
-								></AppIcon>
-								Saqlash</AppButton
-							>
-						</div> -->
-						<CurrentTime />
-					</div>
+				<div class="w-[20%] ml-5 mt-[130px]">
+					<CurrentTime />
 				</div>
 
 				<!-- modal here -->
 
 				<VotingCreateSubjectModal
-					:isOpenModal="isOpenModal"
+					:is-open-modal="isOpenModal"
 					@closeSubjectModal="closeSubjectModal"
 				/>
 			</div>

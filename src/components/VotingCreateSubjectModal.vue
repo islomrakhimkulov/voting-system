@@ -24,7 +24,9 @@
 	const subjectDescription = ref('');
 
 	const saveSubjectData = () => {
-		console.log(subjectText.value + ' ' + subjectDescription.value);
+		if (subjectText.value && subjectDescription.value) {
+			console.log(subjectText.value + ' ' + subjectDescription.value);
+		}
 
 		// push and clear input
 		subjectText.value = '';

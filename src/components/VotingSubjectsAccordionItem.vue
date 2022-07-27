@@ -18,6 +18,7 @@
 	const deleteItem = () => {
 		emits('deleteItem');
 	};
+
 	//  edit accordion item
 	const editItem = () => {
 		emits('editItem');

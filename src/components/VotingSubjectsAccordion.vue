@@ -42,8 +42,21 @@
 		});
 	};
 
+	// modal's code here
+	const isOpenModal = ref(false);
+
+	const showModal = (idx: number) => {
+		isOpenModal.value = true;
+		console.log(idx + 'sayhi');
+	};
+
+	const closeSubjectModal = () => {
+		isOpenModal.value = false;
+	};
+
 	// delete accordion item
 	const deleteItem = (id: number) => {
+		confirm("O'chirishni xoxlaysizmi ?");
 		accordionInfo.value.splice(id, 1);
 		// accordionInfo.value = accordionInfo.value.filter(
 		// 	accordion => accordion.id !== id
@@ -51,8 +64,8 @@
 	};
 
 	// update accordion item
-	const editItem = () => {
-		console.log('start editing');
+	const editItem = (idx: number) => {
+		console.log(idx + ' edited');
 	};
 </script>
 
@@ -63,10 +76,14 @@
 				:accordion="accordion"
 				@openItem="openItem(i)"
 				@deleteItem="deleteItem(i)"
-				@editItem="editItem(i)"
+				@editItem="showModal(i)"
 				class="border-b-2 border-gray-40"
 			/>
 		</template>
+		<VotingCreateSubjectModal
+			:is-open-modal="isOpenModal"
+			@closeSubjectModal="closeSubjectModal"
+		/>
 	</div>
 </template>
 
