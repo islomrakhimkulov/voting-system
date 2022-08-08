@@ -103,7 +103,7 @@
 
 				<!-- modal here -->
 
-				<VotingCreateSubjectModal
+				<VotingFormModal
 					:is-open-modal="isOpenModal"
 					@closeSubjectModal="closeSubjectModal"
 				/>

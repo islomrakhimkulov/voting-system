@@ -43,18 +43,22 @@
 			type: Boolean,
 			default: () => false,
 		},
+
 		disabled: {
 			type: Boolean,
 			default: () => false,
 		},
+
 		isBlock: {
 			type: Boolean,
 			default: () => false,
 		},
+
 		prependIcon: {
 			type: Boolean,
 			default: () => false,
 		},
+
 		appendIcon: {
 			type: Boolean,
 			default: () => false,

@@ -76,14 +76,16 @@
 				:accordion="accordion"
 				@openItem="openItem(i)"
 				@deleteItem="deleteItem(i)"
-				@editItem="showModal(i)"
+				@editItem="showModal(accordion.id)"
 				class="border-b-2 border-gray-40"
 			/>
+			<VotingFormModal
+				:is-open-modal="isOpenModal"
+				@closeSubjectModal="closeSubjectModal"
+				:accordionInfo="accordionInfo"
+				:edit="openItem.id"
+			/>
 		</template>
-		<VotingCreateSubjectModal
-			:is-open-modal="isOpenModal"
-			@closeSubjectModal="closeSubjectModal"
-		/>
 	</div>
 </template>
 

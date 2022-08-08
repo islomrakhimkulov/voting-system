@@ -27,11 +27,10 @@
 					Joriy yigilishlar
 				</h2>
 
-				<!--  carousel section -->
-				<!-- <AppCard /> -->
-
 				<swiper :slides-per-view="4" :space-between="10">
-					<swiper-slide><AppCard /></swiper-slide>
+					<swiper-slide>
+						<AppCard />
+					</swiper-slide>
 					<swiper-slide><AppCard /></swiper-slide>
 					<swiper-slide><AppCard /></swiper-slide>
 					<swiper-slide><AppCard /></swiper-slide>

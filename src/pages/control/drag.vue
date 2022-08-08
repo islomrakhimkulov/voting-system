@@ -33,7 +33,6 @@
 		</h1>
 		<div class="mx-auto container">
 			<TestTodo />
-
 			<div
 				class="drag-zone"
 				@drop="onDrop($event, 1)"

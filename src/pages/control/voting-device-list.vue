@@ -28,7 +28,7 @@
 	]);
 
 	// unnamed group list
-	const unNamedGroupList = ref([
+	const unNamedGroupDevicesList = ref([
 		{ name: "Joh's tablet", status: 'Guruhlanmagan' },
 		{ name: "Usmon's tablet", status: 'Guruhlanmagan' },
 		{ name: "Kamol's tablet", status: 'Guruhlanmagan' },
@@ -41,7 +41,7 @@
 
 	// delete from unGrouped card
 	const deleteUnGroupedCard = (id: number) => {
-		unNamedGroupList.value.splice(id, 1);
+		unNamedGroupDevicesList.value.splice(id, 1);
 	};
 </script>
 
@@ -85,7 +85,9 @@
 						<div class="flex flex-row flex-wrap gap-5 py-3">
 							<!-- unnnamed cards group components -->
 							<template
-								v-for="(unNamedCard, idx) in unNamedGroupList"
+								v-for="(
+									unNamedCard, idx
+								) in unNamedGroupDevicesList"
 								:key="idx"
 							>
 								<VotingUnnamedGroup

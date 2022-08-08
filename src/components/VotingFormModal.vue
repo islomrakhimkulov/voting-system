@@ -2,10 +2,17 @@
 	import TickIcon from '@/assets/icons/check.svg?raw';
 	import CrossIcon from '@/assets/icons/xmark.svg?raw';
 	import CircleIcon from '@/assets/icons/circle.svg?raw';
-	defineProps({
+	const { isOpenModal, accordionInfo, edit } = defineProps({
 		isOpenModal: {
 			type: Boolean,
 			default: false,
+		},
+		accordionInfo: {
+			type: Object,
+			default: () => ({}),
+		},
+		edit: {
+			type: Number,
 		},
 	});
 
@@ -52,6 +59,7 @@
 									<h2 class="text-[22px] font-semibold">
 										Mavzu qo'shish
 									</h2>
+									<p>{{ edit }}</p>
 
 									<!-- form content -->
 									<div class="py-2">
@@ -221,7 +229,7 @@
 <style>
 	.fade-enter-active,
 	.fade-leave-active {
-		transition: opacity 0.5s ease-in;
+		transition: opacity 0.3s ease-in;
 	}
 
 	.fade-enter-from,

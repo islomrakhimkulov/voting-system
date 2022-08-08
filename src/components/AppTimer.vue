@@ -130,9 +130,6 @@
 	.app-timer.active-color {
 		@apply text-accent-600;
 	}
-	/* .timer-indicator {
-		@apply text-gray-90;
-	} */
 	.app-timer.is-true {
 		@apply bg-gray-80 px-8 pb-2 text-white rounded inline-flex;
 	}
