@@ -33,6 +33,7 @@
 		</h1>
 		<div class="mx-auto container">
 			<TestTodo />
+			<VotingDevicesDec />
 			<div
 				class="drag-zone"
 				@drop="onDrop($event, 1)"

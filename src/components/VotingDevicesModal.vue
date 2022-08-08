@@ -73,43 +73,21 @@
 												Guruhlashtilirilgan qurilmalar
 											</h2>
 											<!-- card group-->
-											<ul
+											<div
 												class="py-4 flex flex-row items-center flex-wrap gap-2"
 											>
-												<!-- card -->
-												<li
-													v-for="item in groupedList"
-													:key="item.id"
-													class="w-[220px] p-2 bg-success-50 text-success-300 border-success-300 border-2 rounded-lg"
+												<!-- cards group -->
+												<template
+													v-for="unNamedGroupItem in groupedList"
+													:key="unNamedGroupItem.id"
 												>
-													<img
-														src="@/assets/icons/align-green.svg"
-														alt=""
+													<VotingDevicesDec
+														:unNamedGroupItem="
+															unNamedGroupItem
+														"
 													/>
-													<div
-														class="flex flex-col items-center"
-													>
-														<!-- icon -->
-														<img
-															class="w-[90px]"
-															src="@/assets/phone-tablet-green.svg"
-															alt=""
-														/>
-														<!-- group name -->
-														<h2
-															class="text-[16px] font-semibold"
-														>
-															{{ item.title }}
-														</h2>
-													</div>
-													<!-- group status-->
-													<p
-														class="text-[14px] text-right"
-													>
-														{{ item.status }}
-													</p>
-												</li>
-											</ul>
+												</template>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -145,43 +123,21 @@
 									>
 										Guruhlashtirilmagan qurilmalar
 									</h2>
-									<ul
+									<div
 										class="py-4 flex flex-row flex-wrap gap-2"
 									>
 										<!-- cards group -->
-										<li
-											v-for="item in unGroupedList"
-											:key="item.id"
-											draggable="true"
-											class="w-[220px] p-2 bg-gray-30 text-gray-70 border-gray-70 border-2 rounded-lg cursor-move"
+										<template
+											v-for="unNamedGroupItem in groupedList"
+											:key="unNamedGroupItem.id"
 										>
-											<img
-												class="pointer-events-none"
-												src="@/assets/icons/group-align.svg"
-												alt=""
+											<VotingDevicesDec
+												:unNamedGroupItem="
+													unNamedGroupItem
+												"
 											/>
-											<div
-												class="flex flex-col items-center"
-											>
-												<!-- icon -->
-												<img
-													class="w-[90px] pointer-events-none"
-													src="@/assets/phone-tablet.svg"
-													alt=""
-												/>
-												<!-- group name -->
-												<h2
-													class="text-[16px] font-semibold"
-												>
-													{{ item.title }}
-												</h2>
-											</div>
-											<!-- group status-->
-											<p class="text-[14px] text-right">
-												{{ item.status }}
-											</p>
-										</li>
-									</ul>
+										</template>
+									</div>
 								</div>
 							</div>
 						</div>
