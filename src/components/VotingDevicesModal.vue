@@ -13,21 +13,15 @@
 	};
 
 	const groupName = ref('');
-	const unGroupedList = ref([
+	const unNamedCard = ref([
 		{ id: 1, title: "Aziz's tablet", status: 'guruhlanmagan' },
-		{ id: 2, title: "Islom's tablet", status: 'guruhlangan' },
+		{ id: 2, title: "Islom's tablet", status: 'guruhlanmagan' },
 		{ id: 3, title: "Javohir's tablet", status: 'guruhlanmagan' },
 	]);
 
-	const groupedList = ref([
-		{ id: 1, title: "Joh's tablet", status: 'guruhlanmagan' },
+	const namedCard = ref([
+		{ id: 1, title: "Joh's tablet", status: 'guruhlangan' },
 	]);
-
-	// const firstGroup = () => {
-	// 	return unGroupedList.value.filter(
-	// 		item => item.status === 'guruhlanmagan'
-	// 	);
-	// };
 </script>
 
 <template>
@@ -66,29 +60,12 @@
 											/>
 										</div>
 										<!-- guruhlashtirilgan qurilmalar -->
-										<div>
-											<h2
-												class="text-[16px] font-semibold uppercase"
-											>
-												Guruhlashtilirilgan qurilmalar
-											</h2>
-											<!-- card group-->
-											<div
-												class="py-4 flex flex-row items-center flex-wrap gap-2"
-											>
-												<!-- cards group -->
-												<template
-													v-for="unNamedGroupItem in groupedList"
-													:key="unNamedGroupItem.id"
-												>
-													<VotingDevicesDec
-														:unNamedGroupItem="
-															unNamedGroupItem
-														"
-													/>
-												</template>
-											</div>
-										</div>
+										<VotingDeviceDeck
+											v-model:devices="namedCard"
+											item-color="success"
+											item-draggable
+											name="Guruhlashtirilgan Qurilmalar"
+										/>
 									</div>
 								</div>
 
@@ -117,27 +94,11 @@
 							<!-- guruhlashtilrilmagan qurilmalar -->
 							<div class="w-1/2">
 								<div class="px-7 py-5">
-									<!-- title -->
-									<h2
-										class="text-[16px] font-semibold uppercase"
-									>
-										Guruhlashtirilmagan qurilmalar
-									</h2>
-									<div
-										class="py-4 flex flex-row flex-wrap gap-2"
-									>
-										<!-- cards group -->
-										<template
-											v-for="unNamedGroupItem in groupedList"
-											:key="unNamedGroupItem.id"
-										>
-											<VotingDevicesDec
-												:unNamedGroupItem="
-													unNamedGroupItem
-												"
-											/>
-										</template>
-									</div>
+									<VotingDeviceDeck
+										v-model:devices="unNamedCard"
+										item-draggable
+										name="Guruhlashtirilmagan qurilmalar"
+									/>
 								</div>
 							</div>
 						</div>

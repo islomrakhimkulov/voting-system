@@ -9,20 +9,20 @@
 		return items.value.filter(item => item.list == list);
 	};
 
-	const startDrag = (Event, item) => {
-		console.log(item);
-		Event.dataTransfer.dropEffect = 'move';
-		Event.dataTransfer.effectAllowed = 'copyMove';
-		Event.dataTransfer.setData('itemID', item.id);
-	};
+	// const startDrag = (Event, item) => {
+	// 	console.log(item);
+	// 	Event.dataTransfer.dropEffect = 'move';
+	// 	Event.dataTransfer.effectAllowed = 'copyMove';
+	// 	Event.dataTransfer.setData('itemID', item.id);
+	// };
 
-	const onDrop = (Event, list) => {
-		const itemID = Event.dataTransfer.getData('itemID');
-		const item = items.value.find(
-			item => item.id === Number.parseInt(itemID)
-		);
-		item.list = list;
-	};
+	// const onDrop = (Event, list) => {
+	// 	const itemID = Event.dataTransfer.getData('itemID');
+	// 	const item = items.value.find(
+	// 		item => item.id === Number.parseInt(itemID)
+	// 	);
+	// 	item.list = list;
+	// };
 </script>
 <template>
 	<div>
@@ -31,9 +31,11 @@
 		>
 			Drag and Drop
 		</h1>
-		<div class="mx-auto container">
+		<!-- <div class="mx-auto container">
 			<TestTodo />
-			<VotingDevicesDec />
+
+			<VotingDevicesDeck color="success" />
+			<VotingDeviceDeck deck-name="guruhlashtirilmagan qurilmalar" />
 			<div
 				class="drag-zone"
 				@drop="onDrop($event, 1)"
@@ -66,7 +68,7 @@
 					{{ item.title }}
 				</div>
 			</div>
-		</div>
+		</div> -->
 	</div>
 </template>
 
