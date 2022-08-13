@@ -1,7 +1,6 @@
 <script lang="ts">
 	const COLORS = ['success', 'default', 'danger'];
 </script>
-
 <script setup lang="ts">
 	const emit = defineEmits(['dragStart']);
 	const { device, color, isDraggable } = defineProps({
@@ -18,6 +17,7 @@
 			default: 'default',
 			validator: (value: string) => COLORS.includes(value),
 		},
+
 		isDraggable: {
 			type: Boolean,
 			default: () => false,
@@ -29,23 +29,12 @@
 			[`${color}`]: true,
 		};
 	});
-
-	const onDragStart = (event: DragEvent) => {
-		if (!isDraggable) {
-			return;
-		}
-
-		event.dataTransfer?.setData('type', 'device');
-		event.dataTransfer?.setData('data', JSON.stringify(device));
-
-		emit('dragStart', event, device);
-	};
 </script>
 
 <template>
 	<div
 		:class="classes"
-		class="w-[220px] p-2 border-2 rounded-lg app-device block"
+		class="w-[220px] p-2 border-2 rounded-lg app-device cursor-move"
 		draggable="isDraggable"
 		@dragstart="onDragStart"
 	>

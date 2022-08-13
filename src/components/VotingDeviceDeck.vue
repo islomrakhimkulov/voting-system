@@ -1,7 +1,6 @@
 <script setup lang="ts">
-	import { Subject } from '@/types/subjectType';
+	import Draggable from 'vuedraggable';
 
-	const emit = defineEmits(['update:devices']);
 	const { name, itemDraggable, devices } = defineProps({
 		devices: {
 			type: Array,
@@ -11,7 +10,7 @@
 			type: String,
 			default: 'Guruhlashtirilgan qurilamalar',
 		},
-		itemColor: {
+		color: {
 			type: String,
 			default: () => 'default',
 		},
@@ -19,72 +18,42 @@
 			type: Boolean,
 			default: () => false,
 		},
+		draggableGroup: {
+			type: String,
+			default: () => 'default',
+		},
 	});
-
-	const isDraggingOverDevice = ref(false);
-
-	let onDeviceDragStart = (event: DragEvent, device: Subject) => {
-		emit(
-			'update:devices',
-			devices.filter((item: any) => item.id !== device.id)
-		);
-	};
-
-	const onDragOver = (event: DragEvent) => {
-		if (
-			!itemDraggable ||
-			!event.dataTransfer ||
-			event.dataTransfer.getData('type') !== 'device'
-		) {
-			return;
-		}
-
-		event.preventDefault();
-		isDraggingOverDevice.value = true;
-	};
-
-	const onDragLeave = (event: DragEvent) => {
-		isDraggingOverDevice.value = false;
-	};
-
-	const onDrop = (event: DragEvent) => {
-		if (
-			!itemDraggable ||
-			!event.dataTransfer ||
-			event.dataTransfer.getData('type') !== 'device'
-		) {
-			return;
-		}
-
-		event.preventDefault();
-
-		const device = JSON.parse(event.dataTransfer.getData('data'));
-
-		devices.push(device);
-	};
 </script>
 
 <template>
-	<div
-		:class="{ deviceDragOver: isDraggingOverDevice }"
-		@dragover="onDragOver"
-		@dragleave="onDragLeave"
-		@drop="onDrop"
-	>
+	<div>
 		<h2 class="text-[16px] font-semibold uppercase">
 			{{ name }}
 		</h2>
 		<!-- card group-->
-		<div class="py-2 flex flex-row items-center flex-wrap gap-2">
+		<div class="py- 2">
 			<!-- cards list -->
-			<template v-for="device in devices" :key="device.id">
-				<VotingDeviceCard
-					:device="device"
-					:color="itemColor"
-					:is-draggable="itemDraggable"
-					@dragStart="onDeviceDragStart"
-				/>
-			</template>
+			<draggable
+				v-model="devices"
+				class="w-full flex flex-row items-center flex-wrap gap-2"
+				:group="draggableGroup"
+				item-key="id"
+				ghost-class="ghost"
+				animation="500"
+			>
+				<template #item="{ device }">
+					<VotingDeviceCard
+						:device="device"
+						:color="color"
+					></VotingDeviceCard>
+				</template>
+			</draggable>
 		</div>
 	</div>
 </template>
+
+<style lang="postcss">
+	.ghost {
+		@apply bg-success-200 z-10 text-white cursor-move;
+	}
+</style>

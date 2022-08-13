@@ -13,6 +13,7 @@
 	};
 
 	const groupName = ref('');
+
 	const unNamedCard = ref([
 		{ id: 1, title: "Aziz's tablet", status: 'guruhlanmagan' },
 		{ id: 2, title: "Islom's tablet", status: 'guruhlanmagan' },
@@ -62,8 +63,8 @@
 										<!-- guruhlashtirilgan qurilmalar -->
 										<VotingDeviceDeck
 											v-model:devices="namedCard"
-											item-color="success"
-											item-draggable
+											draggable-group="list"
+											color="success"
 											name="Guruhlashtirilgan Qurilmalar"
 										/>
 									</div>
@@ -96,7 +97,7 @@
 								<div class="px-7 py-5">
 									<VotingDeviceDeck
 										v-model:devices="unNamedCard"
-										item-draggable
+										draggable-group="list"
 										name="Guruhlashtirilmagan qurilmalar"
 									/>
 								</div>
@@ -108,3 +109,16 @@
 		</Teleport>
 	</div>
 </template>
+
+<style scoped>
+	.modal {
+		position: absolute;
+		z-index: 9998;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.5);
+		transition: all 0.3s ease;
+	}
+</style>
