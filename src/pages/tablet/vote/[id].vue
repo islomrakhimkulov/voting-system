@@ -1,4 +1,9 @@
 <script setup lang="ts">
+  const props = defineProps({
+    id: String,
+  });
+  const id = toRef(props, 'id');
+
   const questions = ref([
     {
       id: 1,
@@ -29,6 +34,20 @@
       status: 'active',
     },
   ]);
+
+  const question = computed(
+    () =>
+      questions.value.find((item: any) => item.id.toString() === id.value) || {}
+  );
+
+  const nextPageLink = computed(() => {
+    const pageNumber = Number.parseInt(id.value);
+    if (pageNumber >= questions.value.length) {
+      return undefined;
+    }
+
+    return `/tablet/vote/${pageNumber + 1}`;
+  });
 </script>
 
 <template>
@@ -70,12 +89,44 @@
 
           <!-- subject content here -->
           <div>
-            <VotingTabletQuestion :question="questions" />
+            <div class="flex items-center justify-center h-screen">
+              <div>
+                <div class="text-gray-900">
+                  <!-- about subject title -->
+                  <span class="text-[14px] uppercase">
+                    {{ question.id }} - ovozga qo'yilgan mavzu
+                  </span>
+
+                  <!-- subject title content -->
+                  <h2 class="text-[20px] py-2 font-semibold">
+                    {{ question.title }}
+                  </h2>
+
+                  <!-- subject content info -->
+                  <p class="text-[16px] pb-4">{{ question.text }}</p>
+                </div>
+
+                <div class="absolute bottom-5">
+                  <!-- next prev buttons -->
+                  <div
+                    class="flex justify-between items-center gap-[500px] pt-5"
+                  >
+                    <AppButton size="small">
+                      <router-link :to="`/tablet/vote/${id - 1}`"
+                        >Orqaga</router-link
+                      >
+                    </AppButton>
+
+                    <AppButton size="small">
+                      <router-link :to="nextPageLink">Keyingi</router-link>
+                    </AppButton>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </template>
-
-<style></style>

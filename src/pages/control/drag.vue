@@ -18,6 +18,8 @@
     { name: 'Jasur', id: 8 },
   ]);
 
+  const message = ref('salom');
+
   const getList = list => {
     return items.value.filter(item => item.list == list);
   };
@@ -35,6 +37,7 @@
     item.list = list;
   };
 </script>
+
 <template>
   <div>
     <h1
@@ -74,13 +77,14 @@
         </draggable>
       </div>
 
+      <voting-list :questions="list1"></voting-list>
+
       <TestTodo />
+
       <li v-for="item in list1.value" :key="item.id">
         {{ item }}
       </li>
 
-      <VotingDevicesDeck color="success" />
-      <VotingDeviceDeck deck-name="guruhlashtirilmagan qurilmalar" />
       <div
         class="drag-zone"
         @drop="onDrop($event, 1)"

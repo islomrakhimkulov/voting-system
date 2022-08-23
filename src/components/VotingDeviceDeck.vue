@@ -32,7 +32,7 @@
       return 'empty-group';
     }
 
-    return 'group';
+    return 'filled';
   });
 
   const onDraggableValueChanged = (value: Array) => {
@@ -46,19 +46,21 @@
       {{ name }}
     </h2>
     <!-- card group-->
-    <div class="py- 2" :class="changeBackground">
+    <div class="py-2" :class="changeBackground">
       <!-- cards list -->
       <draggable
         :modelValue="devices"
         @update:modelValue="onDraggableValueChanged"
         class="w-full flex flex-row items-center flex-wrap gap-2"
+        :class="changeBackground"
         :group="draggableGroup"
         item-key="id"
         ghost-class="ghost"
         animation="500"
       >
         <template #item="{ element }">
-          <VotingDeviceCard :device="element" :color="color"></VotingDeviceCard>
+          <VotingDeviceCard :device="element" :color="color">
+          </VotingDeviceCard>
         </template>
       </draggable>
     </div>
@@ -67,10 +69,10 @@
 
 <style lang="postcss">
   .ghost {
-    @apply bg-success-100 z-10 text-white cursor-move h-full w-[200px];
+    @apply bg-success-200 z-10 text-white cursor-move h-full w-[200px];
   }
   .empty-group {
-    @apply bg-gray-30 mt-1 w-full h-[470px] rounded-lg;
+    @apply bg-gray-30 mt-1 w-full h-[170px] rounded-lg;
   }
   .hasItem {
     @apply bg-danger-200 w-full h-full;

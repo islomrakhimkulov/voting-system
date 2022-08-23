@@ -7,15 +7,16 @@ import '@fontsource/open-sans';
 import Particles from 'particles.vue3';
 // import dayjs from 'dayjs';
 import '@/plugins/chartjs';
+import 'swiper/css';
 
 const routes = setupLayouts(generatedRoutes);
 
 export const createApp = ViteSSG(App, { routes }, async ctx => {
-	Object.values(import.meta.globEager('./modules/*.ts')).map(i =>
-		i.install?.(ctx)
-	);
+  Object.values(import.meta.globEager('./modules/*.ts')).map(i =>
+    i.install?.(ctx)
+  );
 
-	const { app } = ctx;
+  const { app } = ctx;
 
-	app.use(Particles);
+  app.use(Particles);
 });

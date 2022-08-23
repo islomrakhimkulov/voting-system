@@ -14,16 +14,13 @@
 
   const groupName = ref('');
 
-  const unNamedCard = ref([
+  const ungroupedDevices = ref([
     { id: 1, title: "Aziz's tablet", status: 'guruhlanmagan' },
     { id: 2, title: "Islom's tablet", status: 'guruhlanmagan' },
     { id: 3, title: "Javohir's tablet", status: 'guruhlanmagan' },
   ]);
 
-  const groupedDevices = [];
-  const ungroupedDevices = [];
-
-  const namedCard = ref([
+  const groupedDevices = ref([
     // { id: 1, title: "Joh's tablet", status: 'guruhlangan' },
   ]);
 </script>
@@ -61,7 +58,7 @@
                     </div>
                     <!-- guruhlashtirilgan qurilmalar -->
                     <VotingDeviceDeck
-                      v-model:devices="namedCard"
+                      v-model:devices="groupedDevices"
                       draggable-group="list"
                       color="success"
                       name="Guruhlashtirilgan Qurilmalar"
@@ -92,7 +89,7 @@
               <div class="w-1/2">
                 <div class="px-7 py-5">
                   <VotingDeviceDeck
-                    v-model:devices="unNamedCard"
+                    v-model:devices="ungroupedDevices"
                     draggable-group="list"
                     name="Guruhlashtirilmagan qurilmalar"
                   />
