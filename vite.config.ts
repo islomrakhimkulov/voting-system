@@ -48,21 +48,7 @@ export default defineConfig({
       resolvers: [],
     }),
     Pages({
-      dirs: [
-        { dir: 'src/pages', baseRoute: '' },
-        {
-          dir: 'src/pages/control',
-          baseRoute: 'control',
-        },
-        {
-          dir: 'src/pages/tablet',
-          baseRoute: 'tablet',
-        },
-        {
-          dir: 'src/pages/presentation',
-          baseRoute: 'presentation',
-        },
-      ],
+      dirs: [{ dir: 'src/pages', baseRoute: '' }],
     }),
     Layouts(),
     VitePWA({

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  const { question } = defineProps({
+  const { questions } = defineProps({
     question: {
       type: Object,
       default: () => ({}),

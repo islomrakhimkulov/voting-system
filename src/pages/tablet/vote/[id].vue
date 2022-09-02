@@ -1,132 +1,136 @@
 <script setup lang="ts">
+  import { useMeetingsStore } from '@/store/meetings';
+  import type { Voting } from '@/models/voting';
+  import { VotingStatus } from '@/models/voting-status';
+
   const props = defineProps({
     id: String,
   });
-  const id = toRef(props, 'id');
 
-  const questions = ref([
-    {
-      id: 1,
-      title:
-        'About new industry of all regions and their lives, what do those who are poor...',
-      text: 'lorem10',
-      status: 'active',
-    },
-    {
-      id: 2,
-      title:
-        'About new industry of all regions and their lives, what do those who are poor...',
-      text: 'lorem12',
-      status: 'noactive',
-    },
-    {
-      id: 3,
-      title:
-        'About new industry of all regions and their lives, what do those who are poor...',
-      text: 'lorem13',
-      status: 'active',
-    },
-    {
-      id: 4,
-      title:
-        'About new industry of all regions and their lives, what do those who are poor...',
-      text: 'lorem14',
-      status: 'active',
-    },
-  ]);
+  const meetings = useMeetingsStore();
 
-  const question = computed(
-    () =>
-      questions.value.find((item: any) => item.id.toString() === id.value) || {}
-  );
-
-  const nextPageLink = computed(() => {
-    const pageNumber = Number.parseInt(id.value);
-    if (pageNumber >= questions.value.length) {
+  const currentVoting = computed<Voting | undefined>(() => {
+    if (!meetings.currentMeeting || !props.id) {
       return undefined;
     }
 
-    return `/tablet/vote/${pageNumber + 1}`;
+    return meetings.currentMeeting.agenda.find(item => item.id === props.id);
   });
+
+  const isInProcess = computed(
+    () => currentVoting.value?.status === VotingStatus.IN_PROCESS
+  );
+
+  const isEnded = computed(
+    () => currentVoting.value?.status === VotingStatus.ENDED
+  );
+
+  const previousVoting = computed(() => {
+    if (!meetings.currentMeeting || !currentVoting.value) {
+      return;
+    }
+
+    return meetings.currentMeeting.agenda.find(
+      item => currentVoting.value.order - 1 === item.order
+    );
+  });
+
+  const nextVoting = computed(() => {
+    if (!meetings.currentMeeting || !currentVoting.value) {
+      return;
+    }
+
+    return meetings.currentMeeting.agenda.find(
+      item => currentVoting.value.order + 1 === item.order
+    );
+  });
+
+  const toPreviousVoting = computed(() => {
+    if (!previousVoting.value) {
+      return;
+    }
+
+    return {
+      name: 'tablet-vote-id',
+      params: {
+        id: previousVoting.value.id,
+      },
+    };
+  });
+
+  const toNextVoting = computed(() => {
+    if (!nextVoting.value) {
+      return;
+    }
+
+    return {
+      name: 'tablet-vote-id',
+      params: {
+        id: nextVoting.value.id,
+      },
+    };
+  });
+
+  onBeforeMount(meetings.fetchCurrentMeeting);
 </script>
 
 <template>
-  <div class="relative">
-    <div class="flex">
-      <div class="w-[42%] h-screen overflow-y-scroll bg-primary-25">
-        <div class="px-5 py-5">
-          <!-- Subject title -->
-          <h2
-            class="pb-4 text-[20px] text-gray-900 uppercase font-semibold leading-6"
-          >
-            XIX Oliy Majlis Qonunchilik palatasining navbatdagi yalpi majlisi
+  <div class="pl-6">
+    <!-- subject content here -->
+    <div class="h-screen">
+      <div>
+        <div class="text-gray-900">
+          <!-- about subject title -->
+          <span class="text-[14px] uppercase">
+            {{ currentVoting.order }} - ovozga qo'yilgan mavzu
+          </span>
+
+          <!-- subject title content -->
+          <h2 class="text-[20px] py-2 font-semibold">
+            {{ currentVoting.issue.subject }}
           </h2>
 
-          <!-- daily tasks title -->
-          <h4 class="text-[16px] text-gray-900 uppercase">
-            Kun tartibidagi mavzular
-          </h4>
-
-          <!-- tasks list -->
-          <div class="pb-5">
-            <template v-for="(question, idx) in questions" :key="idx">
-              <VotingQuestionItem class="my-3" :question="question" />
-            </template>
-          </div>
+          <!-- subject content info -->
+          <p class="text-[16px] pb-4">{{ currentVoting.issue.description }}</p>
         </div>
-      </div>
-      <div class="w-[56%]">
-        <div class="pl-6">
-          <!-- wave background svg icon -->
-          <!-- bottom svg -->
-          <div
-            class="fixed bottom-[-400px] right-[-400px] -z-[999] bg-adminBg bg-cover w-[886.42px] h-[768.78px]"
-          ></div>
-          <!-- top svg-->
-          <div
-            class="fixed top-[-500px] left-[20px] -z-[999] bg-adminBg bg-cover w-[886.42px] h-[768.78px]"
-          ></div>
 
-          <!-- subject content here -->
-          <div>
-            <div class="flex items-center justify-center h-screen">
-              <div>
-                <div class="text-gray-900">
-                  <!-- about subject title -->
-                  <span class="text-[14px] uppercase">
-                    {{ question.id }} - ovozga qo'yilgan mavzu
-                  </span>
+        <template v-if="isInProcess">
+          <div>Soat</div>
+        </template>
 
-                  <!-- subject title content -->
-                  <h2 class="text-[20px] py-2 font-semibold">
-                    {{ question.title }}
-                  </h2>
+        <div>
+          <template v-if="isInProcess || isEnded">
+            <div>Ovoz berganlar</div>
+          </template>
 
-                  <!-- subject content info -->
-                  <p class="text-[16px] pb-4">{{ question.text }}</p>
-                </div>
+          <template v-if="isInProcess">
+            <div>Knopkalar</div>
+          </template>
 
-                <div class="absolute bottom-5">
-                  <!-- next prev buttons -->
-                  <div
-                    class="flex justify-between items-center gap-[500px] pt-5"
-                  >
-                    <AppButton size="small">
-                      <router-link :to="`/tablet/vote/${id - 1}`"
-                        >Orqaga</router-link
-                      >
-                    </AppButton>
+          <template v-if="isEnded">
+            <div>Guruhlangan bar chart</div>
+          </template>
+        </div>
 
-                    <AppButton size="small">
-                      <router-link :to="nextPageLink">Keyingi</router-link>
-                    </AppButton>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div class="absolute bottom-5">
+          <!-- next prev buttons -->
+          <div class="flex justify-between items-center gap-[40px] pt-5">
+            <AppButton size="small" v-if="toPreviousVoting">
+              <router-link :to="toPreviousVoting">Orqaga</router-link>
+            </AppButton>
+
+            <AppButton size="small" v-if="toNextVoting">
+              <router-link :to="toNextVoting">Keyingi</router-link>
+            </AppButton>
           </div>
         </div>
       </div>
     </div>
+    <div></div>
   </div>
 </template>
+
+<route lang="yaml">
+meta:
+  layout: tablet
+</route>

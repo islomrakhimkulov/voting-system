@@ -1,47 +1,10 @@
-<script setup lang="ts">
-  const resultList = ref([
-    {
-      id: 1,
-      text: 'About new industry of all regions and their lives, what do those who are poor...',
-      status: 'active',
-    },
-    {
-      id: 2,
-      text: 'About new industry of all regions and their lives, what do those who are poor... ',
-      status: 'noactive',
-    },
-    {
-      id: 3,
-      text: 'About new industry of all regions and their lives, what do those who are poor... ',
-      status: 'active',
-    },
-  ]);
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div class="relative">
     <div class="flex">
       <div class="w-[42%] h-screen overflow-y-scroll bg-primary-25">
-        <div class="px-5 py-5">
-          <!-- Subject title -->
-          <h2
-            class="pb-4 text-[20px] text-gray-900 uppercase font-semibold leading-6"
-          >
-            XIX Oliy Majlis Qonunchilik palatasining navbatdagi yalpi majlisi
-          </h2>
-
-          <!-- daily tasks title -->
-          <h4 class="text-[16px] text-gray-900 uppercase">
-            Kun tartibidagi mavzular
-          </h4>
-
-          <!-- tasks list -->
-          <div class="pb-5">
-            <template v-for="question in resultList" :key="question.id">
-              <VotingQuestionItem class="my-3" :question="question" />
-            </template>
-          </div>
-        </div>
+        <VotingTabletLayout />
       </div>
       <div class="w-[54%]">
         <div class="pl-6">
@@ -65,7 +28,7 @@
               </span>
 
               <!-- subject title content -->
-              <h2 class="text-[18px] py-3 font-semibold leading-6">
+              <h2 class="text-[18px] font-semibold leading-6">
                 About new industry of all regions and their lives, what do those
                 who are poor need and government should provide work space in
                 order to help out
@@ -83,7 +46,7 @@
               </p>
               <!-- time -->
               <div class="pb-2">
-                <h2 class="text-[14px] pb-3 text-gray-900 uppercase">
+                <h2 class="text-[14px] text-gray-900 uppercase">
                   Ajratilgan vaqt
                 </h2>
                 <div>
@@ -119,7 +82,7 @@
                 </div>
               </div>
             </div>
-            <div class="flex justify-between items-center pt-5">
+            <div class="flex justify-between items-center">
               <AppButton size="small" color="disabled">orqaga</AppButton>
               <AppButton size="small" color="next">keyingi</AppButton>
             </div>

@@ -18,8 +18,6 @@
     { name: 'Jasur', id: 8 },
   ]);
 
-  const message = ref('salom');
-
   const getList = list => {
     return items.value.filter(item => item.list == list);
   };
@@ -77,7 +75,22 @@
         </draggable>
       </div>
 
-      <voting-list :questions="list1"></voting-list>
+      <div>
+        <h3>test draggable</h3>
+        <div>
+          <draggable
+            v-model="list2"
+            item-key="id"
+            @start="drag = true"
+            @end="drag = true"
+            animation="500"
+          >
+            <template #item="{ element }">
+              <div class="bg-green-600 p-2 m-2">{{ element.name }}</div>
+            </template>
+          </draggable>
+        </div>
+      </div>
 
       <TestTodo />
 
