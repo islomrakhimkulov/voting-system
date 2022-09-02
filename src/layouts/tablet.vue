@@ -21,31 +21,34 @@
     class="fixed top-[-500px] left-[20px] -z-[999] bg-adminBg bg-cover w-[886.42px] h-[768.78px]"
   ></div>
 
-  <aside>
-    <div class="px-5 py-5">
-      <!-- Subject title -->
-      <h2
-        class="pb-4 text-[20px] text-gray-900 uppercase font-semibold leading-6"
-      >
-        XIX Oliy Majlis Qonunchilik palatasining navbatdagi yalpi majlisi
-      </h2>
+  <!-- tablet wrapper-->
+  <div class="flex">
+    <aside class="w-[42%] h-screen overflow-y-scroll bg-primary-25">
+      <div class="px-5 py-5">
+        <!-- Subject title -->
+        <h2
+          class="pb-4 text-[20px] text-gray-900 uppercase font-semibold leading-6"
+        >
+          XIX Oliy Majlis Qonunchilik palatasining navbatdagi yalpi majlisi
+        </h2>
 
-      <!-- daily tasks title -->
-      <h4 class="text-[16px] text-gray-900 uppercase">
-        Kun tartibidagi mavzulFar
-      </h4>
+        <!-- daily tasks title -->
+        <h4 class="text-[16px] text-gray-900 uppercase">
+          Kun tartibidagi mavzular
+        </h4>
 
-      <!-- tasks list -->
-      <div class="pb-5">
-        <NumberedVotingList
-          :items="meetings.currentMeeting.agenda"
-          :current-id="currentVotingId"
-        />
+        <!-- tasks list -->
+        <div class="pb-5">
+          <NumberedVotingList
+            :items="meetings.currentMeeting.agenda"
+            :current-id="currentVotingId"
+          />
+        </div>
       </div>
-    </div>
-  </aside>
+    </aside>
 
-  <main>
-    <router-view />
-  </main>
+    <main class="w-[56%]">
+      <router-view />
+    </main>
+  </div>
 </template>

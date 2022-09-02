@@ -72,56 +72,82 @@
   });
 
   onBeforeMount(meetings.fetchCurrentMeeting);
+  onMounted(() => {
+    console.log(currentVoting.order);
+  });
 </script>
 
 <template>
   <div class="pl-6">
     <!-- subject content here -->
-    <div class="h-screen">
+    <div class="">
+      <div class="py-2 text-gray-900">
+        <!-- about subject title -->
+        <span class="text-[14px] uppercase">
+          {{ currentVoting.order }} - ovozga qo'yilgan mavzu
+        </span>
+
+        <!-- subject title content -->
+        <h2 class="text-[20px] font-semibold">
+          {{ currentVoting.issue.subject }}
+        </h2>
+
+        <!-- subject content info -->
+        <p class="text-[16px] pb-2">{{ currentVoting.issue.description }}</p>
+      </div>
+
       <div>
-        <div class="text-gray-900">
-          <!-- about subject title -->
-          <span class="text-[14px] uppercase">
-            {{ currentVoting.order }} - ovozga qo'yilgan mavzu
-          </span>
-
-          <!-- subject title content -->
-          <h2 class="text-[20px] py-2 font-semibold">
-            {{ currentVoting.issue.subject }}
-          </h2>
-
-          <!-- subject content info -->
-          <p class="text-[16px] pb-4">{{ currentVoting.issue.description }}</p>
-        </div>
-
-        <template v-if="isInProcess">
-          <div>Soat</div>
-        </template>
-
         <div>
-          <template v-if="isInProcess || isEnded">
-            <div>Ovoz berganlar</div>
-          </template>
-
+          <!-- vaqt -->
           <template v-if="isInProcess">
-            <div>Knopkalar</div>
+            <div>
+              <AppTimer />
+            </div>
           </template>
 
+          <!-- ovoz berganlar -->
+          <template v-if="isInProcess || isEnded">
+            <h2 class="text-[14px] text-gray-900 uppercase">
+              Ovoz berish jarayoni
+            </h2>
+            <div class="float-left">
+              <VotesCountChart style="width: 300px" />
+            </div>
+          </template>
+
+          <!--  -->
+
+          <!-- buttons(knopkalar) -->
+          <template v-if="isInProcess">
+            <div class="flex flex-col gap-5">
+              <AppButton color="success">Qo'shilaman</AppButton>
+              <AppButton color="danger">Qarshiman</AppButton>
+              <AppButton color="warning">Be'tarafman</AppButton>
+            </div>
+          </template>
+
+          <!-- guruhlangan chartlar -->
           <template v-if="isEnded">
-            <div>Guruhlangan bar chart</div>
+            <div class="float-right">
+              <GroupedVotingResultChart style="width: 350px" />
+            </div>
           </template>
         </div>
 
         <div class="absolute bottom-5">
           <!-- next prev buttons -->
-          <div class="flex justify-between items-center gap-[40px] pt-5">
-            <AppButton size="small" v-if="toPreviousVoting">
-              <router-link :to="toPreviousVoting">Orqaga</router-link>
-            </AppButton>
+          <div class="flex justify-around items-center gap-[40px] pt-5">
+            <div>
+              <AppButton size="small" v-if="toPreviousVoting">
+                <router-link :to="toPreviousVoting">Orqaga</router-link>
+              </AppButton>
+            </div>
 
-            <AppButton size="small" v-if="toNextVoting">
-              <router-link :to="toNextVoting">Keyingi</router-link>
-            </AppButton>
+            <div>
+              <AppButton size="small" v-if="toNextVoting">
+                <router-link :to="toNextVoting">Keyingi</router-link>
+              </AppButton>
+            </div>
           </div>
         </div>
       </div>

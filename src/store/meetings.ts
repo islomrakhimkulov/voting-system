@@ -25,8 +25,8 @@ export const useMeetingsStore = defineStore('meetings', () => {
           status: VotingStatus.ENDED,
           order: 1,
           issue: {
-            subject: 'Lorem',
-            description: 'Lorem',
+            subject: 'Lorem 1',
+            description: 'Lorem 1',
           },
           interval: null,
           options: [
@@ -50,8 +50,8 @@ export const useMeetingsStore = defineStore('meetings', () => {
           status: VotingStatus.IN_PROCESS,
           order: 2,
           issue: {
-            subject: 'Lorem',
-            description: 'Lorem',
+            subject: 'Lorem 2',
+            description: 'Lorem 2',
           },
           interval: null,
           options: [
@@ -75,8 +75,8 @@ export const useMeetingsStore = defineStore('meetings', () => {
           status: VotingStatus.PENDING,
           order: 3,
           issue: {
-            subject: 'Lorem',
-            description: 'Lorem',
+            subject: 'Lorem 3',
+            description: 'Lorem 3',
           },
           interval: null,
           options: [
@@ -100,8 +100,8 @@ export const useMeetingsStore = defineStore('meetings', () => {
           status: VotingStatus.IN_PROCESS,
           order: 4,
           issue: {
-            subject: 'Lorem',
-            description: 'Lorem',
+            subject: 'Lorem 4',
+            description: 'Lorem 4',
           },
           interval: null,
           options: [
@@ -125,8 +125,8 @@ export const useMeetingsStore = defineStore('meetings', () => {
           status: VotingStatus.IN_PROCESS,
           order: 5,
           issue: {
-            subject: 'Lorem',
-            description: 'Lorem',
+            subject: 'Lorem 5',
+            description: 'Lorem 5',
           },
           interval: null,
           options: [
