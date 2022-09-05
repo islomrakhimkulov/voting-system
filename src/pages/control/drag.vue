@@ -76,7 +76,6 @@
       </div>
 
       <div>
-        <h3>test draggable</h3>
         <div>
           <draggable
             v-model="list2"
@@ -92,11 +91,11 @@
         </div>
       </div>
 
-      <TestTodo />
-
       <li v-for="item in list1.value" :key="item.id">
         {{ item }}
       </li>
+
+      <VotingTimer />
 
       <div
         class="drag-zone"

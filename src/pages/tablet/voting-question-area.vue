@@ -119,5 +119,5 @@
 
 <route lang="yaml">
 meta:
-  layout: tablet
+  layout: tablet.
 </route>
