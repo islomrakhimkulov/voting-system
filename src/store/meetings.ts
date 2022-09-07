@@ -1,6 +1,7 @@
 import { Meeting } from '@/models/meeting';
 import { MeetingFlow } from '@/models/meeting-flow';
 import { MeetingStatus } from '@/models/meeting-status';
+import { VotingOptionPolarity } from '@/models/voting-option-polarity';
 import { VotingStatus } from '@/models/voting-status';
 import { defineStore } from 'pinia';
 
@@ -25,18 +26,26 @@ export const useMeetingsStore = defineStore('meetings', () => {
           status: VotingStatus.ENDED,
           order: 1,
           issue: {
-            subject: 'Lorem 1',
-            description: 'Lorem 1',
+            subject: 'Lorem ipsum dolor sit amet consectetur adipisicing el',
+            description: '',
           },
           interval: null,
           options: [
             {
-              order: 1,
               option: 'Yes',
+              polarity: VotingOptionPolarity.NEGATIVE,
             },
             {
-              order: 2,
               option: 'No',
+              polarity: VotingOptionPolarity.POSITIVE,
+            },
+            {
+              option: 'Yes',
+              polarity: VotingOptionPolarity.NEUTRAL,
+            },
+            {
+              option: 'Yes',
+              polarity: VotingOptionPolarity.NEUTRAL,
             },
           ],
           startedAt: '2022-09-01T10:30:00Z',
@@ -56,12 +65,20 @@ export const useMeetingsStore = defineStore('meetings', () => {
           interval: null,
           options: [
             {
-              order: 1,
               option: 'Yes',
+              polarity: VotingOptionPolarity.NEGATIVE,
             },
             {
-              order: 2,
+              option: 'Yes',
+              polarity: VotingOptionPolarity.POSITIVE,
+            },
+            {
+              option: 'Yes',
+              polarity: VotingOptionPolarity.NEUTRAL,
+            },
+            {
               option: 'No',
+              polarity: VotingOptionPolarity.UNKNOWN,
             },
           ],
           startedAt: '2022-09-01T10:30:00Z',
@@ -81,12 +98,20 @@ export const useMeetingsStore = defineStore('meetings', () => {
           interval: null,
           options: [
             {
-              order: 1,
               option: 'Yes',
+              polarity: VotingOptionPolarity.POSITIVE,
             },
             {
-              order: 2,
               option: 'No',
+              polarity: VotingOptionPolarity.POSITIVE,
+            },
+            {
+              option: 'Yes',
+              polarity: VotingOptionPolarity.NEUTRAL,
+            },
+            {
+              option: 'Yes',
+              polarity: VotingOptionPolarity.POSITIVE,
             },
           ],
           startedAt: '2022-09-01T10:30:00Z',
@@ -106,12 +131,20 @@ export const useMeetingsStore = defineStore('meetings', () => {
           interval: null,
           options: [
             {
-              order: 1,
               option: 'Yes',
+              polarity: VotingOptionPolarity.NEGATIVE,
             },
             {
-              order: 2,
               option: 'No',
+              polarity: VotingOptionPolarity.NEGATIVE,
+            },
+            {
+              option: 'Yes',
+              polarity: VotingOptionPolarity.NEGATIVE,
+            },
+            {
+              option: 'Yes',
+              polarity: VotingOptionPolarity.NEGATIVE,
             },
           ],
           startedAt: '2022-09-01T10:30:00Z',
@@ -131,12 +164,20 @@ export const useMeetingsStore = defineStore('meetings', () => {
           interval: null,
           options: [
             {
-              order: 1,
               option: 'Yes',
+              polarity: VotingOptionPolarity.UNKNOWN,
             },
             {
-              order: 2,
               option: 'No',
+              polarity: VotingOptionPolarity.NEGATIVE,
+            },
+            {
+              option: 'Yes',
+              polarity: VotingOptionPolarity.UNKNOWN,
+            },
+            {
+              option: 'No',
+              polarity: VotingOptionPolarity.NEGATIVE,
             },
           ],
           startedAt: '2022-09-01T10:30:00Z',

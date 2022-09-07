@@ -16,7 +16,7 @@
     v-slot="{ isActive, navigate }"
   >
     <div
-      class="p-3 my-2 w-[400px] bg-white rounded-md shadow voting-list-item"
+      class="p-3 my-2 bg-white rounded-md shadow voting-list-item"
       :class="{ active: isActive }"
       @click="navigate"
     >
@@ -28,7 +28,7 @@
             {{ voting.order }}
           </div>
         </div>
-        <div class="pl-5 text-[15px] line-clamp-2">
+        <div class="pl-4 text-[15px] line-clamp-2">
           {{ voting.issue.subject }}
         </div>
       </div>

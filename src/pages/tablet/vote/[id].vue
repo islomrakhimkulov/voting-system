@@ -72,9 +72,6 @@
   });
 
   onBeforeMount(meetings.fetchCurrentMeeting);
-  onMounted(() => {
-    console.log(currentVoting.order);
-  });
 </script>
 
 <template>
@@ -119,16 +116,19 @@
 
           <!-- buttons(knopkalar) -->
           <template v-if="isInProcess">
-            <div class="flex flex-col gap-5">
-              <AppButton color="success">Qo'shilaman</AppButton>
-              <AppButton color="danger">Qarshiman</AppButton>
-              <AppButton color="warning">Be'tarafman</AppButton>
+            <div class="flex justify-center items-center gap-5">
+              <template
+                v-for="option in currentVoting.options"
+                :key="option.value"
+              >
+                <VotingOptionButton :option="option" />
+              </template>
             </div>
           </template>
 
           <!-- guruhlangan chartlar -->
           <template v-if="isEnded">
-            <div class="float-right">
+            <div class="flex justify-center items-center">
               <GroupedVotingResultChart style="width: 350px" />
             </div>
           </template>

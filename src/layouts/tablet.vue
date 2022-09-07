@@ -23,7 +23,7 @@
 
   <!-- tablet wrapper-->
   <div class="flex">
-    <aside class="w-[42%] h-screen overflow-y-scroll bg-primary-25">
+    <aside class="w-[450px] h-screen soverflow-y-scroll bg-primary-25">
       <div class="px-5 py-5">
         <!-- Subject title -->
         <h2

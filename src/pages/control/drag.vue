@@ -74,6 +74,7 @@
           </template>
         </draggable>
       </div>
+      <voting-option-button></voting-option-button>
 
       <div>
         <div>

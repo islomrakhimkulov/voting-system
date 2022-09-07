@@ -1,4 +1,6 @@
+import { Polarity } from './voting-option-polarity';
+
 export interface OrderedVotingOption {
-  order: number;
   option: string;
+  polarity: Polarity;
 }
