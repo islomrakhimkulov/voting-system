@@ -34,7 +34,7 @@
     "@vueuse/components": "^8.5.0",
     "@vueuse/core": "^8.5.0",
     "@vueuse/head": "^0.7.5",
-    "autoprefixer": "^10.4.2",
+    "autoprefixer": "^10.4.9",
     "chart.js": "^3.8.0",
     "date-fns": "^2.29.2",
     "dayjs": "^1.11.3",
