@@ -26,7 +26,7 @@
 
 <template>
   <div
-    class="app-timer flex text-[44px] font-semibold text-gray-900 justify-center"
+    class="app-timer flex text-[44px] font-semibold text-gray-900 justify-center rounded bg-yellow-100 p-3"
   >
     <p>{{ timer.isRunning ? 'Running' : 'Not running' }}</p>
     <div class="hours mx-2 relative">

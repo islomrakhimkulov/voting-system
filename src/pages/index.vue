@@ -12,6 +12,7 @@
     <!-- <CurrentTime /> -->
     <div class="mx-auto container gap-4">
       <voting-stepper />
+      <VotingTimer />
 
       <div class="my-10 flex justify-center items-center">
         <AppCard />

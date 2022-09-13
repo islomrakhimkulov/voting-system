@@ -27,9 +27,9 @@ export const useMeetingsStore = defineStore('meetings', () => {
           order: 1,
           issue: {
             subject: 'Lorem ipsum dolor sit amet consectetur adipisicing el',
-            description: '',
+            description: 'Lorem 1',
           },
-          interval: null,
+          interval: 'PT5M',
           options: [
             {
               option: 'Yes',

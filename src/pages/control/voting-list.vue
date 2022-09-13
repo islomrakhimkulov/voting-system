@@ -2,8 +2,13 @@
   import PlusIcon from '@/assets/icons/bi_plus-circle.svg?raw';
   import { Navigation, Pagination } from 'swiper';
   import { Swiper, SwiperSlide } from 'swiper/vue';
+  import { useMeetingsStore } from '@/store/meetings';
 
-  // import 'swiper/css';
+  const meetings = useMeetingsStore();
+
+  onMounted(() => {
+    console.log(meetings.$state.currentMeeting?.agenda);
+  });
 </script>
 
 <template>
@@ -15,12 +20,12 @@
         class="fixed bottom-[-320px] right-[-320px] -z-[999] bg-adminBg bg-cover w-[886.42px] h-[768.78px]"
       ></div>
 
-      <div class="">
+      <div>
         <h4 class="text-[16px] text-gray-900 uppercase">Yig'ilishlar</h4>
 
-        <h2 class="text-[18px] font-bold py-2 uppercase">
+        <h2 class="text-[18px] font-bold py-1 uppercase">
           <span
-            class="rounded-full inline-block bg-success-300 w-[12px] h-[12px]"
+            class="mr-2 bg-success-300 w-[12px] h-[12px] rounded-full inline-block"
           ></span>
           Joriy yigilishlar
         </h2>
@@ -60,8 +65,8 @@
             <AppButton color="accent">
               <AppIcon v-html="PlusIcon" position="left"> </AppIcon>
               Yaratish
-            </AppButton></router-link
-          >
+            </AppButton>
+          </router-link>
         </div>
 
         <!-- meeting shcudule -->

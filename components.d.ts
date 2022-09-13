@@ -27,8 +27,6 @@ declare module '@vue/runtime-core' {
     VotingOptionButton: typeof import('./src/components/VotingOptionButton.vue')['default']
     VotingPlannedItem: typeof import('./src/components/VotingPlannedItem.vue')['default']
     VotingPlannedList: typeof import('./src/components/VotingPlannedList.vue')['default']
-    VotingSequenceList: typeof import('./src/components/VotingSequenceList.vue')['default']
-    VotingSequenceListItem: typeof import('./src/components/VotingSequenceListItem.vue')['default']
     VotingStepper: typeof import('./src/components/VotingStepper.vue')['default']
     VotingSubjectItem: typeof import('./src/components/VotingSubjectItem.vue')['default']
     VotingSubjectsAccordion: typeof import('./src/components/VotingSubjectsAccordion.vue')['default']

@@ -47,7 +47,7 @@
       </div>
     </aside>
 
-    <main class="w-[56%]">
+    <main>
       <router-view />
     </main>
   </div>

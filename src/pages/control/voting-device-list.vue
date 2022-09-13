@@ -56,10 +56,10 @@
       <!-- devices group -->
       <div>
         <div>
-          <h2 class="text-sm text-gray-900 uppercase">Qurilamalar</h2>
+          <h2 class="text-[16px] text-gray-900 uppercase">Qurilamalar</h2>
         </div>
 
-        <div class="my-3">
+        <div class="my-2">
           <!-- ungrouped devices -->
           <div>
             <div class="flex justify-between items-center">
