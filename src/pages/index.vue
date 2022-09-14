@@ -5,34 +5,19 @@
 </script>
 
 <template>
-  <div>
-    <ParticlesBackground class="absolute w-full -z-10" />
-    <AppNavbar />
+  <div
+    class="bg-primary-50 h-screen w-full flex justify-center items-center relative"
+  >
+    <!-- Background -->
+    <ParticlesBackground class="absolute w-full -z-0" />
 
-    <!-- <CurrentTime /> -->
-    <div class="mx-auto container gap-4">
-      <voting-stepper />
-      <VotingTimer />
+    <!-- LOGO -->
+    <div
+      class="bg-logo w-[14.75rem] h-[7.9375rem] ml-[100px] bg-cover bg-center z-10"
+    ></div>
 
-      <div class="my-10 flex justify-center items-center">
-        <AppCard />
-        <div>
-          <VotesCountChart />
-        </div>
-        <div>
-          <GroupedVotingResultChart />
-        </div>
-      </div>
-      <VotingNamedGroup />
-      <VotingSubjectsList class="my-4" />
-      <voting-subjects-accordion class="my-16" />
-
-      <voting-planned-list />
-
-      <div class="py-6">
-        <AppTimer />
-        <AppTimer active />
-      </div>
+    <div class="absolute bottom-6">
+      <span class="text-[16px] text-gray-400">E-voting system</span>
     </div>
   </div>
 </template>
