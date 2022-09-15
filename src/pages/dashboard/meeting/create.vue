@@ -22,7 +22,6 @@
 
 <template>
   <div class="relative">
-    <AppNavbar />
     <div class="container mx-auto py-4">
       <!-- wave background svg icon -->
       <div
@@ -92,6 +91,7 @@
           </div>
         </div>
         <div class="w-[20%] ml-5 mt-[130px]">
+          <AppButton color="accent" class="ml-5">Saqlash</AppButton>
           <CurrentTime />
         </div>
 
@@ -117,7 +117,9 @@
     background-color: rgba(0, 0, 0, 0.5);
     transition: all 0.3s ease;
   }
-  /* a.router-link-active {
-		@apply text-[15px] text-accent-300 font-semibold;
-	} */
 </style>
+
+<route lang="yaml">
+meta:
+  layout: dashboard
+</route>

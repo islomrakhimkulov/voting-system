@@ -2,7 +2,6 @@
 
 <template>
   <div class="relative">
-    <AppNavbar />
     <div class="container mx-auto py-4">
       <!-- wave background svg icon -->
       <div

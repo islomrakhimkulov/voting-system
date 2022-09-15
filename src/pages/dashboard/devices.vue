@@ -47,7 +47,6 @@
 
 <template>
   <div class="relative">
-    <AppNavbar />
     <!-- wave background svg icon -->
     <div
       class="fixed bottom-[-320px] right-[-320px] -z-[999] bg-adminBg bg-cover w-[886.42px] h-[768.78px]"
@@ -145,3 +144,8 @@
     opacity: 0;
   }
 </style>
+
+<route lang="yaml">
+meta:
+  layout: dashboard
+</route>
