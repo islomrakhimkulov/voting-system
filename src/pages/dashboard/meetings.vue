@@ -5,10 +5,6 @@
   import { useMeetingsStore } from '@/store/meetings';
 
   const meetings = useMeetingsStore();
-
-  onMounted(() => {
-    console.log(meetings.$state.currentMeeting?.agenda);
-  });
 </script>
 
 <template>
@@ -48,20 +44,20 @@
             </h2>
             <div class="flex items-center pb-3">
               <router-link
-                :to="{ name: 'control-create-subject' }"
+                :to="{ name: 'dashboard-meetings' }"
                 class="mr-3 text-[15px] text-accent-300 font-semibold"
               >
                 Rejalashtirilgan
               </router-link>
               <router-link
-                :to="{ name: 'control-voting-full-result' }"
+                :to="{ name: 'dashboard-meetings' }"
                 class="text-gray-15 text-[15px] font-semibold"
               >
                 Yakunlangan
               </router-link>
             </div>
           </div>
-          <router-link :to="{ name: 'control-create-subject' }">
+          <router-link :to="{ name: 'dashboard-meeting-create' }">
             <AppButton color="accent">
               <AppIcon v-html="PlusIcon" position="left"> </AppIcon>
               Yaratish

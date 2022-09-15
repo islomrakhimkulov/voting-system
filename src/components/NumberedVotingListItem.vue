@@ -11,7 +11,7 @@
 
 <template>
   <RouterLink
-    :to="{ name: 'tablet-vote-id', params: { id: voting.id } }"
+    :to="{ name: 'voting-device-vote-id', params: { id: voting.id } }"
     custom
     v-slot="{ isActive, navigate }"
   >

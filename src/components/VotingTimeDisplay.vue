@@ -11,15 +11,18 @@
     return hms.toString().padStart(2, '0');
   }
 
-  const hours = computed(() => toTimePart(props.hours));
-  const minutes = computed(() => toTimePart(props.minutes));
-  const seconds = computed(() => toTimePart(props.seconds));
+  const hours = computed(() => (props.hours ? toTimePart(props.hours) : '00'));
+  const minutes = computed(() =>
+    props.minutes ? toTimePart(props.minutes) : '00'
+  );
+  const seconds = computed(() =>
+    props.seconds ? toTimePart(props.seconds) : '00'
+  );
 </script>
 
 <template>
   <div
     class="app-timer flex text-[44px] font-semibold text-gray-900 justify-center"
-    :class="classes"
   >
     <div class="hours mx-2 relative">
       {{ hours }}

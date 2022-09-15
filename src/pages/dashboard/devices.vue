@@ -59,7 +59,7 @@
           <h2 class="text-[16px] text-gray-900 uppercase">Qurilamalar</h2>
         </div>
 
-        <div class="my-2">
+        <div>
           <!-- ungrouped devices -->
           <div>
             <div class="flex justify-between items-center">

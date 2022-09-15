@@ -51,7 +51,7 @@
     }
 
     return {
-      name: 'tablet-vote-id',
+      name: 'voting-device-vote-id',
       params: {
         id: previousVoting.value.id,
       },
@@ -64,7 +64,7 @@
     }
 
     return {
-      name: 'tablet-vote-id',
+      name: 'voting-device-vote-id',
       params: {
         id: nextVoting.value.id,
       },
@@ -158,5 +158,5 @@
 
 <route lang="yaml">
 meta:
-  layout: tablet
+  layout: voting-device
 </route>

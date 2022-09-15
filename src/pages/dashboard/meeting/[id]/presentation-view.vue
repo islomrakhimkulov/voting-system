@@ -1,5 +1,3 @@
-<script setup lang="ts"></script>
-
 <template>
   <div class="relative">
     <AppNavbar />
@@ -26,9 +24,18 @@
           ARE POOR NEED AND GOVERNMENT SHOULD PROVIDE WORK SPACE TO HELP OUT
         </h2>
 
-        <div class="flex pb-3">
-          <div class="text-accent-300 text-[15px] font-semibold">Tarkibi</div>
-          <p class="ml-3 text-[15px] text-gray-15 font-semibold">Natija</p>
+        <div class="flex items-center pb-3">
+          <router-link
+            :to="{ name: 'dashboard-meetings' }"
+            class="mr-3 text-[15px] text-accent-300 font-semibold"
+          >
+            Tarkibi</router-link
+          >
+          <router-link
+            :to="{ name: 'dashboard-results' }"
+            class="text-[15px] text-gray-15 font-semibold"
+            >Natija</router-link
+          >
         </div>
       </div>
 
@@ -52,5 +59,3 @@
     </div>
   </div>
 </template>
-
-<style></style>
