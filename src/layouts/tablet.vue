@@ -21,7 +21,7 @@
     class="fixed top-[-500px] left-[20px] -z-[999] bg-adminBg bg-cover w-[886.42px] h-[768.78px]"
   ></div>
 
-  <!-- tablet wrapper-->
+  <!-- voting-device wrapper-->
   <div class="flex">
     <aside class="w-[450px] h-screen soverflow-y-scroll bg-primary-25">
       <div class="px-5 py-5">

@@ -1,0 +1,232 @@
+[
+  {
+    "id": "09282221-e60c-417c-8daf-70c7c79f50ce",
+    "createdAt": "2022-09-01T10:00:00Z",
+    "status": "in_process",
+    "flow": "voluntary",
+    "name": "XIX Oliy Majlis Qonunchilik palatasining navbatdagi yalpi majlisi",
+    "beginsAt": "2022-09-01T10:30:00Z",
+    "endsAt": "2022-09-01T12:30:00Z",
+    "beganAt": "2022-09-01T10:30:00Z",
+    "endedAt": null,
+    "agenda": [
+      {
+        "id": "67c2f435-6987-424e-864c-a2f6ac6d7281",
+        "createdAt": "2022-09-01T10:01:00Z",
+        "status": "ended",
+        "order": 1,
+        "issue": {
+          "subject": "Lorem ipsum dolor sit amet consectetur adipisicing el",
+          "description": "Lorem 1"
+        },
+        "interval": "PT5M",
+        "options": [
+          {
+            "option": "Yes",
+            "polarity": "negative"
+          },
+          {
+            "option": "Yes",
+            "polarity": "positive"
+          },
+          {
+            "option": "Yes",
+            "polarity": "neutral"
+          },
+          {
+            "option": "Yes",
+            "polarity": "neutral"
+          }
+        ],
+        "startedAt": "2022-09-01T10:30:00Z",
+        "endedAt": null,
+        "ballots": [],
+        "result": null
+      }
+    ]
+  },
+  {
+    "id": "19282221-e60c-417c-8daf-70c7c79f50ce",
+    "createdAt": "2022-09-01T10:00:00Z",
+    "status": "in_process",
+    "flow": "sequential",
+    "name": "Prezident asarlarini talqin qilish",
+    "beginsAt": "2022-09-01T10:30:00Z",
+    "endsAt": "2022-09-01T12:30:00Z",
+    "beganAt": "2022-09-01T10:30:00Z",
+    "endedAt": null,
+    "agenda": [
+      {
+        "id": "67c2f435-6987-424e-864c-a2f6ac6d7281",
+        "createdAt": "2022-09-01T10:01:00Z",
+        "status": "ended",
+        "order": 1,
+        "issue": {
+          "subject": "Lorem ipsum dolor sit amet consectetur adipisicing el",
+          "description": "Lorem 1"
+        },
+        "interval": "PT5M",
+        "options": [
+          {
+            "option": "Yes",
+            "polarity": "negative"
+          },
+          {
+            "option": "Yes",
+            "polarity": "positive"
+          },
+          {
+            "option": "Yes",
+            "polarity": "neutral"
+          },
+          {
+            "option": "Yes",
+            "polarity": "neutral"
+          }
+        ],
+        "startedAt": "2022-09-01T10:30:00Z",
+        "endedAt": null,
+        "ballots": [],
+        "result": null
+      }
+    ]
+  },
+  {
+    "id": "39282221-e60c-417c-8daf-70c7c79f50ce",
+    "createdAt": "2022-09-01T10:00:00Z",
+    "status": "in_process",
+    "flow": "voluntary",
+    "name": "XIX Oliy Majlis Qonunchilik palatasining navbatdagi yalpi majlisi",
+    "beginsAt": "2022-09-01T10:30:00Z",
+    "endsAt": "2022-09-01T12:30:00Z",
+    "beganAt": "2022-09-01T10:30:00Z",
+    "endedAt": null,
+    "agenda": [
+      {
+        "id": "67c2f435-6987-424e-864c-a2f6ac6d7281",
+        "createdAt": "2022-09-01T10:01:00Z",
+        "status": "ended",
+        "order": 1,
+        "issue": {
+          "subject": "Lorem ipsum dolor sit amet consectetur adipisicing el",
+          "description": "Lorem 1"
+        },
+        "interval": "PT5M",
+        "options": [
+          {
+            "option": "Yes",
+            "polarity": "negative"
+          },
+          {
+            "option": "Yes",
+            "polarity": "positive"
+          },
+          {
+            "option": "Yes",
+            "polarity": "neutral"
+          },
+          {
+            "option": "Yes",
+            "polarity": "neutral"
+          }
+        ],
+        "startedAt": "2022-09-01T10:30:00Z",
+        "endedAt": null,
+        "ballots": [],
+        "result": null
+      }
+    ]
+  },
+  {
+    "id": "79282221-e60c-417c-8daf-70c7c79f50ce",
+    "createdAt": "2022-09-01T10:00:00Z",
+    "status": "in_process",
+    "flow": "voluntary",
+    "name": "XIX Oliy Majlis Qonunchilik palatasining navbatdagi yalpi majlisi",
+    "beginsAt": "2022-09-01T10:30:00Z",
+    "endsAt": "2022-09-01T12:30:00Z",
+    "beganAt": "2022-09-01T10:30:00Z",
+    "endedAt": null,
+    "agenda": [
+      {
+        "id": "67c2f435-6987-424e-864c-a2f6ac6d7281",
+        "createdAt": "2022-09-01T10:01:00Z",
+        "status": "ended",
+        "order": 1,
+        "issue": {
+          "subject": "Lorem ipsum dolor sit amet consectetur adipisicing el",
+          "description": "Lorem 1"
+        },
+        "interval": "PT5M",
+        "options": [
+          {
+            "option": "Yes",
+            "polarity": "negative"
+          },
+          {
+            "option": "Yes",
+            "polarity": "positive"
+          },
+          {
+            "option": "Yes",
+            "polarity": "neutral"
+          },
+          {
+            "option": "Yes",
+            "polarity": "neutral"
+          }
+        ],
+        "startedAt": "2022-09-01T10:30:00Z",
+        "endedAt": null,
+        "ballots": [],
+        "result": null
+      }
+    ]
+  },
+  {
+    "id": "39282221-e60c-417c-8daf-70c7c79f50ce",
+    "createdAt": "2022-09-01T10:00:00Z",
+    "status": "in_process",
+    "flow": "voluntary",
+    "name": "XIX Oliy Majlis Qonunchilik palatasining navbatdagi yalpi majlisi",
+    "beginsAt": "2022-09-01T10:30:00Z",
+    "endsAt": "2022-09-01T12:30:00Z",
+    "beganAt": "2022-09-01T10:30:00Z",
+    "endedAt": null,
+    "agenda": [
+      {
+        "id": "67c2f435-6987-424e-864c-a2f6ac6d7281",
+        "createdAt": "2022-09-01T10:01:00Z",
+        "status": "ended",
+        "order": 1,
+        "issue": {
+          "subject": "Lorem ipsum dolor sit amet consectetur adipisicing el",
+          "description": "Lorem 1"
+        },
+        "interval": "PT5M",
+        "options": [
+          {
+            "option": "Yes",
+            "polarity": "negative"
+          },
+          {
+            "option": "Yes",
+            "polarity": "positive"
+          },
+          {
+            "option": "Yes",
+            "polarity": "neutral"
+          },
+          {
+            "option": "Yes",
+            "polarity": "neutral"
+          }
+        ],
+        "startedAt": "2022-09-01T10:30:00Z",
+        "endedAt": null,
+        "ballots": [],
+        "result": null
+      }
+    ]
+  }
+]

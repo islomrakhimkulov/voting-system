@@ -10,13 +10,13 @@
       <!-- router links  -->
       <div class="flex items-center gap-4">
         <router-link
-          :to="{ name: 'control-voting-list' }"
+          :to="{ name: 'dashboard-meetings' }"
           class="text-sm font-normal uppercase rounded"
         >
           Yig'ilishlar
         </router-link>
         <router-link
-          :to="{ name: 'control-voting-device-list' }"
+          :to="{ name: 'dashboard-devices' }"
           class="text-sm font-normal uppercase rounded"
         >
           Qurilmalar
