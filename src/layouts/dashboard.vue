@@ -1,7 +1,5 @@
-<script setup lang="ts"></script>
-
 <template>
-  <navbar class="bg-accent-60 py-3">
+  <div class="bg-accent-50 py-3">
     <div class="flex mx-auto container gap-4">
       <!-- Logo -->
       <div class="mr-10">
@@ -23,8 +21,19 @@
         </router-link>
       </div>
     </div>
-  </navbar>
+  </div>
   <main>
     <router-view />
   </main>
 </template>
+
+<style lang="postcss" scoped>
+  a.router-link-active {
+    @apply px-6 py-3 bg-accent-300 text-white rounded;
+  }
+</style>
+
+<route lang="yaml">
+meta:
+  layout: dashboard
+</route>

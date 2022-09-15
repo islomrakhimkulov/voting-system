@@ -9,7 +9,6 @@
 
 <template>
   <div class="relative">
-    <AppNavbar />
     <div class="container mx-auto py-4">
       <!-- wave background svg icon -->
       <div
@@ -71,3 +70,8 @@
     </div>
   </div>
 </template>
+
+<route lang="yaml">
+meta:
+  layout: dashboard
+</route>
