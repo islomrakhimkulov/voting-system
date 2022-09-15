@@ -47,7 +47,7 @@
       return undefined;
     }
 
-    return `/tablet/vote/${pageNumber + 1}`;
+    return `/voting-device/vote/${pageNumber + 1}`;
   });
 </script>
 
@@ -96,7 +96,7 @@
                   <!-- next prev buttons -->
                   <div class="flex justify-between pt-5">
                     <AppButton size="small">
-                      <router-link :to="`/tablet/vote/${pageNumber - 1}`"
+                      <router-link :to="`/voting-device/vote/${pageNumber - 1}`"
                         >Orqaga</router-link
                       >
                     </AppButton>
@@ -119,5 +119,5 @@
 
 <route lang="yaml">
 meta:
-  layout: tablet
+  layout: voting-device
 </route>
