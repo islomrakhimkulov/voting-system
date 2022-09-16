@@ -46,80 +46,74 @@
 </script>
 
 <template>
-  <div class="relative">
-    <!-- wave background svg icon -->
-    <div
-      class="fixed bottom-[-320px] right-[-320px] -z-[999] bg-adminBg bg-cover w-[886.42px] h-[768.78px]"
-    ></div>
-    <div class="container mx-auto py-4">
-      <!-- devices group -->
+  <div class="container mx-auto py-4">
+    <!-- devices group -->
+    <div>
       <div>
+        <h2 class="text-[16px] text-gray-900 uppercase">Qurilamalar</h2>
+      </div>
+
+      <div>
+        <!-- ungrouped devices -->
         <div>
-          <h2 class="text-[16px] text-gray-900 uppercase">Qurilamalar</h2>
-        </div>
-
-        <div>
-          <!-- ungrouped devices -->
-          <div>
-            <div class="flex justify-between items-center">
-              <h2 class="text-[18px] text-gray-900 font-semibold uppercase">
-                Guruhlashtirilmagan Qurilmalar
-              </h2>
-              <div>
-                <AppButton color="accent" @click="showTokenCodeModal">
-                  <AppIcon v-html="PlusIcon" position="left"> </AppIcon>Qo'shish
-                </AppButton>
-              </div>
-            </div>
-
-            <!-- devices card group -->
-
-            <div class="flex flex-row flex-wrap gap-5 py-3">
-              <!-- unnnamed cards group components -->
-              <template
-                v-for="(unNamedCard, idx) in unNamedGroupDevicesList"
-                :key="idx"
-              >
-                <VotingUnnamedGroup
-                  :unNamedCard="unNamedCard"
-                  @delete="deleteUnGroupedCard(idx)"
-                />
-              </template>
+          <div class="flex justify-between items-center">
+            <h2 class="text-[18px] text-gray-900 font-semibold uppercase">
+              Guruhlashtirilmagan Qurilmalar
+            </h2>
+            <div>
+              <AppButton color="accent" @click="showTokenCodeModal">
+                <AppIcon v-html="PlusIcon" position="left"> </AppIcon>Qo'shish
+              </AppButton>
             </div>
           </div>
-          <!-- groups name -->
-          <div>
-            <div class="flex justify-between items-center">
-              <h2 class="text-[18px] text-gray-900 font-semibold uppercase">
-                Guruhlar nomi
-              </h2>
-              <div>
-                <AppButton color="accent" @click="showDevicesModal">
-                  <AppIcon v-html="PlusIcon" position="left"> </AppIcon>
-                  Qo'shish
-                </AppButton>
-              </div>
+
+          <!-- devices card group -->
+
+          <div class="flex flex-row flex-wrap gap-5 py-2">
+            <!-- unnnamed cards group components -->
+            <template
+              v-for="(unNamedCard, idx) in unNamedGroupDevicesList"
+              :key="idx"
+            >
+              <VotingUnnamedGroup
+                :unNamedCard="unNamedCard"
+                @delete="deleteUnGroupedCard(idx)"
+              />
+            </template>
+          </div>
+        </div>
+        <!-- groups name -->
+        <div>
+          <div class="flex justify-between items-center">
+            <h2 class="text-[18px] text-gray-900 font-semibold uppercase">
+              Guruhlar nomi
+            </h2>
+            <div>
+              <AppButton color="accent" @click="showDevicesModal">
+                <AppIcon v-html="PlusIcon" position="left"> </AppIcon>
+                Qo'shish
+              </AppButton>
             </div>
-            <!-- devices named card group  -->
-            <div class="flex flex-row flex-wrap gap-5 py-3">
-              <!-- named cards group cards -->
-              <template v-for="(cardInfo, idx) in namedGroupList" :key="idx">
-                <VotingNamedGroup
-                  :cardInfo="cardInfo"
-                  @delete="deleteCard(idx)"
-                />
-              </template>
-            </div>
+          </div>
+          <!-- devices named card group  -->
+          <div class="flex flex-row flex-wrap gap-5 py-3">
+            <!-- named cards group cards -->
+            <template v-for="(cardInfo, idx) in namedGroupList" :key="idx">
+              <VotingNamedGroup
+                :cardInfo="cardInfo"
+                @delete="deleteCard(idx)"
+              />
+            </template>
           </div>
         </div>
       </div>
-
-      <!-- token code modal -->
-      <VotingTokenCode :isOpen="isOpenToken" @close="hideTokenCodeModal" />
-
-      <!-- devices control modal -->
-      <VotingDevicesModal :isOpen="isOpenDevice" @close="hideDevicesModal" />
     </div>
+
+    <!-- token code modal -->
+    <VotingTokenCode :isOpen="isOpenToken" @close="hideTokenCodeModal" />
+
+    <!-- devices control modal -->
+    <VotingDevicesModal :isOpen="isOpenDevice" @close="hideDevicesModal" />
   </div>
 </template>
 <style>
