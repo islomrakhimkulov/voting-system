@@ -1,4 +1,4 @@
-Voting System - Ovoz berish web platformasi
+Voting System - Ovoz berish tizimi
 
 When you use this template, try follow the checklist to update your info properly
 
